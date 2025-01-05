@@ -16,5 +16,4 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
 **Solution Summary:**  
 ...
 
-[View Solution](./solutions/Q1(Merge Sorted Array).java)
-
+[View Solution](./Solutions/Q1(Merge Sorted Array).java)
