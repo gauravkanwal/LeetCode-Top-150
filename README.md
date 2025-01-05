@@ -25,5 +25,5 @@ By starting from the back:
 We can directly place the largest elements from both arrays into their correct positions in nums1 without worrying about shifting elements prematurely.
 The last positions of nums1 (the extra space) are filled first, leaving the smaller elements to be placed at the start of the array.
 
-[View Solution 👈](./solutions/Q1-MergeSortedArray.java)
+[View Solution 👈](./Solutions/Q1-MergeSortedArray.java)
 
