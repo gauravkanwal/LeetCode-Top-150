@@ -10,6 +10,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q2. Remove Element](#q2-remove-element)
   - [Q3. Remove Duplicates from Sorted Array](#q3-remove-duplicates-from-sorted-array)
   - [Q4. Remove Duplicates from Sorted Array II](#q4-remove-duplicates-from-sorted-array-ii)
+  - [Q5. Majority Element](#q5-majority-element)
 
 
 ## Key Ideas or approaches of the problems:  
@@ -68,3 +69,30 @@ The approach is same as the [previous problem](#q3-remove-duplicates-from-sorted
 As here we can keep maximum of 2 duplicates we will check the second last element of writeIndex i.e. nums[writeIndex-2] should not be equal to the current nums[i] then only we will fill the writeIndex.
 
 [View Solution 👈](./Solutions/Q4-RemoveDuplicatesFromSortedArrayII.java)
+  
+  
+
+## Q5. Majority Element  
+  
+**Problem link:** 
+[Majority Element](https://leetcode.com/problems/majority-element/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:**  
+Key Approach Summary for the Majority Element Solution:
+Sorting the Array:
+
+The array is first sorted, which has a time complexity of 
+𝑂(𝑛log 𝑛)
+O(nlogn). Sorting ensures that if an element is the majority, it will appear consecutively in the middle of the sorted array.
+Identifying the Majority Element:
+
+After sorting, the algorithm calculates the required count for a majority element, which is more than half the size of the array (n/2).
+A loop is used to check if any element at index i is the same as the element majority - 1 positions ahead. If such an element is found, it is identified as the majority element.
+Efficiency:
+
+The approach leverages the sorted order to efficiently determine the majority element with a single scan of the array after sorting.
+Return Value:
+The identified majority element is returned.
+  
+Another way of solving this problem is by using a HashMap.
+[View Solution 👈](./Solutions/Q5-MajorityElement.java)
