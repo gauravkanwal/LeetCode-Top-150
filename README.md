@@ -11,6 +11,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q3. Remove Duplicates from Sorted Array](#q3-remove-duplicates-from-sorted-array)
   - [Q4. Remove Duplicates from Sorted Array II](#q4-remove-duplicates-from-sorted-array-ii)
   - [Q5. Majority Element](#q5-majority-element)
+  - [Q6. Rotate Array](#q6-rotate-array)
 
 
 ## Key Ideas or approaches of the problems:  
@@ -95,4 +96,39 @@ Return Value:
 The identified majority element is returned.
   
 Another way of solving this problem is by using a HashMap.
-[View Solution 👈](./Solutions/Q5-MajorityElement.java)
+[View Solution 👈](./Solutions/Q5-MajorityElement.java)  
+  
+    
+## Q6. Rotate Array 
+  
+**Problem link:** 
+[Rotate Array](https://leetcode.com/problems/rotate-array/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+Key Points for the Solution:
+Function Purpose:
+
+The rotate function rotates an array nums to the right by k steps.
+Handling Rotations:
+
+k = k % n: This step minimizes unnecessary rotations. If k is larger than the array's length n, the effective number of rotations is k % n.
+Reversal Method:
+
+The reverse method is a helper function that reverses elements of an array within a specified range (start to end).
+Rotation Logic:
+
+Step 1: Reverse the first part of the array from index 0 to n-k-1.
+Step 2: Reverse the second part of the array from index n-k to n-1.
+Step 3: Reverse the entire array to complete the rotation.
+In-Place Modification:
+
+The solution rotates the array in-place, meaning it doesn't use any extra space for another array. It modifies the original array directly.
+Time Complexity:
+
+The algorithm runs in O(n) time complexity because each reversal involves traversing part of the array, and in total, the entire array is traversed two times.
+Space Complexity:
+
+The space complexity is O(1) as no additional data structures are used except for a few variables.
+This solution efficiently rotates an array using a three-step reversal method, making it both time and space-efficient..
+
+[View Solution 👈](./Solutions/Q6-RotateArray.java)    
