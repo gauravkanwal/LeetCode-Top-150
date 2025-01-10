@@ -12,6 +12,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q4. Remove Duplicates from Sorted Array II](#q4-remove-duplicates-from-sorted-array-ii)
   - [Q5. Majority Element](#q5-majority-element)
   - [Q6. Rotate Array](#q6-rotate-array)
+  - [Q7. Best Time To Buy And Sell Stock](#q7-best-time-to-buy-and-sell-stock)
 
 
 ## Key Ideas or approaches of the problems:  
@@ -132,3 +133,21 @@ The space complexity is O(1) as no additional data structures are used except fo
 This solution efficiently rotates an array using a three-step reversal method, making it both time and space-efficient..
 
 [View Solution 👈](./Solutions/Q6-RotateArray.java)    
+  
+    
+## Q7. Best Time To Buy And Sell Stock  
+  
+**Problem link:** 
+[ Best Time To Buy And Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+
+Here’s a refined version of your explanation:
+
+An initial approach could involve using an array named max_profits to store the maximum number to the right of each element. The result is then calculated by subtracting each element from the maximum number to its right, with the maximum difference being the answer. However, this approach requires two traversals of the array.
+
+We can optimize this by finding the result in a single traversal using the following approach:
+Each element checks if it can generate more profit than the previous maximum profit. If the profit from the current element results in a loss (i.e., the profit is less than 0), we reset the currMaxProfit to 0. This approach is similar to Kadane's algorithm, where we track the maximum subarray sum to determine the best possible profit.
+
+[View Solution 👈](./Solutions/Q7-BestTimeToBuyAndSellStock.java)
+  
