@@ -13,6 +13,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q5. Majority Element](#q5-majority-element)
   - [Q6. Rotate Array](#q6-rotate-array)
   - [Q7. Best Time To Buy And Sell Stock](#q7-best-time-to-buy-and-sell-stock)
+  - [Q8. Best Time To Buy And Sell Stock II](#q8-best-time-to-buy-and-sell-stock-ii)
 
 
 ## Key Ideas or approaches of the problems:  
@@ -142,12 +143,23 @@ This solution efficiently rotates an array using a three-step reversal method, m
 
 **Solution Key Idea or Approach:**  
 
-Here’s a refined version of your explanation:
-
 An initial approach could involve using an array named max_profits to store the maximum number to the right of each element. The result is then calculated by subtracting each element from the maximum number to its right, with the maximum difference being the answer. However, this approach requires two traversals of the array.
 
 We can optimize this by finding the result in a single traversal using the following approach:
 Each element checks if it can generate more profit than the previous maximum profit. If the profit from the current element results in a loss (i.e., the profit is less than 0), we reset the currMaxProfit to 0. This approach is similar to Kadane's algorithm, where we track the maximum subarray sum to determine the best possible profit.
 
-[View Solution 👈](./Solutions/Q7-BestTimeToBuyAndSellStock.java)
+[View Solution 👈](./Solutions/Q7-BestTimeToBuyAndSellStock.java)  
+  
+
+## Q8. Best Time To Buy And Sell Stock II
+  
+**Problem link:** 
+[ Best Time To Buy And Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+
+The first approach I thought was to apply the last problem's approach to keep finding the profit for a stock until it is increasing . If the profit of a stock decreases at any point sell that stock on the previous  max profit and buy the new stock that gives less profit,
+One better and simpler approach is to maintain a variable start and initialize it with first day's price and if price of the stock increases any day sell that stock and add the profit to maxProfit.Initialize start with current stock value after every iteration.
+
+[View Solution 👈](./Solutions/Q8-BestTimeToBuyAndSellStockII.java)
   
