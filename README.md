@@ -14,6 +14,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q6. Rotate Array](#q6-rotate-array)
   - [Q7. Best Time To Buy And Sell Stock](#q7-best-time-to-buy-and-sell-stock)
   - [Q8. Best Time To Buy And Sell Stock II](#q8-best-time-to-buy-and-sell-stock-ii)
+  - [Q9. Jump Game](#q9-jump-game)
 
 
 ## Key Ideas or approaches of the problems:  
@@ -161,5 +162,21 @@ Each element checks if it can generate more profit than the previous maximum pro
 The first approach I thought was to apply the last problem's approach to keep finding the profit for a stock until it is increasing . If the profit of a stock decreases at any point sell that stock on the previous  max profit and buy the new stock that gives less profit,
 One better and simpler approach is to maintain a variable start and initialize it with first day's price and if price of the stock increases any day sell that stock and add the profit to maxProfit.Initialize start with current stock value after every iteration.
 
-[View Solution 👈](./Solutions/Q8-BestTimeToBuyAndSellStockII.java)
+[View Solution 👈](./Solutions/Q8-BestTimeToBuyAndSellStockII.java)  
+  
+
+## Q9. Jump Game
+  
+**Problem link:** 
+[ Jump Game](https://leetcode.com/problems/jump-game/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+
+My key idea was that we iterate from right to left and if we find a 0 value that means it can cause problems. So we check to the left of 0 is there a value that can take us to the right side of 0.  
+  
+A more simpler code will for this approach that we initialize the variable goal with last index and i with second last index. And if we can reach to the goal from the ith index we initialize goal with the ith index.  
+  
+We check if we can reach to goal from ith index by :[ i + (maximum jump from i) should be >= goal ]
+
+[View Solution 👈](./Solutions/Q9-JumpGame.java)
   
