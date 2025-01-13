@@ -15,6 +15,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q7. Best Time To Buy And Sell Stock](#q7-best-time-to-buy-and-sell-stock)
   - [Q8. Best Time To Buy And Sell Stock II](#q8-best-time-to-buy-and-sell-stock-ii)
   - [Q9. Jump Game](#q9-jump-game)
+  - [Q10. Jump Game II](#q10-jump-game-ii)
 
 
 ## Key Ideas or approaches of the problems:  
@@ -178,5 +179,36 @@ A more simpler code will for this approach that we initialize the variable goal 
   
 We check if we can reach to goal from ith index by :[ i + (maximum jump from i) should be >= goal ]
 
-[View Solution 👈](./Solutions/Q9-JumpGame.java)
+[View Solution 👈](./Solutions/Q9-JumpGame.java)  
+  
+
+## Q10. Jump Game II
+  
+**Problem link:** 
+[ Jump Game II](https://leetcode.com/problems/jump-game-ii/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+
+My key idea was that we iterate from right to left and use two pointers i and j where i=n-1 and j=i-1.
+And iterate the array backwards from index j and find the minimum index that can take us to i and then increase the count .The next step is to make i=j , j=i-1 again and start iterating array again backwards and repeat the process until i becomes 0. This way we will find the minimum number of  steps needed to reach n-1 index . But this solution's time complexity is O(n^2).
+  
+So a O(n) approach would be to using a greedy approach to maximize the reach at each step while keeping track of the current jump's boundary.Whenever we find a new farthest reach we make connection with that index.
+Breakdown of the central concepts:  
+1. Farthest Reach:
+At each index, calculate the farthest index that can be reached using the current jump. This ensures that we are always considering the maximum possible progress at every step.
+2. Jump Boundary:
+Use a variable (currentEnd) to track the end of the current jump range. Once you reach this boundary, it means you need to make another jump to continue progressing.
+3. Greedy Decision Making:
+Always aim to reach the farthest possible point with each jump. By making greedy choices, the algorithm minimizes the total number of jumps.
+4. Efficiency:
+This approach only iterates through the array once, updating the farthest reach and jump boundaries as necessary. By avoiding redundant calculations, the time complexity is reduced to 
+O(n).
+5. Termination Condition:
+The loop stops as soon as the farthest reach is greater than or equal to the last index. This ensures that the algorithm doesn't perform unnecessary calculations once the goal is reached.
+Example Walkthrough with Key Steps:
+At each index:
+Update farthest: Calculate the farthest index you can reach from the current index.
+Check currentEnd: If the current index reaches the end of the current jump's range (currentEnd), increment the jump count and update currentEnd to farthest.
+Stop when currentEnd reaches or exceeds the last index: This indicates that the last position is within reach with the current or next jump
+[View Solution 👈](./Solutions/Q10-JumpGameII.java)
   
