@@ -16,6 +16,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q8. Best Time To Buy And Sell Stock II](#q8-best-time-to-buy-and-sell-stock-ii)
   - [Q9. Jump Game](#q9-jump-game)
   - [Q10. Jump Game II](#q10-jump-game-ii)
+  - [Q11. H-Index](#q11-h-index)
 
 
 ## Key Ideas or approaches of the problems:  
@@ -210,5 +211,37 @@ At each index:
 Update farthest: Calculate the farthest index you can reach from the current index.
 Check currentEnd: If the current index reaches the end of the current jump's range (currentEnd), increment the jump count and update currentEnd to farthest.
 Stop when currentEnd reaches or exceeds the last index: This indicates that the last position is within reach with the current or next jump
-[View Solution 👈](./Solutions/Q10-JumpGameII.java)
+[View Solution 👈](./Solutions/Q10-JumpGameII.java)  
+  
+  
+## Q11. H-Index
+  
+**Problem link:** 
+[H-Index](https://leetcode.com/problems/h-index/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+
+ 1. Bucket Counting:
+- Instead of sorting the entire array, the code creates a **bucket array** where each index represents a specific number of citations.
+- Each bucket (`buckets[i]`) counts how many papers have exactly `i` citations.
+
+ 2. Handling Large Citations:
+- Any paper with citations greater than or equal to `n` (the total number of papers) is placed in the last bucket (`buckets[n]`). This effectively caps the maximum citations considered for the h-index calculation to `n`.
+
+ 3. Efficient Cumulative Count:
+- The code iterates backward through the `buckets` array, accumulating the number of papers with at least `i` citations.
+- Once it finds the largest `i` where the cumulative count of papers (`count`) is greater than or equal to `i`, it determines this `i` as the h-index.
+
+ Why This Works:
+- The h-index requires finding the maximum `h` where there are at least `h` papers with `h` citations. By using bucket counting, the code efficiently counts and accumulates citation data without the need for sorting, which would take more time.
+
+ Advantages of This Key Idea:
+- **Time Efficiency**: The bucket counting approach runs in O(n) time complexity, making it efficient for large datasets.
+- **Space Efficiency**: The extra space used (bucket array) is proportional to the number of papers, making it manageable.
+
+ Summary:
+The key idea is to **use a counting mechanism (buckets)** to avoid sorting and directly determine the h-index by accumulating citation counts.
+
+
+[View Solution 👈](./Solutions/Q11-h-Index.java)  
   
