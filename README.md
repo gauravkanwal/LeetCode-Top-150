@@ -17,6 +17,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q9. Jump Game](#q9-jump-game)
   - [Q10. Jump Game II](#q10-jump-game-ii)
   - [Q11. H-Index](#q11-h-index)
+  - [Q12. Insert Delete GetRandom O(1)](#q12-insert-delete-getrandom-o1)
 
 
 ## Key Ideas or approaches of the problems:  
@@ -245,3 +246,26 @@ The key idea is to **use a counting mechanism (buckets)** to avoid sorting and d
 
 [View Solution 👈](./Solutions/Q11-h-Index.java)  
   
+  
+
+## Q12. Insert Delete GetRandom O(1)
+  
+**Problem link:** 
+[ Insert Delete GetRandom O(1) ](https://leetcode.com/problems/insert-delete-getrandom-o1/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+
+Initially, we used a HashSet to store the elements, which ensured O(1) time complexity for insertion and removal. However, getting a random element from the HashSet was causing O(n) time complexity because HashSet does not allow accessing elements by index. We had to iterate over the entire set to get a random element, which was inefficient.
+
+To improve this, we switched to a combination of ArrayList and HashSet. The ArrayList allowed us to access elements by index, making the getRandom() method an O(1) operation. However, when removing elements, we encountered the issue of not knowing the index of the element to remove, which led to O(n) time complexity for removal.
+
+The key idea in the final solution is using both HashMap and ArrayList:
+
+HashMap stores the element as the key and its corresponding index in the ArrayList as the value. This allows us to get the index of any element in O(1) time.
+ArrayList allows us to access elements by index in O(1) time.
+To remove an element efficiently, instead of removing the element directly, we swap it with the last element in the ArrayList and then remove the last element. This ensures that removal also happens in O(1) time.
+Finally, the listSize variable keeps track of the current size of the ArrayList, enabling efficient random access and removal.
+This approach ensures that all operations (insert, remove, and getRandom) are executed in O(1) time.
+
+
+[View Solution 👈](./Solutions/Q12-InsertDeleteGetRandomO(1).java) 
