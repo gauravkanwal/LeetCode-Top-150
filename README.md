@@ -18,6 +18,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q10. Jump Game II](#q10-jump-game-ii)
   - [Q11. H-Index](#q11-h-index)
   - [Q12. Insert Delete GetRandom O(1)](#q12-insert-delete-getrandom-o1)
+  - [Q13. Product of Array Except Self](#q13-product-of-array-except-self)
 
 
 ## Key Ideas or approaches of the problems:  
@@ -268,4 +269,42 @@ Finally, the listSize variable keeps track of the current size of the ArrayList,
 This approach ensures that all operations (insert, remove, and getRandom) are executed in O(1) time.
 
 
-[View Solution 👈](./Solutions/Q12-InsertDeleteGetRandomO(1).java) 
+[View Solution 👈](./Solutions/Q12-InsertDeleteGetRandomO(1).java)   
+  
+
+## Q13. Product of Array Except Self
+  
+**Problem link:** 
+[ Product of Array Except Self ](https://leetcode.com/problems/product-of-array-except-self/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+
+First Approach: Using Prefix and Suffix Products
+
+Prefix Product Calculation: Create prefixProduct where each element is the product of all elements before it in nums.
+
+Suffix Product Calculation: Create suffixProduct where each element is the product of all elements after it in nums.
+
+Final Output: Multiply corresponding elements of prefixProduct and suffixProduct.
+
+Time Complexity: O(n) (three passes through nums).
+Space Complexity: O(n) (two additional arrays).
+
+Improved Approach: Optimized Space Complexity
+
+Single Output Array: Use a single array ans to store prefix products initially.
+
+Combine Suffix Calculation: In a second pass, calculate suffix products and update ans on the fly.
+
+Time Complexity: O(n) (two passes through nums).
+Space Complexity: O(1) (ignoring the output array).
+
+Summary
+
+First Approach: O(n) time, O(n) space.
+
+Improved Approach: O(n) time, O(1) space (excluding the output array).
+
+
+
+[View Solution 👈](./Solutions/Q13-ProductOfArrayExceptSelf.java) 
