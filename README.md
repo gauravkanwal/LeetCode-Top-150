@@ -19,6 +19,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q11. H-Index](#q11-h-index)
   - [Q12. Insert Delete GetRandom O(1)](#q12-insert-delete-getrandom-o1)
   - [Q13. Product of Array Except Self](#q13-product-of-array-except-self)
+  - [Q14. Gas Station](#q14-gas-station)
 
 
 ## Key Ideas or approaches of the problems:  
@@ -308,3 +309,27 @@ Improved Approach: O(n) time, O(1) space (excluding the output array).
 
 
 [View Solution 👈](./Solutions/Q13-ProductOfArrayExceptSelf.java) 
+  
+
+
+## Q14. Gas Station
+  
+**Problem link:** 
+[ Gas Station ](https://leetcode.com/problems/gas-station/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+
+Main key ideas for this problem are:
+1. If total cost > total gas , there is no way to complete the rotation.
+2. Else we only have to find the correct starting point . For this the main idea is that if you start at station i and can't reach station j, then no station k (where i < k ≤ j) can be the starting point either, because the gas accumulated between i and k is less than the cost.This allows us to skip certain starting points instead of iterating through all of them. So we put the next starting point direct as j+1.
+  
+
+Algorithm:
+
+Calculate the total gas (totalGas) and total cost (totalCost).
+If totalGas < totalCost, it's impossible to complete the circuit, so return -1.
+Use a currentGas variable to track the remaining gas while traversing. If currentGas becomes negative at station i, reset the starting station to i+1 and reset currentGas.
+
+
+
+[View Solution 👈](./Solutions/Q14-GasStation.java) 
