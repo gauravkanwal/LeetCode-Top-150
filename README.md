@@ -20,6 +20,8 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q12. Insert Delete GetRandom O(1)](#q12-insert-delete-getrandom-o1)
   - [Q13. Product of Array Except Self](#q13-product-of-array-except-self)
   - [Q14. Gas Station](#q14-gas-station)
+  - [Q15. Candy](#q15-candy)
+  - [My Approach:](#my-approach)
 
 
 ## Key Ideas or approaches of the problems:  
@@ -333,3 +335,44 @@ Use a currentGas variable to track the remaining gas while traversing. If curren
 
 
 [View Solution 👈](./Solutions/Q14-GasStation.java) 
+  
+
+
+## Q15. Candy
+  
+**Problem link:** 
+[ Candy ](https://leetcode.com/problems/candy/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+
+My Approach:
+------------
+
+The problem requires distributing candies to children such that:
+
+Each child must have at least one candy.
+A child with a higher rating must get more candies than their neighbors.
+This approach solves the problem in two main passes:
+
+Left-to-Right Pass:
+
+Start by assigning one candy to each child (candies[i] = 1).
+For every child i from left to right:
+If the rating of the current child (ratings[i]) is greater than the rating of the previous child (ratings[i-1]), assign the current child candies[i-1] + 1 candies.
+Maintain a running total (totalCandies) of all candies during this pass.
+Right-to-Left Pass:
+
+Traverse the array from right to left.
+For every child i:
+If the rating of the current child (ratings[i]) is greater than the rating of the next child (ratings[i+1]), update the current child's candy count to be the maximum of its current candy count and candies[i+1] + 1.
+Adjust the totalCandies to account for changes in candy distribution.
+Key Insight:
+The two-pass strategy ensures that the candy distribution satisfies the constraints in both directions:
+
+The left-to-right pass ensures that children with higher ratings than their left neighbors get more candies.
+The right-to-left pass ensures the same for children with higher ratings than their right neighbors, while also maintaining the larger candy count from both passes.
+This results in an optimal candy distribution in O(n) time and O(n) space.
+
+
+
+[View Solution 👈](./Solutions/Q15-Candy.java) 
