@@ -21,8 +21,6 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q13. Product of Array Except Self](#q13-product-of-array-except-self)
   - [Q14. Gas Station](#q14-gas-station)
   - [Q15. Candy](#q15-candy)
-  - [My Approach:](#my-approach)
-
 
 ## Key Ideas or approaches of the problems:  
   
@@ -345,7 +343,7 @@ Use a currentGas variable to track the remaining gas while traversing. If curren
 
 **Solution Key Idea or Approach:**  
 
-My Approach:
+My Approach:<!-- omit in toc -->
 ------------
 
 The problem requires distributing candies to children such that:
@@ -373,6 +371,31 @@ The left-to-right pass ensures that children with higher ratings than their left
 The right-to-left pass ensures the same for children with higher ratings than their right neighbors, while also maintaining the larger candy count from both passes.
 This results in an optimal candy distribution in O(n) time and O(n) space.
 
+Optimal Approach:<!-- omit in toc -->
+-----------------
+  
 
+The solution relies on identifying and handling three distinct segments in the ratings array:
+
+Flat Segment:
+
+If consecutive ratings are equal, no additional candies are needed for these children; they each get exactly one candy.
+Increasing Slope:
+
+When ratings are increasing, the candies are distributed in ascending order. For example, if the slope length is 3, the candies would be distributed as 1, 2, 3.
+The length of this increasing slope (peak) determines the additional candies required.
+Decreasing Slope:
+
+When ratings are decreasing, candies are distributed in descending order. For example, if the slope length is 3, the candies would be distributed as 3, 2, 1.
+The length of this decreasing slope (valley) determines the additional candies required.
+Peak Adjustment:
+
+If an increasing slope is immediately followed by a decreasing slope, the peak value (highest point in the increasing slope) will be double-counted.
+To correct this, subtract the smaller of the peak or valley length from the total candies.
+Key Insights:
+Efficiency: By analyzing the slopes in a single traversal, the solution avoids the need for separate passes or arrays, making it highly efficient.
+Dynamic Candy Adjustment: The algorithm dynamically calculates the total candies required without pre-computing values for each child.
+Double-Counting Fix: Adjusting for the overlap at the peak ensures that candies are distributed optimally.
+This approach ensures the problem's constraints are met with an efficient O(n) time complexity and O(1) space complexity.
 
 [View Solution 👈](./Solutions/Q15-Candy.java) 
