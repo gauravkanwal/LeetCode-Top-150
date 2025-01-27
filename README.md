@@ -398,4 +398,23 @@ Dynamic Candy Adjustment: The algorithm dynamically calculates the total candies
 Double-Counting Fix: Adjusting for the overlap at the peak ensures that candies are distributed optimally.
 This approach ensures the problem's constraints are met with an efficient O(n) time complexity and O(1) space complexity.
 
-[View Solution 👈](./Solutions/Q15-Candy.java) 
+[View Solution 👈](./Solutions/Q15-Candy.java)  
+  
+
+## Q16. Trapping Rain Water
+  
+**Problem link:** 
+[ Trapping Rain Water ](https://leetcode.com/problems/trapping-rain-water/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+
+My Approach:<!-- omit in toc -->
+------------
+  
+  
+We start with two pointers, i and j, where i represents the left tallest bar, and j is the closest bar to i that is greater than or equal to the height of i. We increment j until we find such a bar. Once we find that bar, we add the trapped water between these two bars to res. After this, we update i to j and repeat the process.
+
+However, if there is no taller bar than height[i], j will become equal to n, and we may miss all the trapped water between i and n-1. To handle this case, we traverse the array from the back until the last value of i to ensure that no trapped water is missed.
+  
+
+[View Solution 👈](./Solutions/Q16-TrappingRainWater.java) 
