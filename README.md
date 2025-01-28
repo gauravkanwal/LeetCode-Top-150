@@ -409,12 +409,31 @@ This approach ensures the problem's constraints are met with an efficient O(n) t
 **Solution Key Idea or Approach:**  
 
 My Approach:<!-- omit in toc -->
-------------
-  
-  
+------------  
 We start with two pointers, i and j, where i represents the left tallest bar, and j is the closest bar to i that is greater than or equal to the height of i. We increment j until we find such a bar. Once we find that bar, we add the trapped water between these two bars to res. After this, we update i to j and repeat the process.
 
 However, if there is no taller bar than height[i], j will become equal to n, and we may miss all the trapped water between i and n-1. To handle this case, we traverse the array from the back until the last value of i to ensure that no trapped water is missed.
-  
+     
+Optimal approach:<!-- omit in toc -->
+----------------- 
+Instead of starting both pointers together (which can lead to traversing the array twice in the worst case), we can optimize the process by using two pointers:
 
+maxLeft initialized at index 0.  
+maxRight initialized at index n-1.  
+Additionally, we have two other pointers:  
+left initialized at 1.  
+right initialized at n-2.  
+  
+Algorithm:  
+Compare the values of maxLeft and maxRight.  
+Whichever is smaller (maxLeft or maxRight), check its corresponding pointer:  
+If maxLeft is smaller, check the value at left:  
+If array[left] > maxLeft, update maxLeft.  
+Otherwise, add (maxLeft - array[left]) to the result (trapped water).  
+Increment the left pointer.  
+If maxRight is smaller, check the value at right:  
+If array[right] > maxRight, update maxRight.  
+Otherwise, add (maxRight - array[right]) to the result (trapped water).  
+Decrement the right pointer.  
+This approach ensures that we process each element only once, making it more efficient.  
 [View Solution 👈](./Solutions/Q16-TrappingRainWater.java) 
