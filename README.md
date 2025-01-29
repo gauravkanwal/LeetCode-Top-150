@@ -21,6 +21,9 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q13. Product of Array Except Self](#q13-product-of-array-except-self)
   - [Q14. Gas Station](#q14-gas-station)
   - [Q15. Candy](#q15-candy)
+  - [Q16. Trapping Rain Water](#q16-trapping-rain-water)
+  - [Q17. Roman To Integer](#q17-roman-to-integer)
+  
 
 ## Key Ideas or approaches of the problems:  
   
@@ -436,4 +439,15 @@ If array[right] > maxRight, update maxRight.
 Otherwise, add (maxRight - array[right]) to the result (trapped water).  
 Decrement the right pointer.  
 This approach ensures that we process each element only once, making it more efficient.  
-[View Solution 👈](./Solutions/Q16-TrappingRainWater.java) 
+[View Solution 👈](./Solutions/Q16-TrappingRainWater.java)  
+  
+
+## Q17. Roman To Integer
+  
+**Problem link:** 
+[ Roman To Integer ](https://leetcode.com/problems/roman-to-integer/submissions/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+
+We map all the value like I=1 ,V=5 etc in a HashMap. Then we just iterate the string s and check if the current character's value is less than the next character's value. If yes we subtract the current character's value otherwise we add current character's value.  
+[View Solution 👈](./Solutions/Q17-RomanToInteger.java) 
