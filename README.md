@@ -23,7 +23,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q15. Candy](#q15-candy)
   - [Q16. Trapping Rain Water](#q16-trapping-rain-water)
   - [Q17. Roman To Integer](#q17-roman-to-integer)
-  - [Q18. Integer To Roman](#q17-integer-to-roman)
+  - [Q18. Integer To Roman](#q18-integer-to-roman)
   
 
 ## Key Ideas or approaches of the problems:  
