@@ -23,6 +23,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q15. Candy](#q15-candy)
   - [Q16. Trapping Rain Water](#q16-trapping-rain-water)
   - [Q17. Roman To Integer](#q17-roman-to-integer)
+  - [Q18. Integer To Roman](#q17-integer-to-roman)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -445,9 +446,21 @@ This approach ensures that we process each element only once, making it more eff
 ## Q17. Roman To Integer
   
 **Problem link:** 
-[ Roman To Integer ](https://leetcode.com/problems/roman-to-integer/submissions/?envType=study-plan-v2&envId=top-interview-150)  
+[ Roman To Integer ](https://leetcode.com/problems/roman-to-integer/description/?envType=study-plan-v2&envId=top-interview-150)  
 
 **Solution Key Idea or Approach:**  
 
 We map all the value like I=1 ,V=5 etc in a HashMap. Then we just iterate the string s and check if the current character's value is less than the next character's value. If yes we subtract the current character's value otherwise we add current character's value.  
-[View Solution 👈](./Solutions/Q17-RomanToInteger.java) 
+[View Solution 👈](./Solutions/Q17-RomanToInteger.java)  
+  
+
+## Q18. Integer To Roman
+  
+**Problem link:** 
+[ Integer To Roman ](https://leetcode.com/problems/integer-to-roman/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+We start by initializing an empty StringBuilder named res to store the resulting Roman numeral. We also use two arrays: nums, which contains integer values in ascending order, and romans, which holds their corresponding Roman numeral symbols.
+
+The algorithm works by iterating through the nums array from right to left. In each iteration, we check for the largest number in nums that is less than or equal to the current value of num. When such a number is found, we append its corresponding Roman numeral symbol from the romans array to res and subtract the number from num. This process repeats until num is reduced to 0, at which point res contains the complete Roman numeral representation of the original number.
+[View Solution 👈](./Solutions/Q18-IntegerToRoman.java)   
