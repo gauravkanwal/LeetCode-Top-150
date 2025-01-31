@@ -24,6 +24,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q16. Trapping Rain Water](#q16-trapping-rain-water)
   - [Q17. Roman To Integer](#q17-roman-to-integer)
   - [Q18. Integer To Roman](#q18-integer-to-roman)
+  - [Q19. Length of Last Word](#q19-length-of-last-word)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -464,3 +465,13 @@ We start by initializing an empty StringBuilder named res to store the resulting
 
 The algorithm works by iterating through the nums array from right to left. In each iteration, we check for the largest number in nums that is less than or equal to the current value of num. When such a number is found, we append its corresponding Roman numeral symbol from the romans array to res and subtract the number from num. This process repeats until num is reduced to 0, at which point res contains the complete Roman numeral representation of the original number.
 [View Solution 👈](./Solutions/Q18-IntegerToRoman.java)   
+  
+  
+## Q19. Length of Last Word
+  
+**Problem link:** 
+[  Length of Last Word ](https://leetcode.com/problems/length-of-last-word/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+We initialize a variable count and iterate the string brof right to left . Whenever we find a space we check if count>0 if yes we return count otherwise loop continues. If the loop ends we return count.
+[View Solution 👈](./Solutions/Q19-LengthOfLastWord.java)   
