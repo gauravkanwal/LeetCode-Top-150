@@ -25,6 +25,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q17. Roman To Integer](#q17-roman-to-integer)
   - [Q18. Integer To Roman](#q18-integer-to-roman)
   - [Q19. Length of Last Word](#q19-length-of-last-word)
+  - [Q20. Longest Common Prefix](#q20-longest-common-prefix)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -474,4 +475,20 @@ The algorithm works by iterating through the nums array from right to left. In e
 
 **Solution Key Idea or Approach:**  
 We initialize a variable count and iterate the string brof right to left . Whenever we find a space we check if count>0 if yes we return count otherwise loop continues. If the loop ends we return count.
-[View Solution 👈](./Solutions/Q19-LengthOfLastWord.java)   
+[View Solution 👈](./Solutions/Q19-LengthOfLastWord.java)  
+
+
+## Q20. Longest Common Prefix
+  
+**Problem link:** 
+[  Longest Common Prefix ](https://leetcode.com/problems/longest-common-prefix/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+First Solution:<!-- omit in toc -->
+-------------
+The idea is to create a seprate function commonPrefix() which gives common prefix between two strings. Then initialize a String res="" and iterate over the strs array and update res=commonPrefix(res,strs[i]) and return res at the end of loop.
+  
+Second Solution:<!--omit in toc-->
+----------------
+We sort the array in lexicographical order i.e. dictionary order and then directly compare the first and the last strings of the array.  
+[View Solution 👈](./Solutions/Q20-LongestCommonPrefix.java)   
