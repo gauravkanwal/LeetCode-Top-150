@@ -26,6 +26,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q18. Integer To Roman](#q18-integer-to-roman)
   - [Q19. Length of Last Word](#q19-length-of-last-word)
   - [Q20. Longest Common Prefix](#q20-longest-common-prefix)
+  - [Q21. Reverse Words in a String](#q21-reverse-words-in-a-string)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -219,7 +220,8 @@ Example Walkthrough with Key Steps:
 At each index:
 Update farthest: Calculate the farthest index you can reach from the current index.
 Check currentEnd: If the current index reaches the end of the current jump's range (currentEnd), increment the jump count and update currentEnd to farthest.
-Stop when currentEnd reaches or exceeds the last index: This indicates that the last position is within reach with the current or next jump
+Stop when currentEnd reaches or exceeds the last index: This indicates that the last position is within reach with the current or next jump  
+Logic of increasing the jump count when you reach maxIndex is on the right track conceptually, but without a separate variable like currEnd, it’s hard to know when you’ve exhausted the current jump’s range. currEnd is the marker that tells you, "Okay, we can't extend this jump any further; it's time to commit to it and set a new range based on what we've seen."
 [View Solution 👈](./Solutions/Q10-JumpGameII.java)  
   
   
@@ -492,3 +494,32 @@ Second Solution:<!--omit in toc-->
 ----------------
 We sort the array in lexicographical order i.e. dictionary order and then directly compare the first and the last strings of the array.  
 [View Solution 👈](./Solutions/Q20-LongestCommonPrefix.java)   
+  
+
+## Q21. Reverse Words in a String
+  
+**Problem link:** 
+[  Reverse Words in a String ](https://leetcode.com/problems/reverse-words-in-a-string/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+We use an empty StringBuilder str. Then we loop through the input string and find index of a word's starting and ending point and append it to stringbuilder. 
+  
+Iterate through the string while tracking word boundaries.
+Extract each word using substring(temp, i) whenever a non-space character is found.
+Insert words at the beginning of StringBuilder to maintain reverse order.
+Skip spaces efficiently to handle multiple spaces properly.
+Return the final reversed sentence as a string.  
+
+🔹 Why this works?
+
+Preserves word order in reverse by inserting at the start.
+Handles multiple spaces naturally without extra processing.
+Uses StringBuilder efficiently instead of additional data structures. 🚀
+
+
+
+
+
+
+
+[View Solution 👈](./Solutions/Q21-ReverseWordsInAString.java)   
