@@ -27,6 +27,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q19. Length of Last Word](#q19-length-of-last-word)
   - [Q20. Longest Common Prefix](#q20-longest-common-prefix)
   - [Q21. Reverse Words in a String](#q21-reverse-words-in-a-string)
+  - [Q22. Zigzag Conversion](#q22-zigzag-conversion)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -516,10 +517,15 @@ Preserves word order in reverse by inserting at the start.
 Handles multiple spaces naturally without extra processing.
 Uses StringBuilder efficiently instead of additional data structures. 🚀
 
-
-
-
-
-
-
 [View Solution 👈](./Solutions/Q21-ReverseWordsInAString.java)   
+  
+
+## Q22. Zigzag Conversion
+  
+**Problem Link:**
+[Zigzag Conversion ](https://leetcode.com/problems/zigzag-conversion/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+We initialize an array of StringBuilders of size numRows and a StringBuilder ans. And then we loop the input string and for each StringBuilder  in the array we add the correct string index wise.
+The main key point here is to use a boolean forward to check ig we have to go forward or backward in array. 
+[View Solution 👈](./Solutions/Q22-ZigzagConversion.java)   
