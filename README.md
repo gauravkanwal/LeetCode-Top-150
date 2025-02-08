@@ -28,6 +28,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q20. Longest Common Prefix](#q20-longest-common-prefix)
   - [Q21. Reverse Words in a String](#q21-reverse-words-in-a-string)
   - [Q22. Zigzag Conversion](#q22-zigzag-conversion)
+  - [Q23. Find the Index of the First Occurrence in a String](#q23-find-the-index-of-the-first-occurrence-in-a-string)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -529,3 +530,23 @@ Uses StringBuilder efficiently instead of additional data structures. 🚀
 We initialize an array of StringBuilders of size numRows and a StringBuilder ans. And then we loop the input string and for each StringBuilder  in the array we add the correct string index wise.
 The main key point here is to use a boolean forward to check ig we have to go forward or backward in array. 
 [View Solution 👈](./Solutions/Q22-ZigzagConversion.java)   
+  
+  
+## Q23. Find the Index of the First Occurrence in a String
+  
+**Problem Link:**
+[Find the Index of the First Occurrence in a String ](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+ MY Solution:
+ ------------
+ Two pointers (i for haystack, j for needle) track matching characters.
+If characters match, j moves forward to check the next character of needle.
+If a mismatch occurs after some matches (j > 0):
+i -= j moves i back to the position where the match started.
+Then, i++ ensures the next attempt starts from the next position after the failed match (avoiding an infinite loop).
+j = 0 resets needle tracking to start fresh.
+If j == n, a full match is found at i - n.
+If no match is found, return -1.
+This method avoids checking every position from scratch, making it more efficient than a naive brute-force approach. 🚀
+[View Solution 👈](./Solutions/Q23-FindTheIndexOfTheFirstOccurrenceInAString.java)   
