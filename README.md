@@ -29,6 +29,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q21. Reverse Words in a String](#q21-reverse-words-in-a-string)
   - [Q22. Zigzag Conversion](#q22-zigzag-conversion)
   - [Q23. Find the Index of the First Occurrence in a String](#q23-find-the-index-of-the-first-occurrence-in-a-string)
+  - [Q24. Text Justification](#q24-text-justification)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -550,3 +551,24 @@ If j == n, a full match is found at i - n.
 If no match is found, return -1.
 This method avoids checking every position from scratch, making it more efficient than a naive brute-force approach. 🚀
 [View Solution 👈](./Solutions/Q23-FindTheIndexOfTheFirstOccurrenceInAString.java)   
+  
+
+## Q24. Text Justification
+  
+**Problem Link:**
+[Text Justification ](https://leetcode.com/problems/text-justification/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+We break the problem into separate functions to solve it step by step. The functions we create are:
+
+1. Finding the end index for each starting index, ensuring the words fit within maxWidth.
+2. Generating spaces as a string of a given length.
+3. Justifying a line from start to end in the words array, ensuring proper spacing.  
+
+The solution follows these steps:
+
+-> For each start index, we find the corresponding end index using the first function.  
+-> We then justify the line from start to end using the justification function.  
+-> The justified line is added to the result array.  
+-> Finally, we update start = end + 1 to process the next line..  
+[View Solution 👈](./Solutions/Q24-TextJustification.java)   
