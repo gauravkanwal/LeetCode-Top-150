@@ -30,6 +30,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q22. Zigzag Conversion](#q22-zigzag-conversion)
   - [Q23. Find the Index of the First Occurrence in a String](#q23-find-the-index-of-the-first-occurrence-in-a-string)
   - [Q24. Text Justification](#q24-text-justification)
+  - [Q25. Vaild Palindrome](#q25-valid-palindrome)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -572,3 +573,13 @@ The solution follows these steps:
 -> The justified line is added to the result array.  
 -> Finally, we update start = end + 1 to process the next line..  
 [View Solution 👈](./Solutions/Q24-TextJustification.java)   
+  
+
+## Q25. Valid Palindrome
+  
+**Problem Link:**
+[Valid Palindrome ](https://leetcode.com/problems/valid-palindrome/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+We use the method Character.isLetterOrDigit(ch) to check if ch is alphanumeric. We initialize two pointers: i = 0 and j = s.length() - 1. Then, we increment i and decrement j until we find an alphanumeric character. After that, we compare both characters after converting them to lowercase. If they are not equal, we return false. Finally, after the loop completes which means the string is valid palindrome, we return true.  
+[View Solution 👈](./Solutions/Q25-ValidPalindrome.java)   
