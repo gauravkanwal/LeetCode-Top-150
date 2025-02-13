@@ -31,6 +31,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q23. Find the Index of the First Occurrence in a String](#q23-find-the-index-of-the-first-occurrence-in-a-string)
   - [Q24. Text Justification](#q24-text-justification)
   - [Q25. Vaild Palindrome](#q25-valid-palindrome)
+  - [Q26. Is Subsequence](#q26-is-subsequence)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -583,3 +584,13 @@ The solution follows these steps:
 **Solution Key Idea or Approach:**  
 We use the method Character.isLetterOrDigit(ch) to check if ch is alphanumeric. We initialize two pointers: i = 0 and j = s.length() - 1. Then, we increment i and decrement j until we find an alphanumeric character. After that, we compare both characters after converting them to lowercase. If they are not equal, we return false. Finally, after the loop completes which means the string is valid palindrome, we return true.  
 [View Solution 👈](./Solutions/Q25-ValidPalindrome.java)   
+  
+
+## Q26. Is Subsequence
+  
+**Problem Link:**
+[Is Subsequence ](https://leetcode.com/problems/is-subsequence/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+We use two pointers i for s string and j for t string. Then we run a loop on t string by incrementing j index after every iteration and start matching characters of both strings if they match we increase i index . And if at any point i==m we return true.   
+[View Solution 👈](./Solutions/Q26-IsSubsequence.java)   
