@@ -32,6 +32,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q24. Text Justification](#q24-text-justification)
   - [Q25. Vaild Palindrome](#q25-valid-palindrome)
   - [Q26. Is Subsequence](#q26-is-subsequence)
+  - [Q27. Two Sum II - Input Array Is Sorted](#q27-two-sum-ii---input-array-is-sorted)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -593,4 +594,14 @@ We use the method Character.isLetterOrDigit(ch) to check if ch is alphanumeric. 
 
 **Solution Key Idea or Approach:**  
 We use two pointers i for s string and j for t string. Then we run a loop on t string by incrementing j index after every iteration and start matching characters of both strings if they match we increase i index . And if at any point i==m we return true.   
-[View Solution 👈](./Solutions/Q26-IsSubsequence.java)   
+[View Solution 👈](./Solutions/Q26-IsSubsequence.java)  
+
+
+## Q27. Two Sum II - Input Array Is Sorted
+  
+**Problem Link:**
+[Two Sum II - Input Array Is Sorted ](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+We use two pointers i=0 and j=numbers.length-1. We compare numbers[i]+numbers[j] with target and move i and j accordingly. Whenever we find numbers[i]==numbers[j] we return a new array with values i+1 and j+1;   
+[View Solution 👈](./Solutions/Q27-TwoSumII-InputArrayIsSorted.java)   
