@@ -33,6 +33,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q25. Vaild Palindrome](#q25-valid-palindrome)
   - [Q26. Is Subsequence](#q26-is-subsequence)
   - [Q27. Two Sum II - Input Array Is Sorted](#q27-two-sum-ii---input-array-is-sorted)
+  - [Q28. Container With Most Water](#q28-container-with-most-water)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -605,3 +606,15 @@ We use two pointers i for s string and j for t string. Then we run a loop on t s
 **Solution Key Idea or Approach:**  
 We use two pointers i=0 and j=numbers.length-1. We compare numbers[i]+numbers[j] with target and move i and j accordingly. Whenever we find numbers[i]==numbers[j] we return a new array with values i+1 and j+1;   
 [View Solution 👈](./Solutions/Q27-TwoSumII-InputArrayIsSorted.java)   
+
+
+## Q28. Container With Most Water
+  
+**Problem Link:**
+[Container With Most Water ](https://leetcode.com/problems/container-with-most-water/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+We use two pointers i=0 and j=heights.length-1. We calculate water between two index by  
+ currWater=Math.min(height[i],height[j])*(j-i);  
+And keep track of the maximum water level. We increment i if heights[i]<=heights[j] else we decrement j. At last we return the maximum water level.
+[View Solution 👈](./Solutions/Q28-ContainerWithMostWater.java)   
