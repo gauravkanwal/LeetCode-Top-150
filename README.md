@@ -34,6 +34,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q26. Is Subsequence](#q26-is-subsequence)
   - [Q27. Two Sum II - Input Array Is Sorted](#q27-two-sum-ii---input-array-is-sorted)
   - [Q28. Container With Most Water](#q28-container-with-most-water)
+  - [Q29. 3Sum](#q29-3sum)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -618,3 +619,33 @@ We use two pointers i=0 and j=heights.length-1. We calculate water between two i
  currWater=Math.min(height[i],height[j])*(j-i);  
 And keep track of the maximum water level. We increment i if heights[i]<=heights[j] else we decrement j. At last we return the maximum water level.
 [View Solution 👈](./Solutions/Q28-ContainerWithMostWater.java)   
+
+
+## Q29. 3sum
+  
+**Problem Link:**
+[3Sum ](https://leetcode.com/problems/3sum/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+1️⃣ Sort the Array  
+Sorting helps efficiently find pairs that sum to a target value.
+🔹 Why sort?  
+Makes duplicate removal easier.
+Allows the use of the two-pointer technique for faster searching.  
+  
+2️⃣ Fix the First Element (i) & Find Two Other Numbers (left & right)
+Iterate i from 0 to n-1 (we need at least 3 numbers).
+Use two pointers:
+left = i + 1 (next element)
+right = n - 1 (last element)
+Goal: Find two numbers that sum to -nums[i].  
+   
+3️⃣ Use Two-Pointer Technique to Find left & right
+If nums[left] + nums[right] > target, decrease right (need a smaller sum).
+If nums[left] + nums[right] < target, increase left (need a larger sum).
+If they add up to target, store the triplet and skip duplicates.  
+  
+4️⃣ Skip Duplicates to Avoid Repeated Triplets  
+For i: If nums[i] == nums[i - 1], skip to the next distinct number.
+For left and right: If nums[left] or nums[right] is the same as the previous, move to the next distinct element.  
+[View Solution 👈](./Solutions/Q29-3Sum.java)   
