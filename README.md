@@ -35,6 +35,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q27. Two Sum II - Input Array Is Sorted](#q27-two-sum-ii---input-array-is-sorted)
   - [Q28. Container With Most Water](#q28-container-with-most-water)
   - [Q29. 3Sum](#q29-3sum)
+  - [Q30. Minimum SIze Subarray Sum](#q30-minimum-size-subarray-sum)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -649,3 +650,13 @@ If they add up to target, store the triplet and skip duplicates.
 For i: If nums[i] == nums[i - 1], skip to the next distinct number.
 For left and right: If nums[left] or nums[right] is the same as the previous, move to the next distinct element.  
 [View Solution 👈](./Solutions/Q29-3Sum.java)   
+
+
+## Q30. Minimum Size Subarray Sum
+  
+**Problem Link:**
+[Minimum Size Subarray Sum ](https://leetcode.com/problems/minimum-size-subarray-sum/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+We use a sliding winodow approach if the sum of window is less than target we expand the window otherwise we update the answer and shrink the window.   
+[View Solution 👈](./Solutions/Q30-MinimumSizeSubarraySum.java)   
