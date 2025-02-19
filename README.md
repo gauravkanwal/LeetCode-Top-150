@@ -36,6 +36,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q28. Container With Most Water](#q28-container-with-most-water)
   - [Q29. 3Sum](#q29-3sum)
   - [Q30. Minimum SIze Subarray Sum](#q30-minimum-size-subarray-sum)
+  - [Q31. Longest Substring Without Repeating Characters](#q31-longest-substring-without-repeating-characters)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -660,3 +661,13 @@ For left and right: If nums[left] or nums[right] is the same as the previous, mo
 **Solution Key Idea or Approach:**  
 We use a sliding winodow approach if the sum of window is less than target we expand the window otherwise we update the answer and shrink the window.   
 [View Solution 👈](./Solutions/Q30-MinimumSizeSubarraySum.java)   
+
+
+## Q31. Longest Substring Without Repeating Characters
+  
+**Problem Link:**
+[Longest Substring Without Repeating Characters ](https://leetcode.com/problems/longest-substring-without-repeating-characters/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+We use a hash set to check if a character is already present in the selected substring. Then we find the result by sliding winodow approach: if the character is not present in substring we expand the window otherwise shrink the window.At last we return the maximum length of window at any time.   
+[View Solution 👈](./Solutions/Q31-LongestSubstringWithoutRepeatingCharacters.java)   
