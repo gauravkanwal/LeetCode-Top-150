@@ -37,6 +37,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q29. 3Sum](#q29-3sum)
   - [Q30. Minimum SIze Subarray Sum](#q30-minimum-size-subarray-sum)
   - [Q31. Longest Substring Without Repeating Characters](#q31-longest-substring-without-repeating-characters)
+  - [Q32. Substring with Concatenation of All Words](#q32-substring-with-concatenation-of-all-words)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -671,3 +672,36 @@ We use a sliding winodow approach if the sum of window is less than target we ex
 **Solution Key Idea or Approach:**  
 We use a hash set to check if a character is already present in the selected substring. Then we find the result by sliding winodow approach: if the character is not present in substring we expand the window otherwise shrink the window.At last we return the maximum length of window at any time.   
 [View Solution 👈](./Solutions/Q31-LongestSubstringWithoutRepeatingCharacters.java)   
+
+
+## Q32. Substring with Concatenation of All Words
+  
+**Problem Link:**
+[Substring with Concatenation of All Words ](https://leetcode.com/problems/substring-with-concatenation-of-all-words/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+We use a Sliding Window + HashMap approach to efficiently find all starting indices where the concatenation of all words in words[] appears as a contiguous substring in s.   
+   
+**Why Sliding Window?**  
+
+Instead of checking every substring independently (O(NM) brute force), we slide a window across s, processing words in-place to reduce redundant computations.  
+  
+**Why HashMap?**  
+We use two HashMaps:  
+  
+wordMap → Stores the frequency of words from words[].  
+seenWords → Tracks words inside the current window.    
+  
+**Why Run the Algorithm wordLen Times?**    
+Since words in words[] have a fixed length wordLen, we start the sliding window at every possible offset from 0 to wordLen - 1.  
+  
+This ensures we catch all possible valid substrings, even when words start at different positions.  
+Otherwise, we might miss valid combinations due to misalignment.  
+  
+**Overall Optimization:**  
+Each word is checked only once per shift → O(N / wordLen) outer loop.  
+Each inner iteration processes words in-place → O(N) complexity.  
+Total complexity: O(N * W), where W = wordLen, making it much faster than brute force.  
+🚀 This ensures an optimal and efficient solution for large inputs.  
+  
+[View Solution 👈](./Solutions/Q32-SubstringWithConcatenationOfAllWords.java)   
