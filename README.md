@@ -38,6 +38,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q30. Minimum SIze Subarray Sum](#q30-minimum-size-subarray-sum)
   - [Q31. Longest Substring Without Repeating Characters](#q31-longest-substring-without-repeating-characters)
   - [Q32. Substring with Concatenation of All Words](#q32-substring-with-concatenation-of-all-words)
+  - [Q33. Minimum Window Substring](#q33-minimum-window-substring)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -705,3 +706,16 @@ Total complexity: O(N * W), where W = wordLen, making it much faster than brute 
 🚀 This ensures an optimal and efficient solution for large inputs.  
   
 [View Solution 👈](./Solutions/Q32-SubstringWithConcatenationOfAllWords.java)   
+
+
+## Q33. Minimum Window Substring
+  
+**Problem Link:**
+[Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+We use sliding window approach to solve this problem . We increase the window until we found a valid ans and after founding the valid answer we shrink the window to check if there's a less sized window .  
+To match the strings with t, we use an array map of size 128 (for ASCII characters) to store the frequency of characters in t. As we expand the window by moving the right pointer, we decrement the corresponding character count in map. If a character in s is part of t and its count in map is still non-negative, we increase the matchedCount, which tracks how many required characters are fully matched.
+  
+Once all characters of t are matched (matchedCount == t.length()), we attempt to shrink the window from the left by moving the left pointer. While shrinking, we restore the character count in map and check if removing s[left] causes a mismatch. If it does, we stop shrinking and continue expanding to find another valid window. Throughout this process, we keep track of the smallest valid window found so far and return it as the result. This ensures we get the minimum window substring efficiently.
+[View Solution 👈](./Solutions/Q33-MinimumWindowSubstring.java)   
