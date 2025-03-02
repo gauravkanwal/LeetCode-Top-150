@@ -39,6 +39,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q31. Longest Substring Without Repeating Characters](#q31-longest-substring-without-repeating-characters)
   - [Q32. Substring with Concatenation of All Words](#q32-substring-with-concatenation-of-all-words)
   - [Q33. Minimum Window Substring](#q33-minimum-window-substring)
+  - [Q34. Valid Sudoku](#q34-valid-sudoku)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -719,3 +720,56 @@ To match the strings with t, we use an array map of size 128 (for ASCII characte
   
 Once all characters of t are matched (matchedCount == t.length()), we attempt to shrink the window from the left by moving the left pointer. While shrinking, we restore the character count in map and check if removing s[left] causes a mismatch. If it does, we stop shrinking and continue expanding to find another valid window. Throughout this process, we keep track of the smallest valid window found so far and return it as the result. This ensures we get the minimum window substring efficiently.
 [View Solution 👈](./Solutions/Q33-MinimumWindowSubstring.java)   
+
+## Q34. Valid Sudoku
+  
+**Problem Link:**
+[Valid Sudoku](https://leetcode.com/problems/valid-sudoku/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+## 🔹 First Approach: Using Multiple Loops (Brute Force)
+
+### Summary:
+- We check **each row, column, and 3×3 sub-box separately** using **three independent loops**.
+- For each check, a **HashSet** is used to track encountered numbers.
+- If a duplicate is found in any row, column, or sub-box, return `false`.
+
+### Key Points:
+✅ Easy to understand  
+✅ Uses three HashSets for better clarity  
+❌ Inefficient due to three separate loops  
+❌ Unnecessary HashSet creation in each iteration  
+
+---
+
+## 🔹 Second Approach: Using a Single HashSet (Optimized)
+
+### Summary:
+- Instead of multiple loops, we **combine all three checks** inside a **single loop**.
+- Use **one HashSet** to store unique keys in the format:
+  - `"5 in row 0"` → Tracks row uniqueness.
+  - `"5 in column 3"` → Tracks column uniqueness.
+  - `"5 in box 0-1"` → Tracks 3×3 sub-box uniqueness.
+- If any key already exists in the HashSet, return `false`.
+
+### Key Points:
+✅ **Single loop** to handle all conditions  
+✅ **Simplifies logic** compared to multiple loops  
+✅ **Less memory usage** than brute force  
+❌ **String operations** (slightly slower than direct array checks)  
+
+---
+
+## 🔹 Third Approach: Using 3 Boolean 2D Arrays (Most Optimal)
+
+### Summary:
+- Instead of using **a HashSet**, we use **three 2D boolean arrays** to track:
+  1. `rowCheck[9][9]` → Tracks if a number appears in a row.
+  2. `colCheck[9][9]` → Tracks if a number appears in a column.
+  3. `boxCheck[9][9]` → Tracks if a number appears in a 3×3 sub-box.
+- Since numbers in Sudoku are **between 1 and 9**, we map them to an index (`num = board[i][j] - '1'`).
+- The **3×3 box index** is calculated using:  
+  ```java
+  boxCheck[(i / 3) * 3 + (j / 3)][num]
+
+[View Solution 👈](./Solutions/Q34-ValidSudoku.java)   
