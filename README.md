@@ -40,6 +40,8 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q32. Substring with Concatenation of All Words](#q32-substring-with-concatenation-of-all-words)
   - [Q33. Minimum Window Substring](#q33-minimum-window-substring)
   - [Q34. Valid Sudoku](#q34-valid-sudoku)
+  - [Q35. Spiral Matrix](#q35-spiral-matrix)
+  - [Q36. Rotate Image](#q36-rotate-image)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -773,3 +775,24 @@ Once all characters of t are matched (matchedCount == t.length()), we attempt to
   boxCheck[(i / 3) * 3 + (j / 3)][num]
 
 [View Solution 👈](./Solutions/Q34-ValidSudoku.java)   
+
+## Q35. Spiral Matrix
+  
+**Problem Link:**
+[Spiral Matrix](https://leetcode.com/problems/spiral-matrix/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+We traverse to right then to down then to left and then to up . We maintain another 2Darray visited where we check if the index is visited before or not so that we don't add duplicate elements.
+
+[View Solution 👈](./Solutions/Q35-SpiralMatrix.java)   
+
+## Q36. Rotate Image
+  
+**Problem Link:**
+[Rotate Image](https://leetcode.com/problems/rotate-image/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+first transpose the matrix i.e. swap matrix[i][j] with matrix[j][i]  
+then flip the matrix hoeizontally i.e. swap matrix[i][j] with matrix[i][n-1-j]
+
+[View Solution 👈](./Solutions/Q36-RotateImage.java)   
