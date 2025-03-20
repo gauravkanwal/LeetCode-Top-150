@@ -42,6 +42,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q34. Valid Sudoku](#q34-valid-sudoku)
   - [Q35. Spiral Matrix](#q35-spiral-matrix)
   - [Q36. Rotate Image](#q36-rotate-image)
+  - [Q37. Set Matrix Zeroes](#q37-set-matrix-zeroes)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -796,3 +797,49 @@ first transpose the matrix i.e. swap matrix[i][j] with matrix[j][i]
 then flip the matrix hoeizontally i.e. swap matrix[i][j] with matrix[i][n-1-j]
 
 [View Solution 👈](./Solutions/Q36-RotateImage.java)   
+
+## Q37. Set Matrix Zeroes
+  
+**Problem Link:**
+[Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+## Initial HashSet Approach (O(m + n) Space)
+We initially used two HashSets (`rowSet` and `colSet`) to store row and column indices that should be set to zero.
+
+### Steps:
+1. **First Pass:** Traverse the matrix and store row and column indices where `matrix[i][j] == 0` in `rowSet` and `colSet`.
+2. **Second Pass:** Use `rowSet` to set entire rows to zero.
+3. **Third Pass:** Use `colSet` to set entire columns to zero.
+
+### Issue:
+- Extra space of **O(m + n)** is used for HashSets, which can be optimized.
+
+---
+
+## Optimizing to O(1) Space using the Matrix itself
+To eliminate the extra space, we can use the **first row and first column as markers** instead of HashSets.
+
+### **Key Insight:**
+- Instead of using separate data structures, we store zero indicators directly in the first row and first column.
+
+### **Optimized Steps:**
+1. **Check if the first row or first column should be zeroed** (since they will be used as markers).
+2. **Mark zeroes in the first row and column:** If `matrix[i][j] == 0`, mark `matrix[i][0] = 0` and `matrix[0][j] = 0`.
+3. **Use these markers to zero out other cells:**
+   - If `matrix[i][0] == 0`, zero out the entire row `i`.
+   - If `matrix[0][j] == 0`, zero out the entire column `j`.
+4. **Handle the first row and column separately**, as they were originally part of the input and not just markers.
+
+---
+
+### **Why is This Better?**
+| Approach             | Time Complexity | Space Complexity |
+|----------------------|----------------|------------------|
+| **HashSet Approach** | O(m × n)        | **O(m + n)**      |
+| **Optimized Approach** | O(m × n)        | **O(1)**          |
+
+- The optimized approach achieves the same result while eliminating extra space by cleverly reusing the matrix itself.
+- This is a classic example of how **in-place modifications** can improve efficiency without affecting correctness.
+
+[View Solution 👈](./Solutions/Q37-SetMatrixZeroes.java)   
