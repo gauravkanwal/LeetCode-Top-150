@@ -43,6 +43,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q35. Spiral Matrix](#q35-spiral-matrix)
   - [Q36. Rotate Image](#q36-rotate-image)
   - [Q37. Set Matrix Zeroes](#q37-set-matrix-zeroes)
+  - [Q38. Game of Life](#q38-game-of-life)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -843,3 +844,24 @@ To eliminate the extra space, we can use the **first row and first column as mar
 - This is a classic example of how **in-place modifications** can improve efficiency without affecting correctness.
 
 [View Solution 👈](./Solutions/Q37-SetMatrixZeroes.java)   
+
+
+## Q38. Game of Life
+  
+**Problem Link:**
+[Game of Life](https://leetcode.com/problems/game-of-life/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+The brute force approach for this problem would be to use another 2D array, but we need to come up with a solution that uses O(1) extra space. To achieve this, we track the changes as follows:
+
+    If an element transitions from dead to live, we set it as 2.
+    If an element transitions from live to dead, we set it as -1.
+
+This way, we can retain both the previous and next states of each element.
+
+Finally, we modify the array according to the next state of each element:
+
+We set elements with a value of 2 to 1.
+We set elements with a value of -1 to 0.
+
+[View Solution 👈](./Solutions/Q38-GameOfLife.java)   
