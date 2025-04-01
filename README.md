@@ -44,6 +44,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q36. Rotate Image](#q36-rotate-image)
   - [Q37. Set Matrix Zeroes](#q37-set-matrix-zeroes)
   - [Q38. Game of Life](#q38-game-of-life)
+  - [Q39. Ransom Note](#q39-ransom-note)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -865,3 +866,37 @@ We set elements with a value of 2 to 1.
 We set elements with a value of -1 to 0.
 
 [View Solution 👈](./Solutions/Q38-GameOfLife.java)   
+
+
+## Q39. Ransom Note
+  
+**Problem Link:**
+[Ransom Note](https://leetcode.com/problems/ransom-note/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+1. HashMap Approach
+Uses a HashMap<Character, Integer> to store character frequencies of magazine.
+
+Iterates through ransomNote, checking if each character exists in magaMap with a non-zero count.
+
+If a character is missing or exhausted, returns false, otherwise decrements the count.
+
+Time Complexity: O(n+m), where n is the length of ransomNote and m is the length of magazine.
+
+Space Complexity: O(∣Σ∣), where Σ
+Σ is the character set (26 for lowercase English letters).
+
+2. Optimized Array Approach
+Uses an int[26] array instead of a HashMap for character frequency counting.
+
+Array lookup is faster (𝑂(1)) compared to HashMap operations.
+
+Time Complexity: 
+𝑂(𝑛+𝑚), same as HashMap but with lower overhead.
+
+Space Complexity: 𝑂(1)
+O(1), as it always uses a fixed-size array.
+
+✅ Conclusion: The array approach is more memory-efficient and faster due to constant-time lookups. 🚀
+
+[View Solution 👈](./Solutions/Q39-RansomNote.java)   
