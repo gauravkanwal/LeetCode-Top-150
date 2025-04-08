@@ -45,6 +45,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q37. Set Matrix Zeroes](#q37-set-matrix-zeroes)
   - [Q38. Game of Life](#q38-game-of-life)
   - [Q39. Ransom Note](#q39-ransom-note)
+  - [Q40. Isomorphic Strings](#q40-isomorphic-strings)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -900,3 +901,13 @@ O(1), as it always uses a fixed-size array.
 ✅ Conclusion: The array approach is more memory-efficient and faster due to constant-time lookups. 🚀
 
 [View Solution 👈](./Solutions/Q39-RansomNote.java)   
+
+
+## Q40. Isomorphic Strings
+  
+**Problem Link:**
+[Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+We use two hashmaps one for s string and one for t string. If we get a different value than previously mapped value for a character we return false. If not at last after checking al;l characters in both strings we return true. 
+[View Solution 👈](./Solutions/Q40-IsomorphicStrings.java)   
