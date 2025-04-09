@@ -46,6 +46,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q38. Game of Life](#q38-game-of-life)
   - [Q39. Ransom Note](#q39-ransom-note)
   - [Q40. Isomorphic Strings](#q40-isomorphic-strings)
+  - [Q41. Word Pattern](#q41-word-pattern)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -911,3 +912,30 @@ O(1), as it always uses a fixed-size array.
 **Solution Key Idea or Approach:**  
 We use two hashmaps one for s string and one for t string. If we get a different value than previously mapped value for a character we return false. If not at last after checking al;l characters in both strings we return true. 
 [View Solution 👈](./Solutions/Q40-IsomorphicStrings.java)   
+
+## Q41. Word Pattern
+  
+**Problem Link:**
+[Word Pattern](https://leetcode.com/problems/word-pattern/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+The code checks if a string s follows the same pattern as the string pattern.
+
+It uses two hash maps:
+
+patternMap to map each character in pattern to a word in s.
+
+sMap to map each word in s back to a character in pattern (for bijective mapping).
+
+It splits s manually by spaces while iterating over pattern.
+
+For each character-word pair, it ensures:
+
+The current character maps to the same word as before (if already mapped).
+
+The current word maps to the same character as before.
+
+If any mismatch or length inconsistency occurs, it returns false.
+
+✅ If all mappings are consistent and lengths match, it returns true.  
+[View Solution 👈](./Solutions/Q41-WordPattern.java)   
