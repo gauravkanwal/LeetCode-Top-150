@@ -47,6 +47,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q39. Ransom Note](#q39-ransom-note)
   - [Q40. Isomorphic Strings](#q40-isomorphic-strings)
   - [Q41. Word Pattern](#q41-word-pattern)
+  - [Q42. Valid Anagram](#q42-valid-anagram)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -939,3 +940,21 @@ If any mismatch or length inconsistency occurs, it returns false.
 
 ✅ If all mappings are consistent and lengths match, it returns true.  
 [View Solution 👈](./Solutions/Q41-WordPattern.java)   
+
+
+## Q42. Valid Anagram
+  
+**Problem Link:**
+[Valid Anagram](https://leetcode.com/problems/valid-anagram/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+✅ HashMap Approach
+Uses a HashMap to count character frequencies in s, then decrements for each character in t.
+If all frequencies balance out and the map is empty, the strings are anagrams.
+Time: O(n), Space: O(1) (for fixed charset)
+
+✅ Array Approach
+Uses an int[26] array for character counts (only lowercase letters).
+Increments for s, decrements for t, then checks if all counts are zero.
+Time: O(n), Space: O(1)
+[View Solution 👈](./Solutions/Q42-ValidAnagram.java) 
