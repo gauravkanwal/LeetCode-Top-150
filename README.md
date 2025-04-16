@@ -48,6 +48,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q40. Isomorphic Strings](#q40-isomorphic-strings)
   - [Q41. Word Pattern](#q41-word-pattern)
   - [Q42. Valid Anagram](#q42-valid-anagram)
+  - [Q43. Group Anagrams](#q43-group-anagrams)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -958,3 +959,25 @@ Uses an int[26] array for character counts (only lowercase letters).
 Increments for s, decrements for t, then checks if all counts are zero.
 Time: O(n), Space: O(1)
 [View Solution 👈](./Solutions/Q42-ValidAnagram.java) 
+
+
+## Q43. Group Anagrams
+  
+**Problem Link:**
+[Group Anagrams](https://leetcode.com/problems/group-anagrams/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+Anagrams have the same characters in different order.
+
+So, for each string, sort its characters to get a common key for all its anagrams.
+
+Use a HashMap where:
+
+Key = sorted version of the string
+
+Value = list of original strings that are anagrams
+
+Finally, return all values from the map.
+
+This ensures all anagrams are grouped together efficiently.
+[View Solution 👈](./Solutions/Q43-GroupAnagrams.java) 
