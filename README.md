@@ -49,6 +49,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q41. Word Pattern](#q41-word-pattern)
   - [Q42. Valid Anagram](#q42-valid-anagram)
   - [Q43. Group Anagrams](#q43-group-anagrams)
+  - [Q44. Two Sum](#q44-two-sum)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -981,3 +982,30 @@ Finally, return all values from the map.
 
 This ensures all anagrams are grouped together efficiently.
 [View Solution 👈](./Solutions/Q43-GroupAnagrams.java) 
+
+
+## Q44. Two Sum
+  
+**Problem Link:**
+[Two Sum](https://leetcode.com/problems/two-sum/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+Initialize a HashMap to store numbers and their indices:
+map<number, index>
+
+Iterate through the array:
+
+For each nums[i], compute the complement: target - nums[i]
+
+If complement exists in the map, return its index and current index.
+
+Else, store nums[i] and its index in the map.
+
+Why it works:
+
+Ensures we find the pair in O(n) time.
+
+Handles duplicates naturally by checking while iterating.
+
+
+[View Solution 👈](./Solutions/Q44-TwoSum.java) 
