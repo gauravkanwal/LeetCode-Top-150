@@ -50,6 +50,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q42. Valid Anagram](#q42-valid-anagram)
   - [Q43. Group Anagrams](#q43-group-anagrams)
   - [Q44. Two Sum](#q44-two-sum)
+  - [Q45. Happy Number](#q45-happy-number)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1009,3 +1010,18 @@ Handles duplicates naturally by checking while iterating.
 
 
 [View Solution 👈](./Solutions/Q44-TwoSum.java) 
+
+
+## Q45. Happy Number
+  
+**Problem Link:**
+[Happy Number](https://leetcode.com/problems/happy-number/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+To determine if a number is happy, repeatedly replace the number with the sum of the squares of its digits. If this process eventually leads to 1, the number is happy. If it enters a cycle (i.e., a repeated number that doesn’t reach 1), then it’s not happy.
+
+We use a HashSet to keep track of numbers we've seen before to detect cycles.
+If we see a number again, it means we’re in a loop — so return false.
+If we reach 1, return true.
+
+[View Solution 👈](./Solutions/Q45-HappyNumber.java) 
