@@ -51,6 +51,8 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q43. Group Anagrams](#q43-group-anagrams)
   - [Q44. Two Sum](#q44-two-sum)
   - [Q45. Happy Number](#q45-happy-number)
+  - [Q46. Contains Duplicate II](#q46-contains-duplicate-ii)
+  - [Q47. Longest Consecutive Sequence](#q47-longest-consecutive-sequence)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1025,3 +1027,38 @@ If we see a number again, it means we’re in a loop — so return false.
 If we reach 1, return true.
 
 [View Solution 👈](./Solutions/Q45-HappyNumber.java) 
+
+
+## Q46. Contains Duplicate II
+  
+**Problem Link:**
+[Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+  1. HashMap Approach – Track Last Seen Index
+Key Idea:
+Use a HashMap to store the last seen index of each number.
+If you encounter the same number again and the index difference ≤ k, return true.
+
+  2. HashSet + Sliding Window Approach – Maintain Recent Elements
+Key Idea:
+Use a HashSet as a sliding window of size k to store recently seen elements.
+If a number already exists in the window, return true.
+Otherwise, keep adding current elements and remove the oldest one when the window exceeds size k.
+
+[View Solution 👈](./Solutions/Q46-ContainsDuplicateII.java) 
+
+
+## Q47. Longest Consecutive Sequence
+  
+**Problem Link:**
+[Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+Use a HashSet to store all numbers for O(1) lookups.
+Then, for each number, only start counting a sequence if it's the beginning (i.e., num - 1 is not in the set).
+From there, count how long the consecutive sequence continues by checking num + 1, num + 2, etc.
+This ensures each number is visited at most once, giving an optimal O(n) time solution.
+
+
+[View Solution 👈](./Solutions/Q47-LongestConsecutiveSequence.java) 
