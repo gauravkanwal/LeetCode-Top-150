@@ -53,6 +53,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q45. Happy Number](#q45-happy-number)
   - [Q46. Contains Duplicate II](#q46-contains-duplicate-ii)
   - [Q47. Longest Consecutive Sequence](#q47-longest-consecutive-sequence)
+  - [Q48. Summary Ranges](#q48-summary-ranges)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1062,3 +1063,14 @@ This ensures each number is visited at most once, giving an optimal O(n) time so
 
 
 [View Solution 👈](./Solutions/Q47-LongestConsecutiveSequence.java) 
+
+
+## Q48. Summary Ranges
+  
+**Problem Link:**
+[Summary Ranges](https://leetcode.com/problems/summary-ranges/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+Use two pointers to find continuous increasing sequences. When a sequence ends, build the corresponding range string using StringBuilder and add it to the result list.
+  
+[View Solution 👈](./Solutions/Q48-SummaryRanges.java) 
