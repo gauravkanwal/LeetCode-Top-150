@@ -54,6 +54,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q46. Contains Duplicate II](#q46-contains-duplicate-ii)
   - [Q47. Longest Consecutive Sequence](#q47-longest-consecutive-sequence)
   - [Q48. Summary Ranges](#q48-summary-ranges)
+  - [Q49. Merge Intervals](#q49-merge-intervals)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1074,3 +1075,24 @@ This ensures each number is visited at most once, giving an optimal O(n) time so
 Use two pointers to find continuous increasing sequences. When a sequence ends, build the corresponding range string using StringBuilder and add it to the result list.
   
 [View Solution 👈](./Solutions/Q48-SummaryRanges.java) 
+
+
+## Q49. Merge Intervals
+  
+**Problem Link:**
+[Merge Intervals](https://leetcode.com/problems/merge-intervals/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+Sort all intervals by their starting point to bring overlapping ones together.
+
+Iterate through intervals and keep track of the current merged interval.
+
+If the next interval overlaps (i.e., its start ≤ current end), merge by extending the end.
+
+If it doesn't overlap, add the current interval to the result and move to the next one.
+
+After the loop, add the last merged interval.
+
+➡️ This ensures all overlapping intervals are combined efficiently in a single pass after sorting.
+  
+[View Solution 👈](./Solutions/Q49-MergeIntervals.java) 
