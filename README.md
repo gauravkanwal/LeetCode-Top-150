@@ -55,6 +55,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q47. Longest Consecutive Sequence](#q47-longest-consecutive-sequence)
   - [Q48. Summary Ranges](#q48-summary-ranges)
   - [Q49. Merge Intervals](#q49-merge-intervals)
+  - [Q50. Insert Interval](#q50-insert-interval)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1096,3 +1097,28 @@ After the loop, add the last merged interval.
 ➡️ This ensures all overlapping intervals are combined efficiently in a single pass after sorting.
   
 [View Solution 👈](./Solutions/Q49-MergeIntervals.java) 
+
+
+## Q50. Insert Interval
+  
+**Problem Link:**
+[Insert Interval](https://leetcode.com/problems/insert-interval/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+Separate Non-Overlapping Intervals:
+
+Add all intervals that end before the new interval starts.
+
+Merge Overlapping Intervals:
+
+Combine all intervals that overlap with the new interval by updating its start and end.
+
+Add Remaining Intervals:
+
+Append intervals that start after the merged interval.
+
+Return the Result:
+
+Convert the list of merged intervals to a 2D array.
+  
+[View Solution 👈](./Solutions/Q50-InsertInterval.java) 
