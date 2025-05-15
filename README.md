@@ -56,6 +56,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q48. Summary Ranges](#q48-summary-ranges)
   - [Q49. Merge Intervals](#q49-merge-intervals)
   - [Q50. Insert Interval](#q50-insert-interval)
+  - [Q51. Minimum Number of Arrows to Burst Balloons](#q51-minimum-number-of-arrows-to-burst-balloons)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1122,3 +1123,35 @@ Return the Result:
 Convert the list of merged intervals to a 2D array.
   
 [View Solution 👈](./Solutions/Q50-InsertInterval.java) 
+
+
+## Q51. Minimum Number of Arrows to Burst Balloons
+  
+**Problem Link:**
+[Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+1. Sorting by Start Points (Your Approach)
+Key Idea:
+
+Sort intervals by starting points.
+
+Maintain a common overlapping interval and update it as long as intervals overlap.
+
+Increment the arrow count when a new non-overlapping interval is encountered.
+
+2. Sorting by End Points (Alternative Approach)
+Key Idea:
+
+Sort intervals by ending points.
+
+Shoot an arrow at the end of the current non-overlapping group.
+
+Increment the arrow count when a new interval starts after the last shot arrow.
+
+Sorting by end points ensures that the next interval will always have an equal or greater end point compared to the current one.
+
+If the start point of the next interval is less than or equal to the current end point, it means they overlap and can be burst with a single arrow.
+
+If the start point is greater, it means the next interval does not overlap, requiring a new arrow.
+[View Solution 👈](./Solutions/Q51-MinimumNumberOfArrowsToBurstBalloons.java) 
