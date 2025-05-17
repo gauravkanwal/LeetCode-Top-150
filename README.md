@@ -58,6 +58,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q50. Insert Interval](#q50-insert-interval)
   - [Q51. Minimum Number of Arrows to Burst Balloons](#q51-minimum-number-of-arrows-to-burst-balloons)
   - [Q52. Valid Parentheses](#q52-valid-parentheses)
+  - [Q53. Simplify Path](#q53-simplify-path)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1180,3 +1181,28 @@ If matched, pop the stack; if not, return false.
 
 Final Check: After processing the entire string, the stack should be empty for a valid sequence.
 [View Solution 👈](./Solutions/Q52-ValidParentheses.java) 
+
+
+## Q53. Simplify Path
+  
+**Problem Link:**
+[Simplify Path](https://leetcode.com/problems/simplify-path/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+Split Path: Traverse the path, skipping consecutive slashes.
+
+Process Directory Names:
+
+If "..", pop the stack (move one level up) if not empty.
+
+If "." or empty, ignore (stay at current level).
+
+Else, push valid directory names onto the stack.
+
+Build Simplified Path: Join stack elements with '/'.
+
+Edge Case: Return '/' if the stack is empty.
+
+This approach ensures efficient path simplification with O(n) time complexity.
+
+[View Solution 👈](./Solutions/Q53-SimplifyPath.java) 
