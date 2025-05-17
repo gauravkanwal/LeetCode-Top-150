@@ -57,6 +57,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q49. Merge Intervals](#q49-merge-intervals)
   - [Q50. Insert Interval](#q50-insert-interval)
   - [Q51. Minimum Number of Arrows to Burst Balloons](#q51-minimum-number-of-arrows-to-burst-balloons)
+  - [Q52. Valid Parentheses](#q52-valid-parentheses)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1155,3 +1156,27 @@ If the start point of the next interval is less than or equal to the current end
 
 If the start point is greater, it means the next interval does not overlap, requiring a new arrow.
 [View Solution 👈](./Solutions/Q51-MinimumNumberOfArrowsToBurstBalloons.java) 
+
+
+## Q52. Valid Parentheses
+  
+**Problem Link:**
+[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+The goal is to check whether a string of parentheses, curly braces, and square brackets is balanced and properly nested.
+
+Stack Data Structure: Use a stack to store opening brackets as they appear.
+
+Matching Pairs: Use a HashMap to map each closing bracket to its corresponding opening bracket.
+
+Validation Process:
+
+Push opening brackets onto the stack.
+
+For closing brackets, check if the stack is non-empty and the top matches the corresponding opening bracket.
+
+If matched, pop the stack; if not, return false.
+
+Final Check: After processing the entire string, the stack should be empty for a valid sequence.
+[View Solution 👈](./Solutions/Q52-ValidParentheses.java) 
