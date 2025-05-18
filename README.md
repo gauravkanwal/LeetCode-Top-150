@@ -59,6 +59,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q51. Minimum Number of Arrows to Burst Balloons](#q51-minimum-number-of-arrows-to-burst-balloons)
   - [Q52. Valid Parentheses](#q52-valid-parentheses)
   - [Q53. Simplify Path](#q53-simplify-path)
+  - [Q54. Min Stack](#q54-min-stack)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1206,3 +1207,24 @@ Edge Case: Return '/' if the stack is empty.
 This approach ensures efficient path simplification with O(n) time complexity.
 
 [View Solution 👈](./Solutions/Q53-SimplifyPath.java) 
+
+
+## Q54. Min Stack
+  
+**Problem Link:**
+[Min Stack](https://leetcode.com/problems/min-stack/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+Uses two stacks:
+
+stack: Stores the actual values.
+
+minStack: Stores the minimum value at each level.
+
+When pushing a value, it also pushes the smaller of the new value and the current minimum onto minStack.
+
+When popping, it removes the top element from both stack and minStack, keeping the current minimum in sync.
+
+The top of minStack always contains the minimum element in the stack.
+
+[View Solution 👈](./Solutions/Q54-MinStack.java) 
