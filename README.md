@@ -60,6 +60,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q52. Valid Parentheses](#q52-valid-parentheses)
   - [Q53. Simplify Path](#q53-simplify-path)
   - [Q54. Min Stack](#q54-min-stack)
+  - [Q55. Evaluate Reverse Polish Notation](#q55-evaluate-reverse-polish-notation)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1228,3 +1229,28 @@ When popping, it removes the top element from both stack and minStack, keeping t
 The top of minStack always contains the minimum element in the stack.
 
 [View Solution 👈](./Solutions/Q54-MinStack.java) 
+
+
+## Q55. Evaluate Reverse Polish Notation
+  
+**Problem Link:**
+[Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+The solution evaluates an expression in Reverse Polish Notation (RPN) using a stack.
+
+Iterate through tokens:
+
+For each token, check whether it is an operator (+, -, *, /) or a number.
+
+Perform operations:
+
+If it’s an operator, pop the top two elements from the stack, perform the operation, and push the result back onto the stack.
+
+If it’s a number, push it onto the stack.
+
+Final result:
+
+The remaining element in the stack is the result of the expression.
+
+[View Solution 👈](./Solutions/Q55-EvaluateReversePolishNotation.java) 
