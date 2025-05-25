@@ -61,6 +61,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q53. Simplify Path](#q53-simplify-path)
   - [Q54. Min Stack](#q54-min-stack)
   - [Q55. Evaluate Reverse Polish Notation](#q55-evaluate-reverse-polish-notation)
+  - [Q56. Basic Calculator](#q56-basic-calculator)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1254,3 +1255,19 @@ Final result:
 The remaining element in the stack is the result of the expression.
 
 [View Solution 👈](./Solutions/Q55-EvaluateReversePolishNotation.java) 
+
+
+## Q56. Basic Calculator
+  
+**Problem Link:**
+[Basic Calculator](https://leetcode.com/problems/basic-calculator/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+Use a stack to handle nested expressions and track previous results and signs when encountering '('.
+Traverse the string once, building numbers and applying + or - using the current sign.
+On (, push current result and sign to stack.
+On ), compute the sub-result and combine it with the previous result from the stack.
+
+➡️ This allows evaluating expressions with +, -, and parentheses in O(n) time.
+
+[View Solution 👈](./Solutions/Q56-BasicCalculator.java) 
