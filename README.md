@@ -62,6 +62,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q54. Min Stack](#q54-min-stack)
   - [Q55. Evaluate Reverse Polish Notation](#q55-evaluate-reverse-polish-notation)
   - [Q56. Basic Calculator](#q56-basic-calculator)
+  - [Q57. Linked List Cycle](#q57-linked-list-cycle)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1271,3 +1272,14 @@ On ), compute the sub-result and combine it with the previous result from the st
 ➡️ This allows evaluating expressions with +, -, and parentheses in O(n) time.
 
 [View Solution 👈](./Solutions/Q56-BasicCalculator.java) 
+
+
+## Q57. Linked List Cycle
+  
+**Problem Link:**
+[Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+Use two pointers (slow and fast) to traverse the linked list at different speeds. If there is a cycle, the fast pointer will eventually meet the slow pointer. If the list ends (fast becomes null), there is no cycle.
+
+[View Solution 👈](./Solutions/Q57-LinkedListCycle.java) 
