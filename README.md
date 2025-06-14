@@ -63,6 +63,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q55. Evaluate Reverse Polish Notation](#q55-evaluate-reverse-polish-notation)
   - [Q56. Basic Calculator](#q56-basic-calculator)
   - [Q57. Linked List Cycle](#q57-linked-list-cycle)
+  - [Q58. Add Two Numbers](#q58-add-two-numbers)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1283,3 +1284,36 @@ On ), compute the sub-result and combine it with the previous result from the st
 Use two pointers (slow and fast) to traverse the linked list at different speeds. If there is a cycle, the fast pointer will eventually meet the slow pointer. If the list ends (fast becomes null), there is no cycle.
 
 [View Solution 👈](./Solutions/Q57-LinkedListCycle.java) 
+
+
+## Q58. Add Two Numbers
+  
+**Problem Link:**
+[Add Two Numbers](https://leetcode.com/problems/add-two-numbers/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+✅ Key Idea of the Solution (addTwoNumbers)
+The goal is to add two numbers represented by linked lists, where each node contains a single digit and the digits are stored in reverse order. The result should also be returned as a linked list in reverse order.
+
+🧠 Core Logic
+Traverse both lists node by node.
+
+At each step, add corresponding digits from l1 and l2, along with any carry from the previous step.
+
+Store the last digit of the sum (sum % 10) in a new node.
+
+Carry forward the rest (sum / 10) to the next step.
+
+Continue the loop until both lists are completely traversed and no carry is left.
+
+🪛 Use of dummyHead
+A dummyHead node is used to simplify list construction.
+
+It acts as a starting point, and the final result starts from dummyHead.next.
+
+This helps avoid extra conditions for initializing the head of the result list and ensures smooth appending of new nodes.
+
+🔚 Final Output
+The final linked list is returned starting from dummyHead.next, which represents the sum of the two input numbers in reverse order.
+
+[View Solution 👈](./Solutions/Q58-AddTwoNumbers.java) 
