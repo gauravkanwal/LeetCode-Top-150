@@ -64,6 +64,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q56. Basic Calculator](#q56-basic-calculator)
   - [Q57. Linked List Cycle](#q57-linked-list-cycle)
   - [Q58. Add Two Numbers](#q58-add-two-numbers)
+  - [Q59. Merge Two Sorted Lists](#q59-merge-two-sorted-lists)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1317,3 +1318,29 @@ This helps avoid extra conditions for initializing the head of the result list a
 The final linked list is returned starting from dummyHead.next, which represents the sum of the two input numbers in reverse order.
 
 [View Solution 👈](./Solutions/Q58-AddTwoNumbers.java) 
+
+
+## Q59. Merge Two Sorted Lists
+  
+**Problem Link:**
+[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+Use a dummy node to simplify the process of building the merged list.
+
+Use a pointer curr to track the end of the new list.
+
+Traverse both list1 and list2:
+
+At each step, compare list1.val and list2.val.
+
+Append the smaller value as a new node to the merged list.
+
+Move forward in the list from which the node was taken.
+
+After the loop, append the remaining nodes from the non-empty list (if any).
+
+Return dummy.next as the head of the merged list.
+
+
+[View Solution 👈](./Solutions/Q59-AddTwoNumbers.java) 
