@@ -65,6 +65,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q57. Linked List Cycle](#q57-linked-list-cycle)
   - [Q58. Add Two Numbers](#q58-add-two-numbers)
   - [Q59. Merge Two Sorted Lists](#q59-merge-two-sorted-lists)
+  - [Q60. Copy List with Random Pointer](#q60-copy-list-with-random-pointer)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1344,3 +1345,20 @@ Return dummy.next as the head of the merged list.
 
 
 [View Solution 👈](./Solutions/Q59-AddTwoNumbers.java) 
+
+
+## Q60. Copy List with Random Pointer
+  
+**Problem Link:**
+[Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+Use a HashMap to store the mapping between original nodes and their corresponding new nodes.
+
+First, create a new list by copying each node's value from the original list and link them using next. Store the mapping original → copy in the HashMap.
+
+Then, iterate again to set the random pointers in the new list using the map, where copy.random = map.get(original.random).
+Finally, return the head of the newly created list.
+
+
+[View Solution 👈](./Solutions/Q60-CopyListWithRandomPointer.java) 
