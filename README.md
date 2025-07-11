@@ -66,6 +66,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q58. Add Two Numbers](#q58-add-two-numbers)
   - [Q59. Merge Two Sorted Lists](#q59-merge-two-sorted-lists)
   - [Q60. Copy List with Random Pointer](#q60-copy-list-with-random-pointer)
+  - [Q61. Reverse Linked List II](#q61-reverse-linked-list-ii)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1362,3 +1363,38 @@ Finally, return the head of the newly created list.
 
 
 [View Solution 👈](./Solutions/Q60-CopyListWithRandomPointer.java) 
+
+
+## Q61. Reverse Linked List II
+  
+**Problem Link:**
+[Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+🔹 Phase 1: Assign pointers to their correct places
+Create a dummy node pointing to head to handle edge cases.
+
+Move the prev pointer to the node just before the left position.
+
+Identify leftNode as the start node of the sublist to be reversed.
+
+Initialize curr = leftNode and then = curr.next for reversal.
+
+🔹 Phase 2: Reverse the sublist from left to right
+Use iterative reversal: in each loop, move then in front of curr:
+
+then.next = curr reverses the link.
+
+Advance curr = then, and then = temp (next node to reverse).
+
+Repeat this for right - left steps to fully reverse the sublist.
+
+🔹 Phase 3: Reconnect the reversed sublist back
+prev.next = curr connects the node before left to the new head of the reversed sublist.
+
+leftNode.next = then connects the tail of the reversed sublist to the node after right.
+
+
+
+
+[View Solution 👈](./Solutions/Q61-ReverseLinkedListII.java) 
