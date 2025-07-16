@@ -67,6 +67,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q59. Merge Two Sorted Lists](#q59-merge-two-sorted-lists)
   - [Q60. Copy List with Random Pointer](#q60-copy-list-with-random-pointer)
   - [Q61. Reverse Linked List II](#q61-reverse-linked-list-ii)
+  - [Q62. Reverse Nodes in k-Group](#q62-reverse-nodes-in-k-group)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1398,3 +1399,32 @@ leftNode.next = then connects the tail of the reversed sublist to the node after
 
 
 [View Solution 👈](./Solutions/Q61-ReverseLinkedListII.java) 
+
+
+## Q62. Reverse Nodes in k-Group
+  
+**Problem Link:**
+[Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+1. Identify the Group to Reverse
+Use a pointer to find the k-th node ahead from the current position.
+
+If less than k nodes remain, stop.
+
+2. Reverse the Group
+Reverse the pointers between the start and end of the current group.
+
+Use standard in-place reversal: update next pointers using prev, curr, and next.
+
+3. Connect the Group Back
+Connect the tail of the previous group to the new head (after reversal).
+
+Connect the tail of the reversed group to the next part of the list.
+
+Move to the next group and repeat.
+
+
+
+
+[View Solution 👈](./Solutions/Q62-ReverseNodesInKGroup.java) 
