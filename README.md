@@ -68,6 +68,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q60. Copy List with Random Pointer](#q60-copy-list-with-random-pointer)
   - [Q61. Reverse Linked List II](#q61-reverse-linked-list-ii)
   - [Q62. Reverse Nodes in k-Group](#q62-reverse-nodes-in-k-group)
+  - [Q63. Remove Nth Node From End of List](#q63-remove-nth-node-from-end-of-list)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1428,3 +1429,15 @@ Move to the next group and repeat.
 
 
 [View Solution 👈](./Solutions/Q62-ReverseNodesInKGroup.java) 
+
+
+## Q63. Remove Nth Node From End of List
+  
+**Problem Link:**
+[Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+Use two pointers with a dummy node. Move the ahead pointer n steps ahead, then move both ahead and behind together until ahead reaches the end. This places behind just before the node to remove. Skip the target node and return the updated list.
+
+
+[View Solution 👈](./Solutions/Q63-RemoveNthNodeFromEndOfList.java) 
