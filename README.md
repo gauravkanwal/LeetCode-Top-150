@@ -69,6 +69,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q61. Reverse Linked List II](#q61-reverse-linked-list-ii)
   - [Q62. Reverse Nodes in k-Group](#q62-reverse-nodes-in-k-group)
   - [Q63. Remove Nth Node From End of List](#q63-remove-nth-node-from-end-of-list)
+  - [Q64. Remove Duplicates from Sorted List II](#q64-remove-duplicates-from-sorted-list-ii)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1441,3 +1442,25 @@ Use two pointers with a dummy node. Move the ahead pointer n steps ahead, then m
 
 
 [View Solution 👈](./Solutions/Q63-RemoveNthNodeFromEndOfList.java) 
+
+
+## Q64. Remove Duplicates from Sorted List II
+  
+**Problem Link:**
+[Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+Use two pointers (prev and curr) to iterate through the sorted linked list.
+
+At each step, check if the current node has duplicates by comparing curr.val with curr.next.val (then.val).
+
+If duplicates are found, skip all nodes with the same value by advancing curr until the value changes.
+
+If no duplicates, link prev.next to the unique node (curr), then move both prev and curr forward.
+
+Return dummy.next as the new head, skipping all duplicate nodes.
+
+This approach ensures only distinct nodes are retained, efficiently handling sorted input in O(n) time and O(1) space.
+
+
+[View Solution 👈](./Solutions/Q64-RemoveDuplicatesFromSortedListII.java) 
