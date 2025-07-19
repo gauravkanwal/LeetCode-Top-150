@@ -1464,3 +1464,18 @@ This approach ensures only distinct nodes are retained, efficiently handling sor
 
 
 [View Solution 👈](./Solutions/Q64-RemoveDuplicatesFromSortedListII.java) 
+
+
+## Q65.  Rotate List
+  
+**Problem Link:**
+[ Rotate List](https://leetcode.com/problems/rotate-list/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+find length and tail of the list  
+make the list circular  
+reduce the number of rotaions needed by removing extra rotations  (k=k%length)
+after rotating k times to the right the new tail of the list should be length-k times ahead  
+break the circular property and set head=tail.next and tail.next to null  
+
+[View Solution 👈](./Solutions/Q65-RotateList.java) 
