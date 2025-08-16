@@ -70,6 +70,8 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q62. Reverse Nodes in k-Group](#q62-reverse-nodes-in-k-group)
   - [Q63. Remove Nth Node From End of List](#q63-remove-nth-node-from-end-of-list)
   - [Q64. Remove Duplicates from Sorted List II](#q64-remove-duplicates-from-sorted-list-ii)
+  - [Q65. Rotate List](#q65--rotate-list)
+  - [Q66. Partition List](#q66--partition-list)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1479,3 +1481,13 @@ after rotating k times to the right the new tail of the list should be length-k 
 break the circular property and set head=tail.next and tail.next to null  
 
 [View Solution 👈](./Solutions/Q65-RotateList.java) 
+
+
+## Q66.  Partition List
+  
+**Problem Link:**
+[ Partition List](https://leetcode.com/problems/partition-list/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+We maintain a pointer (prevTail) to the end of the “< x” partition. As we traverse the list, whenever we find a node < x, we extract it from its current position and insert it right after prevTail. This grows the “< x” partition in-place while preserving the original relative order of nodes in both partitions.
+[View Solution 👈](./Solutions/Q66-PartitionList.java) 
