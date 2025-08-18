@@ -72,6 +72,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q64. Remove Duplicates from Sorted List II](#q64-remove-duplicates-from-sorted-list-ii)
   - [Q65. Rotate List](#q65--rotate-list)
   - [Q66. Partition List](#q66--partition-list)
+  - [Q67. LRU Cache](#q67--lru-cache)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1491,3 +1492,27 @@ break the circular property and set head=tail.next and tail.next to null
 **Solution Key Idea or Approach:**  
 We maintain a pointer (prevTail) to the end of the “< x” partition. As we traverse the list, whenever we find a node < x, we extract it from its current position and insert it right after prevTail. This grows the “< x” partition in-place while preserving the original relative order of nodes in both partitions.
 [View Solution 👈](./Solutions/Q66-PartitionList.java) 
+
+
+## Q67.  LRU Cache
+  
+**Problem Link:**
+[ LRU Cache](https://leetcode.com/problems/lru-cache/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+The LRU Cache is implemented using a HashMap + Doubly Linked List.
+
+The HashMap provides O(1) access to nodes by key.
+
+The Doubly Linked List maintains the order of usage:
+
+Most recently used node is always placed right after the dummy head.
+
+Least recently used node is always just before the dummy tail.
+
+On every get or put, the accessed/updated node is moved to the front (most recent).
+
+If capacity is exceeded, the least recently used node (before tail) is removed.
+
+This ensures both get and put run in O(1) time.
+[View Solution 👈](./Solutions/Q67-LRUCache.java) 
