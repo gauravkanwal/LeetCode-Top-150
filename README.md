@@ -73,6 +73,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q65. Rotate List](#q65--rotate-list)
   - [Q66. Partition List](#q66--partition-list)
   - [Q67. LRU Cache](#q67--lru-cache)
+  - [Q68. Maximum Depth of Binary Tree](#q68--maximum-depth-of-binary-tree)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1516,3 +1517,35 @@ If capacity is exceeded, the least recently used node (before tail) is removed.
 
 This ensures both get and put run in O(1) time.
 [View Solution 👈](./Solutions/Q67-LRUCache.java) 
+
+
+## Q68.  Maximum Depth of Binary Tree
+  
+**Problem Link:**
+[ Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+🔹 BFS (Iterative using Queue)
+
+Use a queue (Deque) to do level-order traversal.
+
+For each level, process all nodes in the queue, then push their children.
+
+After processing one level, increment count.
+
+At the end, count = number of levels = maximum depth.
+
+👉 Key idea: Count levels in a breadth-first traversal.
+
+🔹 DFS (Recursive)
+
+If node is null, depth is 0.
+
+Otherwise, recursively find depth of left and right subtrees.
+
+Return 1 + max(leftDepth, rightDepth).
+
+👉 Key idea: Depth of a node = 1 + maximum depth of its children.
+
+This ensures both get and put run in O(1) time.
+[View Solution 👈](./Solutions/Q68-MaximumDepthOfBinaryTree.java) 
