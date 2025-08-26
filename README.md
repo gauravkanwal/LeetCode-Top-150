@@ -74,6 +74,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q66. Partition List](#q66--partition-list)
   - [Q67. LRU Cache](#q67--lru-cache)
   - [Q68. Maximum Depth of Binary Tree](#q68--maximum-depth-of-binary-tree)
+  - [Q69. Same Tree](#q69-same-tree)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1549,3 +1550,24 @@ Return 1 + max(leftDepth, rightDepth).
 
 This ensures both get and put run in O(1) time.
 [View Solution 👈](./Solutions/Q68-MaximumDepthOfBinaryTree.java) 
+
+
+## Q69. Same Tree
+  
+**Problem Link:**
+[Same Tree](https://leetcode.com/problems/same-tree/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+If both nodes are null, the trees are the same at this branch.
+
+If only one is null, the trees differ.
+
+If the values of the current nodes differ, the trees differ.
+
+Recursively check the left subtrees and then the right subtrees.
+
+If both match, return true; otherwise, return false.
+
+Basically, this is a DFS (Depth-First Search) recursive check comparing both trees node by node.
+
+[View Solution 👈](./Solutions/Q69-SameTree.java) 
