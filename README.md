@@ -75,6 +75,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q67. LRU Cache](#q67--lru-cache)
   - [Q68. Maximum Depth of Binary Tree](#q68--maximum-depth-of-binary-tree)
   - [Q69. Same Tree](#q69-same-tree)
+  - [Q70. Invert Binary Tree](#q70-invert-binary-tree)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1571,3 +1572,22 @@ If both match, return true; otherwise, return false.
 Basically, this is a DFS (Depth-First Search) recursive check comparing both trees node by node.
 
 [View Solution 👈](./Solutions/Q69-SameTree.java) 
+
+
+## Q70. Invert Binary Tree
+  
+**Problem Link:** 
+[Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+The key idea of this solution is recursion + swapping:
+
+If the root is null, return null (base case).
+
+For each node, swap its left and right subtrees.
+
+Recursively call the function on both subtrees so that the entire tree gets inverted.
+
+Finally, return the modified root.
+
+[View Solution 👈](./Solutions/Q70-InvertBinaryTree.java) 
