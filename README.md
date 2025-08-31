@@ -76,6 +76,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q68. Maximum Depth of Binary Tree](#q68--maximum-depth-of-binary-tree)
   - [Q69. Same Tree](#q69-same-tree)
   - [Q70. Invert Binary Tree](#q70-invert-binary-tree)
+  - [Q71. Symmetric Tree](#q70-invert-binary-tree)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1577,7 +1578,7 @@ Basically, this is a DFS (Depth-First Search) recursive check comparing both tre
 ## Q70. Invert Binary Tree
   
 **Problem Link:** 
-[Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/description/?envType=study-plan-v2&envId=top-interview-150)  
+[Invert Binary Tree](https://leetcode.com/problems/symmetric-tree/description/?envType=study-plan-v2&envId=top-interview-150)  
 
 **Solution Key Idea or Approach:**  
 The key idea of this solution is recursion + swapping:
@@ -1591,3 +1592,57 @@ Recursively call the function on both subtrees so that the entire tree gets inve
 Finally, return the modified root.
 
 [View Solution 👈](./Solutions/Q70-InvertBinaryTree.java) 
+
+
+## Q71. Symmetric Tree
+  
+**Problem Link:** 
+[Symmetric Tree](https://leetcode.com/problems/symmetric-tree/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+Recursive Solution:  
+
+The key idea of this solution:
+
+A binary tree is symmetric if its left and right subtrees are mirror images of each other.
+
+Base cases:
+
+If both subtrees are null → symmetric at this level.
+
+If only one is null → not symmetric.
+
+Otherwise, check two conditions:
+
+The current nodes’ values are equal.
+
+The left child of one is a mirror of the right child of the other, and vice versa.
+
+This recursive comparison ensures symmetry is checked across the entire tree.
+
+👉 Essentially, it uses divide and conquer + mirror checking.  
+  
+Iterative Solution:
+ 
+The key idea of iterative solution:
+
+Use a queue to check nodes in mirror pairs.
+
+Enqueue the left and right children of the root.
+
+Repeatedly dequeue two nodes at a time:
+
+If both are null → continue (still symmetric at this level).
+
+If only one is null or their values differ → tree is not symmetric.
+
+Otherwise, enqueue their children in mirror order:
+
+(left of first, right of second)
+
+(right of first, left of second)
+
+If all pairs match until the queue is empty → the tree is symmetric.
+
+👉 Essentially, this solution performs a level-order mirror check (BFS) instead of recursion.
+[View Solution 👈](./Solutions/Q71-SymmetricTree.java) 
