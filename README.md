@@ -77,6 +77,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q69. Same Tree](#q69-same-tree)
   - [Q70. Invert Binary Tree](#q70-invert-binary-tree)
   - [Q71. Symmetric Tree](#q70-invert-binary-tree)
+  - [Q72. Construct Binary Tree from Preorder and Inorder Traversal](#q72-construct-binary-tree-from-preorder-and-inorder-traversal)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1646,3 +1647,16 @@ If all pairs match until the queue is empty → the tree is symmetric.
 
 👉 Essentially, this solution performs a level-order mirror check (BFS) instead of recursion.
 [View Solution 👈](./Solutions/Q71-SymmetricTree.java) 
+
+
+## Q72. Construct Binary Tree from Preorder and Inorder Traversal
+  
+**Problem Link:** 
+[Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+This solution reconstructs a binary tree from its preorder and inorder traversal arrays.
+
+The core idea is to use a recursive helper function that avoids inefficient array copying. It identifies the root of any subtree as the next element in the preorder traversal. It then uses a pre-built HashMap to find that root's position in the inorder traversal in constant time (O(1)). This position splits the inorder array into left and right subtrees. The function then recursively builds the left and right children using indices to define the boundaries of these subtrees, achieving an optimal time complexity of O(N).  
+
+[View Solution 👈](./Solutions/Q72-ConstructBinaryTreeFromPreorderAndInorderTraversal.java) 
