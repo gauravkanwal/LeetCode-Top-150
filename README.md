@@ -78,6 +78,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q70. Invert Binary Tree](#q70-invert-binary-tree)
   - [Q71. Symmetric Tree](#q70-invert-binary-tree)
   - [Q72. Construct Binary Tree from Preorder and Inorder Traversal](#q72-construct-binary-tree-from-preorder-and-inorder-traversal)
+  - [Q73. Construct Binary Tree from Inorder and Postorder Traversal](#q73-construct-binary-tree-from-inorder-and-postorder-traversal)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1660,3 +1661,14 @@ This solution reconstructs a binary tree from its preorder and inorder traversal
 The core idea is to use a recursive helper function that avoids inefficient array copying. It identifies the root of any subtree as the next element in the preorder traversal. It then uses a pre-built HashMap to find that root's position in the inorder traversal in constant time (O(1)). This position splits the inorder array into left and right subtrees. The function then recursively builds the left and right children using indices to define the boundaries of these subtrees, achieving an optimal time complexity of O(N).  
 
 [View Solution 👈](./Solutions/Q72-ConstructBinaryTreeFromPreorderAndInorderTraversal.java) 
+
+
+## Q73. Construct Binary Tree from Inorder and Postorder Traversal
+  
+**Problem Link:** 
+[Construct Binary Tree from Inorder and Postorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+The last element in postorder is always the root. Using a HashMap of inorder indices, we can find the root’s position in inorder to split the tree into left and right subtrees. We then recursively build the tree: first the right subtree, then the left, since we are moving backward in postorder.
+
+[View Solution 👈](./Solutions/Q73-ConstructBinaryTreeFromInorderAndPostorderTraversal.java) 
