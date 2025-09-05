@@ -78,7 +78,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q70. Invert Binary Tree](#q70-invert-binary-tree)
   - [Q71. Symmetric Tree](#q70-invert-binary-tree)
   - [Q72. Construct Binary Tree from Preorder and Inorder Traversal](#q72-construct-binary-tree-from-preorder-and-inorder-traversal)
-  - [Q73. Construct Binary Tree from Inorder and Postorder Traversal](#q73-construct-binary-tree-from-inorder-and-postorder-traversal)
+  - [Q74. Populating Next Right Pointers in Each Node II](#q74-populating-next-right-pointers-in-each-node-ii)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1672,3 +1672,16 @@ The core idea is to use a recursive helper function that avoids inefficient arra
 The last element in postorder is always the root. Using a HashMap of inorder indices, we can find the root’s position in inorder to split the tree into left and right subtrees. We then recursively build the tree: first the right subtree, then the left, since we are moving backward in postorder.
 
 [View Solution 👈](./Solutions/Q73-ConstructBinaryTreeFromInorderAndPostorderTraversal.java) 
+
+
+## Q74. Populating Next Right Pointers in Each Node II
+  
+**Problem Link:** 
+[Populating Next Right Pointers in Each Node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+
+O(n) space approach (Using Queue):
+Perform a level-order traversal (BFS) using a queue. For each node, set its next pointer to the next node in the queue (which will be the neighbor in the same level, or null at the end of the level). Push children into the queue so the process continues level by level until the tree is fully connected.
+
+[View Solution 👈](./Solutions/Q74-PopulatingNextRightPointersInEachNodeII.java) 
