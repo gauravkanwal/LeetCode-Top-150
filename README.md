@@ -1682,6 +1682,11 @@ The last element in postorder is always the root. Using a HashMap of inorder ind
 **Solution Key Idea or Approach:**  
 
 O(n) space approach (Using Queue):
-Perform a level-order traversal (BFS) using a queue. For each node, set its next pointer to the next node in the queue (which will be the neighbor in the same level, or null at the end of the level). Push children into the queue so the process continues level by level until the tree is fully connected.
+Perform a level-order traversal (BFS) using a queue. For each node, set its next pointer to the next node in the queue (which will be the neighbor in the same level, or null at the end of the level). Push children into the queue so the process continues level by level until the tree is fully connected.  
+  
+O(1) space approach:
+Traverse the tree level by level without using extra space. At each level, move across nodes using their already established next pointers. While doing so, link all children with a prev pointer and update leftMost to the first child of the next level. Repeat until no more levels remain.
+
+This way, all next pointers are set in O(n) time and O(1) extra sp
 
 [View Solution 👈](./Solutions/Q74-PopulatingNextRightPointersInEachNodeII.java) 

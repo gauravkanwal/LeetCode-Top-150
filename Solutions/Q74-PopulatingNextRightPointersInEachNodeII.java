@@ -44,3 +44,34 @@ class Solution {
         return root;
     }
 }
+
+
+//O(1) space solution:
+class Solution {
+    public Node connect(Node root) {
+        if(root==null) return root;
+        
+        Node leftMost=root;
+        while(leftMost!=null){
+            Node curr=leftMost;
+            Node prev=null;
+            leftMost=null;
+            while(curr!=null){
+                if(curr.left!=null){
+                    if(prev!=null)prev.next=curr.left;
+                    else leftMost=curr;
+                    prev=curr;
+                }
+
+                if(curr.right!=null){
+                    if(prev!=null)prev.next=curr.right;
+                    else leftMost=curr;
+                    prev=curr;
+                }
+
+                curr=curr.next;
+            }
+        }
+        return root;
+    }
+}
