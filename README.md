@@ -79,6 +79,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q71. Symmetric Tree](#q70-invert-binary-tree)
   - [Q72. Construct Binary Tree from Preorder and Inorder Traversal](#q72-construct-binary-tree-from-preorder-and-inorder-traversal)
   - [Q74. Populating Next Right Pointers in Each Node II](#q74-populating-next-right-pointers-in-each-node-ii)
+  - [Q75. Flatten Binary Tree to Linked List](#q75-flatten-binary-tree-to-linked-list)
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1690,3 +1691,14 @@ Traverse the tree level by level without using extra space. At each level, move 
 This way, all next pointers are set in O(n) time and O(1) extra sp
 
 [View Solution 👈](./Solutions/Q74-PopulatingNextRightPointersInEachNodeII.java) 
+
+
+## Q75. Flatten Binary Tree to Linked List
+  
+**Problem Link:** 
+[Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/?envType=study-plan-v2&envId=top-interview-150)  
+
+**Solution Key Idea or Approach:**  
+Flatten the tree in preorder by recursively flattening left and right subtrees, then splice the left list between the root and the right list. Return the last node (tail) of the flattened subtree so connections stay correct. This way the whole tree becomes a right-skewed linked list.
+
+[View Solution 👈](./Solutions/Q75-FlattenBinaryTreeToLinkedList.java) 
