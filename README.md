@@ -78,8 +78,12 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q70. Invert Binary Tree](#q70-invert-binary-tree)
   - [Q71. Symmetric Tree](#q70-invert-binary-tree)
   - [Q72. Construct Binary Tree from Preorder and Inorder Traversal](#q72-construct-binary-tree-from-preorder-and-inorder-traversal)
+  - [Q73. Construct Binary Tree from Inorder and Postorder Traversal](#q73-construct-binary-tree-from-inorder-and-postorder-traversal)
   - [Q74. Populating Next Right Pointers in Each Node II](#q74-populating-next-right-pointers-in-each-node-ii)
   - [Q75. Flatten Binary Tree to Linked List](#q75-flatten-binary-tree-to-linked-list)
+  - [Q76. Path Sum](#q76-path-sum)
+  - [Q77. Sum Root to Leaf Numbers](#q76-sum-root-to-leaf-numbers)
+
   
 
 ## Key Ideas or approaches of the problems:  
@@ -1358,7 +1362,7 @@ After the loop, append the remaining nodes from the non-empty list (if any).
 Return dummy.next as the head of the merged list.
 
 
-[View Solution 👈](./Solutions/Q59-AddTwoNumbers.java) 
+[View Solution 👈](./Solutions/Q59-MergeTwoSortedLists.java) 
 
 
 ## Q60. Copy List with Random Pointer
@@ -1702,3 +1706,25 @@ This way, all next pointers are set in O(n) time and O(1) extra sp
 Flatten the tree in preorder by recursively flattening left and right subtrees, then splice the left list between the root and the right list. Return the last node (tail) of the flattened subtree so connections stay correct. This way the whole tree becomes a right-skewed linked list.
 
 [View Solution 👈](./Solutions/Q75-FlattenBinaryTreeToLinkedList.java) 
+
+
+## Q76. Path Sum
+ 
+**Problem Link:** 
+[Path Sum](https://leetcode.com/problems/path-sum/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:**  
+The algorithm uses recursion to check whether a root-to-leaf path exists with the given target sum. At each node, it subtracts the node’s value from the target. If it reaches a leaf and the remaining sum equals the leaf’s value, it returns true. Otherwise, it recursively explores the left and right subtrees.
+
+[View Solution 👈](./Solutions/Q76-PathSum.java) 
+
+
+## Q77. Sum Root to Leaf Numbers
+ 
+**Problem Link:** 
+[Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:**  
+The solution performs a DFS on the binary tree, carrying along the number formed from the root to the current node. At each step, it multiplies the accumulated number by 10 and adds the current node’s value. When it reaches a leaf node, it returns that complete number. Finally, it sums up all such root-to-leaf numbers.
+
+[View Solution 👈](./Solutions/Q77-SumRootToLeafNumbers.java) 
