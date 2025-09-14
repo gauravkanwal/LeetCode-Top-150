@@ -26,23 +26,40 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q18. Integer To Roman](#q18-integer-to-roman)
   - [Q19. Length of Last Word](#q19-length-of-last-word)
   - [Q20. Longest Common Prefix](#q20-longest-common-prefix)
+  - [Second Solution:](#second-solution)
   - [Q21. Reverse Words in a String](#q21-reverse-words-in-a-string)
   - [Q22. Zigzag Conversion](#q22-zigzag-conversion)
   - [Q23. Find the Index of the First Occurrence in a String](#q23-find-the-index-of-the-first-occurrence-in-a-string)
+  - [MY Solution:](#my-solution)
   - [Q24. Text Justification](#q24-text-justification)
-  - [Q25. Vaild Palindrome](#q25-valid-palindrome)
+  - [Q25. Valid Palindrome](#q25-valid-palindrome)
   - [Q26. Is Subsequence](#q26-is-subsequence)
   - [Q27. Two Sum II - Input Array Is Sorted](#q27-two-sum-ii---input-array-is-sorted)
   - [Q28. Container With Most Water](#q28-container-with-most-water)
-  - [Q29. 3Sum](#q29-3sum)
-  - [Q30. Minimum SIze Subarray Sum](#q30-minimum-size-subarray-sum)
+  - [Q29. 3sum](#q29-3sum)
+  - [Q30. Minimum Size Subarray Sum](#q30-minimum-size-subarray-sum)
   - [Q31. Longest Substring Without Repeating Characters](#q31-longest-substring-without-repeating-characters)
   - [Q32. Substring with Concatenation of All Words](#q32-substring-with-concatenation-of-all-words)
   - [Q33. Minimum Window Substring](#q33-minimum-window-substring)
   - [Q34. Valid Sudoku](#q34-valid-sudoku)
+  - [🔹 First Approach: Using Multiple Loops (Brute Force)](#-first-approach-using-multiple-loops-brute-force)
+    - [Summary:](#summary)
+    - [Key Points:](#key-points)
+  - [🔹 Second Approach: Using a Single HashSet (Optimized)](#-second-approach-using-a-single-hashset-optimized)
+    - [Summary:](#summary-1)
+    - [Key Points:](#key-points-1)
+  - [🔹 Third Approach: Using 3 Boolean 2D Arrays (Most Optimal)](#-third-approach-using-3-boolean-2d-arrays-most-optimal)
+    - [Summary:](#summary-2)
   - [Q35. Spiral Matrix](#q35-spiral-matrix)
   - [Q36. Rotate Image](#q36-rotate-image)
   - [Q37. Set Matrix Zeroes](#q37-set-matrix-zeroes)
+  - [Initial HashSet Approach (O(m + n) Space)](#initial-hashset-approach-om--n-space)
+    - [Steps:](#steps)
+    - [Issue:](#issue)
+  - [Optimizing to O(1) Space using the Matrix itself](#optimizing-to-o1-space-using-the-matrix-itself)
+    - [**Key Insight:**](#key-insight)
+    - [**Optimized Steps:**](#optimized-steps)
+    - [**Why is This Better?**](#why-is-this-better)
   - [Q38. Game of Life](#q38-game-of-life)
   - [Q39. Ransom Note](#q39-ransom-note)
   - [Q40. Isomorphic Strings](#q40-isomorphic-strings)
@@ -70,19 +87,20 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q62. Reverse Nodes in k-Group](#q62-reverse-nodes-in-k-group)
   - [Q63. Remove Nth Node From End of List](#q63-remove-nth-node-from-end-of-list)
   - [Q64. Remove Duplicates from Sorted List II](#q64-remove-duplicates-from-sorted-list-ii)
-  - [Q65. Rotate List](#q65--rotate-list)
-  - [Q66. Partition List](#q66--partition-list)
-  - [Q67. LRU Cache](#q67--lru-cache)
-  - [Q68. Maximum Depth of Binary Tree](#q68--maximum-depth-of-binary-tree)
+  - [Q65.  Rotate List](#q65--rotate-list)
+  - [Q66.  Partition List](#q66--partition-list)
+  - [Q67.  LRU Cache](#q67--lru-cache)
+  - [Q68.  Maximum Depth of Binary Tree](#q68--maximum-depth-of-binary-tree)
   - [Q69. Same Tree](#q69-same-tree)
   - [Q70. Invert Binary Tree](#q70-invert-binary-tree)
-  - [Q71. Symmetric Tree](#q70-invert-binary-tree)
+  - [Q71. Symmetric Tree](#q71-symmetric-tree)
   - [Q72. Construct Binary Tree from Preorder and Inorder Traversal](#q72-construct-binary-tree-from-preorder-and-inorder-traversal)
   - [Q73. Construct Binary Tree from Inorder and Postorder Traversal](#q73-construct-binary-tree-from-inorder-and-postorder-traversal)
   - [Q74. Populating Next Right Pointers in Each Node II](#q74-populating-next-right-pointers-in-each-node-ii)
   - [Q75. Flatten Binary Tree to Linked List](#q75-flatten-binary-tree-to-linked-list)
   - [Q76. Path Sum](#q76-path-sum)
-  - [Q77. Sum Root to Leaf Numbers](#q76-sum-root-to-leaf-numbers)
+  - [Q77. Sum Root to Leaf Numbers](#q77-sum-root-to-leaf-numbers)
+  - [Q78.Binary Tree Maximum Path Sum](#q78binary-tree-maximum-path-sum)
 
   
 
@@ -1728,3 +1746,16 @@ The algorithm uses recursion to check whether a root-to-leaf path exists with th
 The solution performs a DFS on the binary tree, carrying along the number formed from the root to the current node. At each step, it multiplies the accumulated number by 10 and adds the current node’s value. When it reaches a leaf node, it returns that complete number. Finally, it sums up all such root-to-leaf numbers.
 
 [View Solution 👈](./Solutions/Q77-SumRootToLeafNumbers.java) 
+
+
+## Q78.Binary Tree Maximum Path Sum
+ 
+**Problem Link:** 
+[Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:**  
+At each node, compute the maximum path downward (node + at most one child) and return it to the parent.
+Meanwhile, keep a global maximum that checks the best path passing through the node (left + node + right).
+This way, the global maximum tracks the best path anywhere in the tree, while the return value ensures paths stay valid when passed upward.
+
+[View Solution 👈](./Solutions/Q78-BinaryTreeMaximumPathSum.java) 
