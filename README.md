@@ -101,6 +101,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q76. Path Sum](#q76-path-sum)
   - [Q77. Sum Root to Leaf Numbers](#q77-sum-root-to-leaf-numbers)
   - [Q78.Binary Tree Maximum Path Sum](#q78binary-tree-maximum-path-sum)
+  - [Q79.Binary Search Tree Iterator](#q79binary-search-tree-iterator)
 
   
 
@@ -1759,3 +1760,14 @@ Meanwhile, keep a global maximum that checks the best path passing through the n
 This way, the global maximum tracks the best path anywhere in the tree, while the return value ensures paths stay valid when passed upward.
 
 [View Solution 👈](./Solutions/Q78-BinaryTreeMaximumPathSum.java) 
+
+
+## Q79.Binary Search Tree Iterator
+ 
+**Problem Link:** 
+[Binary Search Tree Iterator](https://leetcode.com/problems/binary-search-tree-iterator/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:**  
+Flatten the BST into a sorted list using inorder traversal, then use an index to iterate through elements one by one.
+
+[View Solution 👈](./Solutions/Q79-BinarySearchTreeIterator.java) 
