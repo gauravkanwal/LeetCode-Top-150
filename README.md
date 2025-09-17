@@ -102,6 +102,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q77. Sum Root to Leaf Numbers](#q77-sum-root-to-leaf-numbers)
   - [Q78.Binary Tree Maximum Path Sum](#q78binary-tree-maximum-path-sum)
   - [Q79.Binary Search Tree Iterator](#q79binary-search-tree-iterator)
+  - [Q80.Count Complete Tree Nodes](#q80count-complete-tree-nodes)
 
   
 
@@ -1771,3 +1772,27 @@ This way, the global maximum tracks the best path anywhere in the tree, while th
 Flatten the BST into a sorted list using inorder traversal, then use an index to iterate through elements one by one.
 
 [View Solution 👈](./Solutions/Q79-BinarySearchTreeIterator.java) 
+
+
+## Q80.Count Complete Tree Nodes
+ 
+**Problem Link:** 
+[Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:**  
+For a Complete Binary Tree, if the left height and right height of a subtree are equal, that subtree is actually a perfect binary tree.
+
+A perfect binary tree of height h has exactly 2^h - 1 nodes.
+
+So instead of traversing all nodes, we can directly compute its size in O(1).
+
+👉 Otherwise, the tree is not perfect, so we recursively count nodes in the left and right subtrees.
+
+This reduces the complexity from O(n) (traversing all nodes) to about O(log² n), since each level we compute height in O(log n) and recurse on at most one side.
+
+⚡ In short:
+
+Check if subtree is perfect → compute node count directly using formula.
+
+Else → recurse into left & right subtrees.
+[View Solution 👈](./Solutions/Q80-CountCompleteTreeNodes.java) 
