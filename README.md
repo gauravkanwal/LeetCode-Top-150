@@ -103,6 +103,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q78.Binary Tree Maximum Path Sum](#q78binary-tree-maximum-path-sum)
   - [Q79.Binary Search Tree Iterator](#q79binary-search-tree-iterator)
   - [Q80.Count Complete Tree Nodes](#q80count-complete-tree-nodes)
+  - [Q81.Lowest Common Ancestor of a Binary Tree](#q81lowest-common-ancestor-of-a-binary-tree)
 
   
 
@@ -1796,3 +1797,13 @@ Check if subtree is perfect → compute node count directly using formula.
 
 Else → recurse into left & right subtrees.
 [View Solution 👈](./Solutions/Q80-CountCompleteTreeNodes.java) 
+
+
+## Q81.Lowest Common Ancestor of a Binary Tree
+ 
+**Problem Link:** 
+[Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/submissions/1775083840/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:**  
+Use recursion to explore the tree bottom-up. If the current node is p or q, return it. Recursively check left and right subtrees — if both sides return non-null, it means p and q are in different branches, so the current node is their lowest common ancestor. If only one side is non-null, propagate that result upward. This way, each node is visited once, giving an O(n) solution.
+[View Solution 👈](./Solutions/Q81-LowestCommonAncestorOfABinaryTree.java) 
