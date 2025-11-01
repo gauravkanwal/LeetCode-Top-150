@@ -104,6 +104,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q79.Binary Search Tree Iterator](#q79binary-search-tree-iterator)
   - [Q80.Count Complete Tree Nodes](#q80count-complete-tree-nodes)
   - [Q81.Lowest Common Ancestor of a Binary Tree](#q81lowest-common-ancestor-of-a-binary-tree)
+  - [Q82.Binary Tree Right Side View](#q82binary-tree-right-side-view)
 
   
 
@@ -1807,3 +1808,21 @@ Else → recurse into left & right subtrees.
 **Solution Key Idea or Approach:**  
 Use recursion to explore the tree bottom-up. If the current node is p or q, return it. Recursively check left and right subtrees — if both sides return non-null, it means p and q are in different branches, so the current node is their lowest common ancestor. If only one side is non-null, propagate that result upward. This way, each node is visited once, giving an O(n) solution.
 [View Solution 👈](./Solutions/Q81-LowestCommonAncestorOfABinaryTree.java) 
+
+
+## Q82.Binary Tree Right Side View
+ 
+**Problem Link:** 
+[Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:**  
+Approach 1:  
+
+Use level order traversal (BFS) using loop with a queue. For each level, traverse all nodes, and the last node processed in that level represents the node visible from the right side. Add that node’s value to the result list. This ensures one node per level is chosen, giving an O(n) time and O(n) space solution.
+  
+Approach 2:  
+
+Use DFS (Depth-First Search), traversing the tree in right → left order. Keep track of the current level. When visiting a level for the first time (i.e., result.size() == level), add the node’s value to the result list. This ensures the rightmost node at each level is recorded. The approach runs in O(n) time with O(h) space, where h is the tree height.
+
+
+[View Solution 👈](./Solutions/Q82-BinaryTreeRightSideView.java) 
