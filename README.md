@@ -105,6 +105,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q80.Count Complete Tree Nodes](#q80count-complete-tree-nodes)
   - [Q81.Lowest Common Ancestor of a Binary Tree](#q81lowest-common-ancestor-of-a-binary-tree)
   - [Q82.Binary Tree Right Side View](#q82binary-tree-right-side-view)
+  - [Q83. Average of Levels in Binary Tree](#q83-average-of-levels-in-binary-tree)
 
   
 
@@ -1826,3 +1827,14 @@ Use DFS (Depth-First Search), traversing the tree in right → left order. Keep 
 
 
 [View Solution 👈](./Solutions/Q82-BinaryTreeRightSideView.java) 
+
+
+## Q83. Average of Levels in Binary Tree
+ 
+**Problem Link:** 
+[ Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:**  
+Do BFS using loop and get the average at every level and store it in the list.
+
+[View Solution 👈](./Solutions/Q83-AverageOfLevelsInBinaryTree.java) 
