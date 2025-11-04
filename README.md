@@ -107,6 +107,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q82.Binary Tree Right Side View](#q82binary-tree-right-side-view)
   - [Q83. Average of Levels in Binary Tree](#q83-average-of-levels-in-binary-tree)
   - [Q84. Binary Tree Level Order Traversal](#q84-binary-tree-level-order-traversal)
+  - [Q85. Binary Tree Zigzag Level Order Traversal](#q85-binary-tree-zigzag-level-order-traversal)
 
   
 
@@ -1850,3 +1851,14 @@ Do BFS using loop and get the average at every level and store it in the list.
 Do BFS using loop and store every nodes value in a list and store that list in the result list.
 
 [View Solution 👈](./Solutions/Q84-BinaryTreeLevelOrderTraversal.java) 
+
+
+## Q85. Binary Tree Zigzag Level Order Traversal
+ 
+**Problem Link:** 
+[Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/description/)
+
+**Solution Key Idea or Approach:**  
+Do BFS using loop and use deque and a flag named fromLeft. If fromLeft is true you have to pick values from front and add values to the last else vice versa.
+
+[View Solution 👈](./Solutions/Q85-BinaryTreeZigzagLevelOrderTraversal.java) 
