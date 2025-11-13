@@ -108,6 +108,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q83. Average of Levels in Binary Tree](#q83-average-of-levels-in-binary-tree)
   - [Q84. Binary Tree Level Order Traversal](#q84-binary-tree-level-order-traversal)
   - [Q85. Binary Tree Zigzag Level Order Traversal](#q85-binary-tree-zigzag-level-order-traversal)
+  - [Q86. Minimum Absolute Difference in BST](#q86-minimum-absolute-difference-in-bst)
 
   
 
@@ -1862,3 +1863,14 @@ Do BFS using loop and store every nodes value in a list and store that list in t
 Do BFS using loop and use deque and a flag named fromLeft. If fromLeft is true you have to pick values from front and add values to the last else vice versa.
 
 [View Solution 👈](./Solutions/Q85-BinaryTreeZigzagLevelOrderTraversal.java) 
+
+
+## Q86. Minimum Absolute Difference in BST
+ 
+**Problem Link:** 
+[Minimum Absolute Difference in BST](https://leetcode.com/problems/minimum-absolute-difference-in-bst/submissions/1828636005/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:**  
+If we do inorder traersal in BST we kmow we will get sorted values. So create two data members prev and min change min if any smaller difference is found and update prev with value of last node that is viewed.
+
+[View Solution 👈](./Solutions/Q86-MinimumAbsoluteDifferenceInBST.java) 
