@@ -110,6 +110,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q85. Binary Tree Zigzag Level Order Traversal](#q85-binary-tree-zigzag-level-order-traversal)
   - [Q86. Minimum Absolute Difference in BST](#q86-minimum-absolute-difference-in-bst)
   - [Q87. Kth Smallest Element in a BST](#q87-kth-smallest-element-in-a-bst)
+  - [Q88. Validate Binary Search Tree](#q88-validate-binary-search-tree)
 
   
 
@@ -1879,7 +1880,6 @@ If we do inorder traersal in BST we kmow we will get sorted values. So create tw
 
 ## Q87. Kth Smallest Element in a BST
 
- 
 **Problem Link:** 
 [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/?envType=study-plan-v2&envId=top-interview-150)
 
@@ -1887,3 +1887,14 @@ If we do inorder traersal in BST we kmow we will get sorted values. So create tw
 Make two data members of Solution class int count(to store the iteration count), TreeNode res(to store the result node). Perform inorder traversal on the BST and Increment count on every traversal when count==k set res=that node and return its value .
 
 [View Solution 👈](./Solutions/Q87-KthSmallestElementInABST.java) 
+
+
+## Q88. Validate Binary Search Tree
+
+**Problem Link:** 
+[Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:**  
+Make two data members of Solution class boolean res=true to (exit the iteration when bst isn't valid), int prev to store the previous value. Perform inorder traversal on the BST and and compare current value with prev if prev>= current value return false .
+
+[View Solution 👈](./Solutions/Q88-ValidateBinarySearchTree.java) 
