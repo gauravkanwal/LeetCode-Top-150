@@ -109,6 +109,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q84. Binary Tree Level Order Traversal](#q84-binary-tree-level-order-traversal)
   - [Q85. Binary Tree Zigzag Level Order Traversal](#q85-binary-tree-zigzag-level-order-traversal)
   - [Q86. Minimum Absolute Difference in BST](#q86-minimum-absolute-difference-in-bst)
+  - [Q87. Kth Smallest Element in a BST](#q87-kth-smallest-element-in-a-bst)
 
   
 
@@ -1874,3 +1875,15 @@ Do BFS using loop and use deque and a flag named fromLeft. If fromLeft is true y
 If we do inorder traersal in BST we kmow we will get sorted values. So create two data members prev and min change min if any smaller difference is found and update prev with value of last node that is viewed.
 
 [View Solution 👈](./Solutions/Q86-MinimumAbsoluteDifferenceInBST.java) 
+
+
+## Q87. Kth Smallest Element in a BST
+
+ 
+**Problem Link:** 
+[Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:**  
+Make two data members of Solution class int count(to store the iteration count), TreeNode res(to store the result node). Perform inorder traversal on the BST and Increment count on every traversal when count==k set res=that node and return its value .
+
+[View Solution 👈](./Solutions/Q87-KthSmallestElementInABST.java) 
