@@ -111,6 +111,8 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q86. Minimum Absolute Difference in BST](#q86-minimum-absolute-difference-in-bst)
   - [Q87. Kth Smallest Element in a BST](#q87-kth-smallest-element-in-a-bst)
   - [Q88. Validate Binary Search Tree](#q88-validate-binary-search-tree)
+  - [Q89. Number of Islands](#q89-number-of-islands)
+  - [Q90. Surrounded Regions](#q90-surrounded-regions)
 
   
 
@@ -1898,3 +1900,24 @@ Make two data members of Solution class int count(to store the iteration count),
 Make two data members of Solution class boolean res=true to (exit the iteration when bst isn't valid), int prev to store the previous value. Perform inorder traversal on the BST and and compare current value with prev if prev>= current value return false .
 
 [View Solution 👈](./Solutions/Q88-ValidateBinarySearchTree.java) 
+
+
+## Q89. Number of Islands
+
+**Problem Link:** 
+[Number Of Islands](https://leetcode.com/problems/number-of-islands/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:**  
+Perform dfs in every idex which is '1' and thru dfs turn all connected nodes to '0' and return count of non connected all seperate land pieces
+[View Solution 👈](./Solutions/Q89-NumberOfIslands.java) 
+
+
+## Q90. Surrounded Regions
+
+**Problem Link:** 
+[Surrounded Regions](https://leetcode.com/problems/surrounded-regions/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:**  
+As the O connected with any edge O will remain O so do dfs from every edge and turn all the O to Y . Then turn the remaining O to X. Now again turn the O that were turned to Y again to O.
+
+[View Solution 👈](./Solutions/Q90-SurroundedRegions.java) 
