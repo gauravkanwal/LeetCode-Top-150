@@ -113,6 +113,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q88. Validate Binary Search Tree](#q88-validate-binary-search-tree)
   - [Q89. Number of Islands](#q89-number-of-islands)
   - [Q90. Surrounded Regions](#q90-surrounded-regions)
+  - [Q91. Clone Graph](#q91-clone-graph)
 
   
 
@@ -1921,3 +1922,14 @@ Perform dfs in every idex which is '1' and thru dfs turn all connected nodes to 
 As the O connected with any edge O will remain O so do dfs from every edge and turn all the O to Y . Then turn the remaining O to X. Now again turn the O that were turned to Y again to O.
 
 [View Solution 👈](./Solutions/Q90-SurroundedRegions.java) 
+
+
+## Q91. Clone Graph
+
+**Problem Link:** 
+[Clone Graph](https://leetcode.com/problems/clone-graph/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:**  
+Use a map to map original nodes and cloned nodes. Select a node and perform dfs one by one to every node as every node is connected and make its clone. 
+
+[View Solution 👈](./Solutions/Q91-CloneGraph.java) 
