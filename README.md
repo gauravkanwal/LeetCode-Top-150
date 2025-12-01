@@ -114,6 +114,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q89. Number of Islands](#q89-number-of-islands)
   - [Q90. Surrounded Regions](#q90-surrounded-regions)
   - [Q91. Clone Graph](#q91-clone-graph)
+  - [Q92. Evaluate Division](#q92-evaluate-division)
 
   
 
@@ -1933,3 +1934,16 @@ As the O connected with any edge O will remain O so do dfs from every edge and t
 Use a map to map original nodes and cloned nodes. Select a node and perform dfs one by one to every node as every node is connected and make its clone. 
 
 [View Solution 👈](./Solutions/Q91-CloneGraph.java) 
+
+
+## Q92. Evaluate Division
+
+**Problem Link:** 
+[Evaluate Division](https://leetcode.com/problems/evaluate-division/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:**  
+The main idea for this problem is if a/b=2.0 store and b/c is 3.0 so a/c will be 2.0*3.0 = 6.0.
+We can solve this problem using weighted graph where we store each node with its adjency list.
+if a/b=2.0 which means distance from a to b is 2.0 then b/a will be 1.0/2.0.
+
+[View Solution 👈](./Solutions/Q92-EvaluateDivision.java) 
