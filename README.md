@@ -115,6 +115,8 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q90. Surrounded Regions](#q90-surrounded-regions)
   - [Q91. Clone Graph](#q91-clone-graph)
   - [Q92. Evaluate Division](#q92-evaluate-division)
+  - [Q93. Course Schedule](#q93-course-schedule)
+
 
   
 
@@ -1947,3 +1949,15 @@ We can solve this problem using weighted graph where we store each node with its
 if a/b=2.0 which means distance from a to b is 2.0 then b/a will be 1.0/2.0.
 
 [View Solution 👈](./Solutions/Q92-EvaluateDivision.java) 
+
+
+## Q93. Course Schedule
+
+**Problem Link:** 
+[Course Schedule](https://leetcode.com/problems/course-schedule/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:**  
+Detecting in the directed graph approach:
+To detect cycle in a directed graph we use two maps one for visited and one for recPath i.e. recursionPath. If any node has a neighbour that is already visited and that also comes in the recursion path of that node, it means there exists a cycle in that graph.
+
+[View Solution 👈](./Solutions/Q93-CourseSchedule.java) 
