@@ -116,6 +116,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q91. Clone Graph](#q91-clone-graph)
   - [Q92. Evaluate Division](#q92-evaluate-division)
   - [Q93. Course Schedule](#q93-course-schedule)
+  - [Q94. Course Schedule II](#q94-course-schedule-ii)
 
 
   
@@ -1961,3 +1962,14 @@ Detecting in the directed graph approach:
 To detect cycle in a directed graph we use two maps one for visited and one for recPath i.e. recursionPath. If any node has a neighbour that is already visited and that also comes in the recursion path of that node, it means there exists a cycle in that graph.
 
 [View Solution 👈](./Solutions/Q93-CourseSchedule.java) 
+
+
+## Q94. Course Schedule II
+
+**Problem Link:** 
+[Course Schedule II](https://leetcode.com/problems/course-schedule-ii/description/)
+
+**Solution Key Idea or Approach:**  
+We have to first know if there exists a cycle in the graph, if not then we have to return the topological sort of the graph. But instead of doing both things using separate loops we can just merge the logic of both in a single loop.
+
+[View Solution 👈](./Solutions/Q94-CourseScheduleII.java) 
