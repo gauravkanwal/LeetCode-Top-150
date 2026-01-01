@@ -1958,8 +1958,12 @@ if a/b=2.0 which means distance from a to b is 2.0 then b/a will be 1.0/2.0.
 [Course Schedule](https://leetcode.com/problems/course-schedule/description/?envType=study-plan-v2&envId=top-interview-150)
 
 **Solution Key Idea or Approach:**  
-Detecting in the directed graph approach:
+DFS:
+Detecting Cycle in the directed graph approach:
 To detect cycle in a directed graph we use two maps one for visited and one for recPath i.e. recursionPath. If any node has a neighbour that is already visited and that also comes in the recursion path of that node, it means there exists a cycle in that graph.
+  
+BFS (Khan's Algorithm):
+Find indegree of every node and apply khans algorihtm. Count the numbers of pop operations performed if it is less than numCourses there exists a cycle so return false. Else true.  
 
 [View Solution 👈](./Solutions/Q93-CourseSchedule.java) 
 
@@ -1970,6 +1974,9 @@ To detect cycle in a directed graph we use two maps one for visited and one for 
 [Course Schedule II](https://leetcode.com/problems/course-schedule-ii/description/)
 
 **Solution Key Idea or Approach:**  
+DFS:
 We have to first know if there exists a cycle in the graph, if not then we have to return the topological sort of the graph. But instead of doing both things using separate loops we can just merge the logic of both in a single loop.
-
+  
+BFS (Khan's Algorithm):
+Apply Khan's Algorithm and return the topological sort. If cycle exists return empty array.   
 [View Solution 👈](./Solutions/Q94-CourseScheduleII.java) 

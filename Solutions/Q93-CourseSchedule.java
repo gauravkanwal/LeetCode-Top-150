@@ -1,3 +1,5 @@
+//DFS:
+
 class Solution {
     HashMap<Integer,List<Integer>> neighbours;
 
@@ -40,4 +42,43 @@ class Solution {
     }
 }
 
+//BFS (Khan's Algorithm):
+class Solution {
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        List<Integer> [] l=new List[numCourses];
+        
+        //initializing each index with empty list
+        for(int i=0;i<numCourses;i++){
+            l[i]= new ArrayList<>();
+        }
+
+        //adding neighbours and peroforming khan's algorithm:
+        int[] indegree=new int[numCourses];
+        for(int[] p:prerequisites){
+            l[p[1]].add(p[0]);
+            indegree[p[0]]++;
+        }
+
+        Queue<Integer> q=new LinkedList<>();
+
+        for(int i=0;i<numCourses;i++){
+           if(indegree[i]==0){
+            q.offer(i);
+           }
+        }
+
+        int count=0;
+
+        while(!q.isEmpty()){
+            int f=q.poll();
+            count++;
+            for(int neigh:l[f]){
+                indegree[neigh]--;
+                if(indegree[neigh]==0) q.offer(neigh);
+            }
+        }
+
+        return count==numCourses;
+    }
+}
     
