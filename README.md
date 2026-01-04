@@ -117,6 +117,8 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q92. Evaluate Division](#q92-evaluate-division)
   - [Q93. Course Schedule](#q93-course-schedule)
   - [Q94. Course Schedule II](#q94-course-schedule-ii)
+  - [Q95. Snakes and Ladders](#q95-snakes-and-ladders)
+  - [Q96. Minimum Genetic Mutation](#q96-minimum-genetic-mutation)
 
 
   
@@ -1980,3 +1982,26 @@ We have to first know if there exists a cycle in the graph, if not then we have 
 BFS (Khan's Algorithm):
 Apply Khan's Algorithm and return the topological sort. If cycle exists return empty array.   
 [View Solution 👈](./Solutions/Q94-CourseScheduleII.java) 
+
+
+## Q95. Snakes and Ladders
+
+**Problem Link:** 
+[Snakes and Ladders](https://leetcode.com/problems/snakes-and-ladders/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+As we have to find the minimum number of dice rolls we will use BFS to compare all options and choose the optimal one. One thing here is we have to know the indices of each number for which we have seperate logic that I have written in comments of the code. 
+   
+[View Solution 👈](./Solutions/Q95-SnakesAndLadders.java) 
+
+
+## Q96. Minimum Genetic Mutation
+
+**Problem Link:** 
+[Minimum Genetic Mutation](https://leetcode.com/problems/minimum-genetic-mutation/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+As we have to find the minimum number of mutations required we will perform BFS. In queue we will add every valid mutation and check if it is the endGene if not we will pop it and add every valid mutation that can be achieved by it to the queue.
+   
+[View Solution 👈](./Solutions/Q96-MinimumGeneticMutation.java) 
+
