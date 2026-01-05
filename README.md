@@ -119,6 +119,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q94. Course Schedule II](#q94-course-schedule-ii)
   - [Q95. Snakes and Ladders](#q95-snakes-and-ladders)
   - [Q96. Minimum Genetic Mutation](#q96-minimum-genetic-mutation)
+  - [Q97. Word Ladder](#q97-word-ladder)
 
 
   
@@ -2004,4 +2005,15 @@ As we have to find the minimum number of dice rolls we will use BFS to compare a
 As we have to find the minimum number of mutations required we will perform BFS. In queue we will add every valid mutation and check if it is the endGene if not we will pop it and add every valid mutation that can be achieved by it to the queue.
    
 [View Solution 👈](./Solutions/Q96-MinimumGeneticMutation.java) 
+
+
+## Q97. Word Ladder
+
+**Problem Link:** 
+[Word Ladder](https://leetcode.com/problems/word-ladder/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+As we have to find the minimum number of transformations required we will perform BFS. First we will create every possible transformation of the poppedword and if any of its transformation is in wordList we will add that to queue. 
+   
+[View Solution 👈](./Solutions/Q97-WordLadder.java) 
 
