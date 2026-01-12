@@ -120,6 +120,8 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q95. Snakes and Ladders](#q95-snakes-and-ladders)
   - [Q96. Minimum Genetic Mutation](#q96-minimum-genetic-mutation)
   - [Q97. Word Ladder](#q97-word-ladder)
+  - [98. Implement Trie (Prefix Tree)](#98-implement-trie-prefix-tree)
+  - [99. Design Add and Search Words Data Structure](#99-design-add-and-search-words-data-structure)
 
 
   
@@ -2016,4 +2018,27 @@ As we have to find the minimum number of mutations required we will perform BFS.
 As we have to find the minimum number of transformations required we will perform BFS. First we will create every possible transformation of the poppedword and if any of its transformation is in wordList we will add that to queue. 
    
 [View Solution 👈](./Solutions/Q97-WordLadder.java) 
+
+
+## 98. Implement Trie (Prefix Tree)
+
+**Problem Link:** 
+[Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+we create two datamembers an Trie array of 26 size which stores null initially and an boolean eow which marks the end of the word. Then we perform insert, search and prefix function based on these array and eow marker. 
+
+[View Solution 👈](./Solutions/Q98-ImplementTrie(PrefixTree).java) 
+
+
+## 99. Design Add and Search Words Data Structure
+
+
+**Problem Link:** 
+[Design Add and Search Words Data Structure](https://leetcode.com/problems/design-add-and-search-words-data-structure/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+Create normal trie data structure to add and search words but for '.' character perform dfs to search every posibility.
+
+[View Solution 👈](./Solutions/Q99-DesignAddAndSearchWordsDataStructure.java) 
 
