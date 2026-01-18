@@ -123,6 +123,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [98. Implement Trie (Prefix Tree)](#98-implement-trie-prefix-tree)
   - [99. Design Add and Search Words Data Structure](#99-design-add-and-search-words-data-structure)
   - [100. Word Search II](#100-word-search-ii)
+  - [101. Letter Combinations of a Phone Number](#101-letter-combinations-of-a-phone-number)
 
 
   
@@ -2052,4 +2053,15 @@ Create normal trie data structure to add and search words but for '.' character 
 Create a trie data structure with words array, then for every charcter on board perform dfs and check if the word or prefix exists in trie. If the word exists in trie add it to result array.
 
 [View Solution 👈](./Solutions/Q100-WordSearchII.java) 
+
+
+## 101. Letter Combinations of a Phone Number
+
+**Problem Link:** 
+[Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+We initialize an array arr with values for every key from 2 to 9. Then we backtrack for every digit in digits and in each call we run a loop for all possible values then append and send them ahead until last index. At last index we add the recieved combination in the result array.
+
+[View Solution 👈](./Solutions/Q101-LetterCombinationsOfAPhoneNumber.java) 
 
