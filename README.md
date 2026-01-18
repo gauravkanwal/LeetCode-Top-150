@@ -122,6 +122,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q97. Word Ladder](#q97-word-ladder)
   - [98. Implement Trie (Prefix Tree)](#98-implement-trie-prefix-tree)
   - [99. Design Add and Search Words Data Structure](#99-design-add-and-search-words-data-structure)
+  - [100. Word Search II](#100-word-search-ii)
 
 
   
@@ -2033,7 +2034,6 @@ we create two datamembers an Trie array of 26 size which stores null initially a
 
 ## 99. Design Add and Search Words Data Structure
 
-
 **Problem Link:** 
 [Design Add and Search Words Data Structure](https://leetcode.com/problems/design-add-and-search-words-data-structure/?envType=study-plan-v2&envId=top-interview-150)
 
@@ -2041,4 +2041,15 @@ we create two datamembers an Trie array of 26 size which stores null initially a
 Create normal trie data structure to add and search words but for '.' character perform dfs to search every posibility.
 
 [View Solution 👈](./Solutions/Q99-DesignAddAndSearchWordsDataStructure.java) 
+
+
+## 100. Word Search II
+
+**Problem Link:** 
+[Word Search II](https://leetcode.com/problems/word-search-ii/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+Create a trie data structure with words array, then for every charcter on board perform dfs and check if the word or prefix exists in trie. If the word exists in trie add it to result array.
+
+[View Solution 👈](./Solutions/Q100-WordSearchII.java) 
 
