@@ -124,6 +124,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [99. Design Add and Search Words Data Structure](#99-design-add-and-search-words-data-structure)
   - [100. Word Search II](#100-word-search-ii)
   - [101. Letter Combinations of a Phone Number](#101-letter-combinations-of-a-phone-number)
+  - [102. Combinations](#102-combinations)
 
 
   
@@ -2064,4 +2065,15 @@ Create a trie data structure with words array, then for every charcter on board 
 We initialize an array arr with values for every key from 2 to 9. Then we backtrack for every digit in digits and in each call we run a loop for all possible values then append and send them ahead until last index. At last index we add the recieved combination in the result array.
 
 [View Solution 👈](./Solutions/Q101-LetterCombinationsOfAPhoneNumber.java) 
+
+
+## 102. Combinations
+
+**Problem Link:** 
+[Combinations](https://leetcode.com/problems/combinations/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+We use backtracking approach here. Each number from 1 to n adds itself to an list and passes it to the next number. If the size of list == k add the list to result list and return.
+
+[View Solution 👈](./Solutions/Q102-Combinations.java) 
 
