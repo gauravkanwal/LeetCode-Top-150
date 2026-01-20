@@ -125,6 +125,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [100. Word Search II](#100-word-search-ii)
   - [101. Letter Combinations of a Phone Number](#101-letter-combinations-of-a-phone-number)
   - [102. Combinations](#102-combinations)
+  - [103. Permutations](#103-permutations)
 
 
   
@@ -2076,4 +2077,14 @@ We initialize an array arr with values for every key from 2 to 9. Then we backtr
 We use backtracking approach here. Each number from 1 to n adds itself to an list and passes it to the next number. If the size of list == k add the list to result list and return.
 
 [View Solution 👈](./Solutions/Q102-Combinations.java) 
+
+
+## 103. Permutations
+
+**Problem Link:** 
+[Permutations](https://leetcode.com/problems/permutations/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+We use backtracking approach here. We use a visited array of nums.length size that marks if any index is already present in the permutation. The in each recursion if the index is not present in the current permutation we add that index in the list. If the list length == nums.length we add that list into the result list.
+[View Solution 👈](./Solutions/Q103-Permutations.java) 
 
