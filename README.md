@@ -126,6 +126,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [101. Letter Combinations of a Phone Number](#101-letter-combinations-of-a-phone-number)
   - [102. Combinations](#102-combinations)
   - [103. Permutations](#103-permutations)
+  - [104.Combination Sum](#104combination-sum)
 
 
   
@@ -2087,4 +2088,14 @@ We use backtracking approach here. Each number from 1 to n adds itself to an lis
 **Solution Key Idea or Approach:** 
 We use backtracking approach here. We use a visited array of nums.length size that marks if any index is already present in the permutation. The in each recursion if the index is not present in the current permutation we add that index in the list. If the list length == nums.length we add that list into the result list.
 [View Solution 👈](./Solutions/Q103-Permutations.java) 
+
+
+## 104.Combination Sum
+
+**Problem Link:** 
+[Combination Sum](https://leetcode.com/problems/combination-sum/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+We use backtracking approach here. We can reuse an index any number of time. We backtrack from 0 to all indices if the sum becomes == target we add all the elements used in that recursion path in the result list if the sum > target we break the recursion. Then we opt for the next option.
+[View Solution 👈](./Solutions/Q104-CombinationSum.java) 
 
