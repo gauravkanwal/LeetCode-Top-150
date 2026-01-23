@@ -128,6 +128,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [103. Permutations](#103-permutations)
   - [104. Combination Sum](#104-combination-sum)
   - [105. N-Queens II](#105-n-queens-ii)
+  - [106. Generate Parentheses](#106-generate-parentheses)
 
 
   
@@ -2110,4 +2111,14 @@ We use backtracking approach here. We can reuse an index any number of time. We 
 **Solution Key Idea or Approach:** 
 As we know we can place only one queen per row . We check for each column in a unmarked row if there's no marked location in both diagonals also so we can add a queen there. To check if there exists a queen in the diagonal1 we can check in a set if row+column exists or not and for diagonal2 we can check in a set if row-column exists. We apply backtracking to know each possibility and increment the result count by 1 if we reach the row number n.
 [View Solution 👈](./Solutions/Q105-N-QueensII.java) 
+
+
+## 106. Generate Parentheses
+
+**Problem Link:** 
+[Generate Parentheses](https://leetcode.com/problems/generate-parentheses/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+We do backtracking here but here is one catch here we don't need to run any more loop as there can be only two posibilities either the next char is '(' or it is ')' so we backtrack for only these two values. We pass the number of open and closing brackets to the recursive function. If the number of closed becomes greater than open that means its an invalid case so we return. And if number of closed becomes n that means a valid combination. We add that valid combination in the result array.
+[View Solution 👈](./Solutions/Q106-GenerateParentheses.java) 
 
