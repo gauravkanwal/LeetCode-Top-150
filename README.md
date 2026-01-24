@@ -129,6 +129,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [104. Combination Sum](#104-combination-sum)
   - [105. N-Queens II](#105-n-queens-ii)
   - [106. Generate Parentheses](#106-generate-parentheses)
+  - [107. Word Search](#107-word-search)
 
 
   
@@ -2121,4 +2122,14 @@ As we know we can place only one queen per row . We check for each column in a u
 **Solution Key Idea or Approach:** 
 We do backtracking here but here is one catch here we don't need to run any more loop as there can be only two posibilities either the next char is '(' or it is ')' so we backtrack for only these two values. We pass the number of open and closing brackets to the recursive function. If the number of closed becomes greater than open that means its an invalid case so we return. And if number of closed becomes n that means a valid combination. We add that valid combination in the result array.
 [View Solution 👈](./Solutions/Q106-GenerateParentheses.java) 
+
+
+## 107. Word Search
+
+**Problem Link:** 
+[Word Search](https://leetcode.com/problems/word-search/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+We do backtracking or dfs here. Using a visited array. We return true when we reach an unvisited index where board[i]==last character of word. 
+[View Solution 👈](./Solutions/Q107-WordSearch.java) 
 
