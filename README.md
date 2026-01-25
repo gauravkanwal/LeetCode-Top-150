@@ -130,6 +130,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [105. N-Queens II](#105-n-queens-ii)
   - [106. Generate Parentheses](#106-generate-parentheses)
   - [107. Word Search](#107-word-search)
+  - [108. Convert Sorted Array to Binary Search Tree](#108-convert-sorted-array-to-binary-search-tree)
 
 
   
@@ -2132,4 +2133,14 @@ We do backtracking here but here is one catch here we don't need to run any more
 **Solution Key Idea or Approach:** 
 We do backtracking or dfs here. Using a visited array. We return true when we reach an unvisited index where board[i]==last character of word. 
 [View Solution 👈](./Solutions/Q107-WordSearch.java) 
+
+
+## 108. Convert Sorted Array to Binary Search Tree
+
+**Problem Link:** 
+[Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+We just run dfs . And from the range of starting and end index we find the mid index. Then we make a new node root= new TreeNode(nums[mid]). Then for left we run the same function by defining ranges start=start, end=mid-1 (as the array is sorted all left elements will be in smaller than mid). For the right child start=mid+1, end=end.
+[View Solution 👈](./Solutions/Q108-ConvertSortedArrayToBinarySearchTree.java) 
 
