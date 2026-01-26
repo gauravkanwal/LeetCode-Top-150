@@ -131,6 +131,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [106. Generate Parentheses](#106-generate-parentheses)
   - [107. Word Search](#107-word-search)
   - [108. Convert Sorted Array to Binary Search Tree](#108-convert-sorted-array-to-binary-search-tree)
+  - [109. Sort List](#109-sort-list)
 
 
   
@@ -2143,4 +2144,14 @@ We do backtracking or dfs here. Using a visited array. We return true when we re
 **Solution Key Idea or Approach:** 
 We just run dfs . And from the range of starting and end index we find the mid index. Then we make a new node root= new TreeNode(nums[mid]). Then for left we run the same function by defining ranges start=start, end=mid-1 (as the array is sorted all left elements will be in smaller than mid). For the right child start=mid+1, end=end.
 [View Solution 👈](./Solutions/Q108-ConvertSortedArrayToBinarySearchTree.java) 
+
+
+## 109. Sort List
+
+**Problem Link:** 
+[Sort List](https://leetcode.com/problems/sort-list/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+We will apply merge sort here. We recursively find the middle node of the linked list using slow & fast pointers. And in each recursive call we use a helper function that merges two sorted array.
+[View Solution 👈](./Solutions/Q109-SortList.java) 
 
