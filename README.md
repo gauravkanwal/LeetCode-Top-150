@@ -132,6 +132,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [107. Word Search](#107-word-search)
   - [108. Convert Sorted Array to Binary Search Tree](#108-convert-sorted-array-to-binary-search-tree)
   - [109. Sort List](#109-sort-list)
+  - [110. Construct Quad Tree](#110-construct-quad-tree)
 
 
   
@@ -2154,4 +2155,14 @@ We just run dfs . And from the range of starting and end index we find the mid i
 **Solution Key Idea or Approach:** 
 We will apply merge sort here. We recursively find the middle node of the linked list using slow & fast pointers. And in each recursive call we use a helper function that merges two sorted array.
 [View Solution 👈](./Solutions/Q109-SortList.java) 
+
+
+## 110. Construct Quad Tree
+
+**Problem Link:** 
+[Construct Quad Tree](https://leetcode.com/problems/construct-quad-tree/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+We will break the given 2D array in 4 equal parts recursively. The base condition will be when the size or row or column is 1 we return a new Node with isVal=value and isLeaf=true. If for a node all its parts have isLeaf=true and all have same value we return the node with isLeaf=true and return the val=value of parts.
+[View Solution 👈](./Solutions/Q110-ConstructQuadTree.java) 
 
