@@ -133,6 +133,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [108. Convert Sorted Array to Binary Search Tree](#108-convert-sorted-array-to-binary-search-tree)
   - [109. Sort List](#109-sort-list)
   - [110. Construct Quad Tree](#110-construct-quad-tree)
+  - [111. Merge k Sorted Lists](#111-merge-k-sorted-lists)
 
 
   
@@ -2165,4 +2166,14 @@ We will apply merge sort here. We recursively find the middle node of the linked
 **Solution Key Idea or Approach:** 
 We will break the given 2D array in 4 equal parts recursively. The base condition will be when the size or row or column is 1 we return a new Node with isVal=value and isLeaf=true. If for a node all its parts have isLeaf=true and all have same value we return the node with isLeaf=true and return the val=value of parts.
 [View Solution 👈](./Solutions/Q110-ConstructQuadTree.java) 
+
+
+## 111. Merge k Sorted Lists
+
+**Problem Link:** 
+[Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+As we have to sort k sorted lists, we should first know how to sort two sorted linked lists. So we will create a function to do that than after that we will recursively divide the lists array into two equal parts and keep sorting the sorted results of both parts and this way at the end we will return the full sorted array in O(n logk ) time. Where n is the total number of nodes and k is the number of lists.
+[View Solution 👈](./Solutions/Q111-MergeKSortedLists.java) 
 
