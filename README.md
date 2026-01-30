@@ -134,7 +134,9 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [109. Sort List](#109-sort-list)
   - [110. Construct Quad Tree](#110-construct-quad-tree)
   - [111. Merge k Sorted Lists](#111-merge-k-sorted-lists)
-
+  - [112. Maximum Subarray](#112-maximum-subarray)
+  - [113. Maximum Sum Circular Subarray](#113-maximum-sum-circular-subarray)
+  - [114. Search Insert Position](#114-search-insert-position)
 
   
 
@@ -2176,4 +2178,40 @@ We will break the given 2D array in 4 equal parts recursively. The base conditio
 **Solution Key Idea or Approach:** 
 As we have to sort k sorted lists, we should first know how to sort two sorted linked lists. So we will create a function to do that than after that we will recursively divide the lists array into two equal parts and keep sorting the sorted results of both parts and this way at the end we will return the full sorted array in O(n logk ) time. Where n is the total number of nodes and k is the number of lists.
 [View Solution 👈](./Solutions/Q111-MergeKSortedLists.java) 
+
+
+## 112. Maximum Subarray
+
+**Problem Link:** 
+[Maximum Subarray](https://leetcode.com/problems/maximum-subarray/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+We apply Kadane's Algorithm to solve this problem in O(n). The idea is to at each index we will find the maximum sum till that index and pass that sum to the next index. Maximum sum at any index can be of two case:
+1. maximumSum of previous index + number at current index
+  Or
+2. number at current index alone
+
+whichever is maximum we send that to the next index
+[View Solution 👈](./Solutions/Q112-MaximumSubarray.java) 
+
+
+## 113. Maximum Sum Circular Subarray
+
+**Problem Link:** 
+[Maximum Sum Circular Subarray](https://leetcode.com/problems/maximum-sum-circular-subarray/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+We apply Kadane's Algorithm to solve this problem in O(n). The idea is to at each index we will find the maximum sum till that index and also the minimum sum ending at that index. After the loop we will have the maximum and minimum sum of all the subarrays. Then we return max(maxSum, total-minSum). 
+But there is one edge case when all the elements in the array will be negative that time the total-minsum will result to zero which will be wrong answer so to tackle this case we add a condition when maxSum < 0 we return maxSum not total-minSum.
+[View Solution 👈](./Solutions/Q113-MaximumSumCircularSubarray.java) 
+
+
+## 114. Search Insert Position
+
+**Problem Link:** 
+[Search Insert Position](https://leetcode.com/problems/search-insert-position/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+We apply binary search here till start < end . If we found the target in mid index that's good we return the mid index. But if the loop ends we check if the element is greater than nums[start] we return left+1 index else we return left index. 
+[View Solution 👈](./Solutions/Q114-SearchInsertPosition.java) 
 
