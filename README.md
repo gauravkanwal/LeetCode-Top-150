@@ -137,6 +137,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [112. Maximum Subarray](#112-maximum-subarray)
   - [113. Maximum Sum Circular Subarray](#113-maximum-sum-circular-subarray)
   - [114. Search Insert Position](#114-search-insert-position)
+  - [115. Search a 2D Matrix](#115-search-a-2d-matrix)
 
   
 
@@ -2214,4 +2215,15 @@ But there is one edge case when all the elements in the array will be negative t
 **Solution Key Idea or Approach:** 
 We apply binary search here till start < end . If we found the target in mid index that's good we return the mid index. But if the loop ends we check if the element is greater than nums[start] we return left+1 index else we return left index. 
 [View Solution 👈](./Solutions/Q114-SearchInsertPosition.java) 
+
+
+## 115. Search a 2D Matrix
+
+
+**Problem Link:** 
+[Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+Simple approach Apply binary search on from top to bottom then when you find the correct row apply binary search on that row from left to right.
+[View Solution 👈](./Solutions/Q115-SearchA2DMatrix.java) 
 
