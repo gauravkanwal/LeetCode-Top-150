@@ -138,6 +138,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [113. Maximum Sum Circular Subarray](#113-maximum-sum-circular-subarray)
   - [114. Search Insert Position](#114-search-insert-position)
   - [115. Search a 2D Matrix](#115-search-a-2d-matrix)
+  - [116. Find Peak Element](#116-find-peak-element)
 
   
 
@@ -2226,4 +2227,21 @@ We apply binary search here till start < end . If we found the target in mid ind
 **Solution Key Idea or Approach:** 
 Simple approach Apply binary search on from top to bottom then when you find the correct row apply binary search on that row from left to right.
 [View Solution 👈](./Solutions/Q115-SearchA2DMatrix.java) 
+
+
+## 116. Find Peak Element
+
+
+**Problem Link:** 
+[Find Peak Element](https://leetcode.com/problems/find-peak-element/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+Here also we apply binary search but the main point is that the array isn't sorted. For this we find the mid index then we check
+  if 
+    nums[mid] is greater than both of its neighbours -> we return mid
+  else
+     if nums[mid-1]>nums[mid+1] that means nums[mid] is already smaller than nums[mid-1] so there is a major chance that the peak element is in the left side. -> we search the left side
+  else
+    ->we search the right side 
+[View Solution 👈](./Solutions/Q116-FindPeakElement.java) 
 
