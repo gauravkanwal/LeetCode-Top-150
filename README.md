@@ -139,6 +139,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [114. Search Insert Position](#114-search-insert-position)
   - [115. Search a 2D Matrix](#115-search-a-2d-matrix)
   - [116. Find Peak Element](#116-find-peak-element)
+  - [117. Search in Rotated Sorted Array](#117-search-in-rotated-sorted-array)
 
   
 
@@ -2220,7 +2221,6 @@ We apply binary search here till start < end . If we found the target in mid ind
 
 ## 115. Search a 2D Matrix
 
-
 **Problem Link:** 
 [Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/description/?envType=study-plan-v2&envId=top-interview-150)
 
@@ -2230,7 +2230,6 @@ Simple approach Apply binary search on from top to bottom then when you find the
 
 
 ## 116. Find Peak Element
-
 
 **Problem Link:** 
 [Find Peak Element](https://leetcode.com/problems/find-peak-element/description/?envType=study-plan-v2&envId=top-interview-150)
@@ -2244,4 +2243,14 @@ Here also we apply binary search but the main point is that the array isn't sort
   else
     ->we search the right side 
 [View Solution 👈](./Solutions/Q116-FindPeakElement.java) 
+
+
+## 117. Search in Rotated Sorted Array
+
+**Problem Link:** 
+[Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+As the array is rotated. We still perform binary search and find mid index. Then we compare the mid index to start and end .  It is guarantted that one of the two sides will be sorted. So we find that side and if target comes in the range of that sorted side we search on that side else we search on the other side.
+[View Solution 👈](./Solutions/Q117-SearchInRotatedSortedArray.java) 
 
