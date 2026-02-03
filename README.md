@@ -140,6 +140,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [115. Search a 2D Matrix](#115-search-a-2d-matrix)
   - [116. Find Peak Element](#116-find-peak-element)
   - [117. Search in Rotated Sorted Array](#117-search-in-rotated-sorted-array)
+  - [118. Find First and Last Position of Element in Sorted Array](#118-find-first-and-last-position-of-element-in-sorted-array)
 
   
 
@@ -2253,4 +2254,14 @@ Here also we apply binary search but the main point is that the array isn't sort
 **Solution Key Idea or Approach:** 
 As the array is rotated. We still perform binary search and find mid index. Then we compare the mid index to start and end .  It is guarantted that one of the two sides will be sorted. So we find that side and if target comes in the range of that sorted side we search on that side else we search on the other side.
 [View Solution 👈](./Solutions/Q117-SearchInRotatedSortedArray.java) 
+
+
+## 118. Find First and Last Position of Element in Sorted Array
+
+**Problem Link:** 
+[Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+Two binary searchs first to find starting index and second to find ending index. This way total time complexity= O(log n)
+[View Solution 👈](./Solutions/Q118-FindFirstAndLastPositionOfElementInSortedArray.java) 
 
