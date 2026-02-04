@@ -141,6 +141,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [116. Find Peak Element](#116-find-peak-element)
   - [117. Search in Rotated Sorted Array](#117-search-in-rotated-sorted-array)
   - [118. Find First and Last Position of Element in Sorted Array](#118-find-first-and-last-position-of-element-in-sorted-array)
+  - [119. Find Minimum in Rotated Sorted Array](#119-find-minimum-in-rotated-sorted-array)
 
   
 
@@ -2264,4 +2265,14 @@ As the array is rotated. We still perform binary search and find mid index. Then
 **Solution Key Idea or Approach:** 
 Two binary searchs first to find starting index and second to find ending index. This way total time complexity= O(log n)
 [View Solution 👈](./Solutions/Q118-FindFirstAndLastPositionOfElementInSortedArray.java) 
+
+
+## 119. Find Minimum in Rotated Sorted Array
+
+**Problem Link:** 
+[Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+We perform binary search.As the sorted array is rotated by k steps. It is sure that from middle index at least one side will be sorted for sure. We find that side and compare the minimum element of that side with the min variable. Then we saerch fro more smaller number in the other side.
+[View Solution 👈](./Solutions/Q119-FindMinimumInRotatedSortedArray.java) 
 
