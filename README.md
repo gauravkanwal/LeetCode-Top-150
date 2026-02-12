@@ -142,6 +142,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [117. Search in Rotated Sorted Array](#117-search-in-rotated-sorted-array)
   - [118. Find First and Last Position of Element in Sorted Array](#118-find-first-and-last-position-of-element-in-sorted-array)
   - [119. Find Minimum in Rotated Sorted Array](#119-find-minimum-in-rotated-sorted-array)
+  - [120. Median of Two Sorted Arrays](#120-median-of-two-sorted-arrays)
 
   
 
@@ -2275,4 +2276,18 @@ Two binary searchs first to find starting index and second to find ending index.
 **Solution Key Idea or Approach:** 
 We perform binary search.As the sorted array is rotated by k steps. It is sure that from middle index at least one side will be sorted for sure. We find that side and compare the minimum element of that side with the min variable. Then we saerch fro more smaller number in the other side.
 [View Solution 👈](./Solutions/Q119-FindMinimumInRotatedSortedArray.java) 
+
+
+## 120. Median of Two Sorted Arrays
+
+**Problem Link:** 
+[Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+Aproach 1:
+Traverse both arrays and store their sorted merged array in a new array. The find the median according to the number of elements are even or odd. Time Complexity: O(m+n) 
+
+Aproach2:
+Binary search: The median will either be the middle element of the merged array or the average of the two middle elements. We perform binary search on the smaller array and choose a partition at its midpoint. The remaining required elements for the left part are taken from the second array. Then we check whether both partitions satisfy the conditions of a correctly merged sorted array. If the condition is satisfied, we return the median; otherwise, we move the left or right pointers and continue the search.
+[View Solution 👈](./Solutions/Q120-MedianOfTwoSortedArrays.java) 
 
