@@ -143,6 +143,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [118. Find First and Last Position of Element in Sorted Array](#118-find-first-and-last-position-of-element-in-sorted-array)
   - [119. Find Minimum in Rotated Sorted Array](#119-find-minimum-in-rotated-sorted-array)
   - [120. Median of Two Sorted Arrays](#120-median-of-two-sorted-arrays)
+  - [121. Kth Largest Element in an Array](#121-kth-largest-element-in-an-array)
 
   
 
@@ -2290,4 +2291,14 @@ Traverse both arrays and store their sorted merged array in a new array. The fin
 Aproach2:
 Binary search: The median will either be the middle element of the merged array or the average of the two middle elements. We perform binary search on the smaller array and choose a partition at its midpoint. The remaining required elements for the left part are taken from the second array. Then we check whether both partitions satisfy the conditions of a correctly merged sorted array. If the condition is satisfied, we return the median; otherwise, we move the left or right pointers and continue the search.
 [View Solution 👈](./Solutions/Q120-MedianOfTwoSortedArrays.java) 
+
+
+## 121. Kth Largest Element in an Array
+
+**Problem Link:** 
+[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+As it is mentioned that we have to find the solution without sorting the array. So we will use min heap here we will loop through the array and store its elements in the priorityqueue but if size of pq>k we pop the smallest element. This way we have a priorityQueue with a maintained size k. Then we return pq.poll() as it will be our kth largest element.
+[View Solution 👈](./Solutions/Q121-KthLargestElementInAnArray.java) 
 
