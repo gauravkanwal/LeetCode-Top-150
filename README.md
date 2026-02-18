@@ -144,6 +144,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [119. Find Minimum in Rotated Sorted Array](#119-find-minimum-in-rotated-sorted-array)
   - [120. Median of Two Sorted Arrays](#120-median-of-two-sorted-arrays)
   - [121. Kth Largest Element in an Array](#121-kth-largest-element-in-an-array)
+  - [122. IPO](#122-ipo)
 
   
 
@@ -2301,4 +2302,14 @@ Binary search: The median will either be the middle element of the merged array 
 **Solution Key Idea or Approach:** 
 As it is mentioned that we have to find the solution without sorting the array. So we will use min heap here we will loop through the array and store its elements in the priorityqueue but if size of pq>k we pop the smallest element. This way we have a priorityQueue with a maintained size k. Then we return pq.poll() as it will be our kth largest element.
 [View Solution 👈](./Solutions/Q121-KthLargestElementInAnArray.java) 
+
+
+## 122. IPO
+
+**Problem Link:** 
+[IPO](https://leetcode.com/problems/ipo/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+We use two priority queues here : minCapital min heap to store minimum capital needed and maxProfit max heap to store maximum profit. First we add all the projects with their capitals as an array in minCapital. Then we run a loop k times and poll values from minCapital until minCapital becomes empty or capital > w and add their profits in maxProfit so that the top value of maxProfit will be the maximum profit that can be earned by w capital. This way we return the maximum profit earned using this greedy approach.  
+[View Solution 👈](./Solutions/Q122-IPO.java) 
 
