@@ -145,6 +145,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [120. Median of Two Sorted Arrays](#120-median-of-two-sorted-arrays)
   - [121. Kth Largest Element in an Array](#121-kth-largest-element-in-an-array)
   - [122. IPO](#122-ipo)
+  - [123. Find K Pairs with Smallest Sums](#123-find-k-pairs-with-smallest-sums)
 
   
 
@@ -2312,4 +2313,14 @@ As it is mentioned that we have to find the solution without sorting the array. 
 **Solution Key Idea or Approach:** 
 We use two priority queues here : minCapital min heap to store minimum capital needed and maxProfit max heap to store maximum profit. First we add all the projects with their capitals as an array in minCapital. Then we run a loop k times and poll values from minCapital until minCapital becomes empty or capital > w and add their profits in maxProfit so that the top value of maxProfit will be the maximum profit that can be earned by w capital. This way we return the maximum profit earned using this greedy approach.  
 [View Solution 👈](./Solutions/Q122-IPO.java) 
+
+
+## 123. Find K Pairs with Smallest Sums
+
+**Problem Link:** 
+[Find K Pairs with Smallest Sums](https://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+Instead of checking all possible pairs we take the advantage of the fact that both the arrays are sorted. So we use a priority queue (min heap) that stores a pair of (i,j) according to nums1[i]+nums2[j] and can be of maximum k size. First we run a loop in nums1 and insert min(nums1.size,k) values in the pq (We add [i][0] for each i index ). This way we have the pair with minimum sum on top of the queue. We poll() it and store in our result array. Then we check if in the (i,j) we popped if j < nums2.length: we add (i,j+1) in pq to check if thats the pair with minimum sum. We do this max k times. This way we pop min sum pair each time and add it to our result array. Then we return the result array.
+[View Solution 👈](./Solutions/Q123-FindKPairsWithSmallestSums.java) 
 
