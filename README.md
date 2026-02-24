@@ -146,6 +146,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [121. Kth Largest Element in an Array](#121-kth-largest-element-in-an-array)
   - [122. IPO](#122-ipo)
   - [123. Find K Pairs with Smallest Sums](#123-find-k-pairs-with-smallest-sums)
+  - [124. Find Median from Data Stream](#124-find-median-from-data-stream)
 
   
 
@@ -2323,4 +2324,14 @@ We use two priority queues here : minCapital min heap to store minimum capital n
 **Solution Key Idea or Approach:** 
 Instead of checking all possible pairs we take the advantage of the fact that both the arrays are sorted. So we use a priority queue (min heap) that stores a pair of (i,j) according to nums1[i]+nums2[j] and can be of maximum k size. First we run a loop in nums1 and insert min(nums1.size,k) values in the pq (We add [i][0] for each i index ). This way we have the pair with minimum sum on top of the queue. We poll() it and store in our result array. Then we check if in the (i,j) we popped if j < nums2.length: we add (i,j+1) in pq to check if thats the pair with minimum sum. We do this max k times. This way we pop min sum pair each time and add it to our result array. Then we return the result array.
 [View Solution 👈](./Solutions/Q123-FindKPairsWithSmallestSums.java) 
+
+
+## 124. Find Median from Data Stream
+
+**Problem Link:** 
+[Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+We use two priority queues here 1. small (a max heap) which will store the smaller values 2. big( a min heap ) which will store bigger values. We will ensure that the difference of small.size() and big.size() don't exceed 1. This way when we will have to find the median value we can find it in O(1) time. If the total size is even we return the avg of top values of both heaps else we return the top value of small as it has that extra middle element.
+[View Solution 👈](./Solutions/Q124-FindMedianFromDataStream.java) 
 
