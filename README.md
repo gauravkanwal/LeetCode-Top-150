@@ -147,6 +147,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [122. IPO](#122-ipo)
   - [123. Find K Pairs with Smallest Sums](#123-find-k-pairs-with-smallest-sums)
   - [124. Find Median from Data Stream](#124-find-median-from-data-stream)
+  - [125. Add Binary](#125-add-binary)
 
   
 
@@ -2334,4 +2335,14 @@ Instead of checking all possible pairs we take the advantage of the fact that bo
 **Solution Key Idea or Approach:** 
 We use two priority queues here 1. small (a max heap) which will store the smaller values 2. big( a min heap ) which will store bigger values. We will ensure that the difference of small.size() and big.size() don't exceed 1. This way when we will have to find the median value we can find it in O(1) time. If the total size is even we return the avg of top values of both heaps else we return the top value of small as it has that extra middle element.
 [View Solution 👈](./Solutions/Q124-FindMedianFromDataStream.java) 
+
+
+## 125. Add Binary
+
+**Problem Link:** 
+[Add Binary](https://leetcode.com/problems/add-binary/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+Take an int carry=0 and traverse strings in reverse and apply the same logic as we do on paper if the both bits are 1 the sum would be 0 and carry would be 1. If both bits are 0, then sum=0 & carry =0. if one bit is 1 and one is 0, then sum=1 and carry=0. Add results one by one to s StringBuilder. At last reverse the result and return as string . 
+[View Solution 👈](./Solutions/Q125-AddBinary.java) 
 
