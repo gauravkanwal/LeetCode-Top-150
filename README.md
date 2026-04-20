@@ -150,6 +150,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [125. Add Binary](#125-add-binary)
   - [126. Reverse Bits](#126-reverse-bits)
   - [127. Number of 1 Bits](#127-number-of-1-bits)
+  - [128. Single Number](#128-single-number)
 
 
   
@@ -2372,4 +2373,14 @@ Get last bit same as sol1. Then left shift the res by 1 to make space for the ne
 **Solution Key Idea or Approach:** 
 Get last bit by doing n&1 and if its 1 increase the count. Then right shift n by one. Repeat until n becomes 0.
 [View Solution 👈](./Solutions/Q127-NumberOf1Bits.java)
+
+
+## 128. Single Number
+
+**Problem Link:** 
+[Single Number](https://leetcode.com/problems/single-number/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+Perform zor (^) operation among all elements. All the duplicate elements will cancel each other and only one element which is unique will remain.
+[View Solution 👈](./Solutions/Q128-SingleNumber.java)
 
