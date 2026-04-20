@@ -149,6 +149,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [124. Find Median from Data Stream](#124-find-median-from-data-stream)
   - [125. Add Binary](#125-add-binary)
   - [126. Reverse Bits](#126-reverse-bits)
+  - [127. Number of 1 Bits](#127-number-of-1-bits)
 
 
   
@@ -2361,4 +2362,14 @@ Get last bit and add to res. To know the last bit do n&1 and then n>>1 so the ne
 Solution 2:
 Get last bit same as sol1. Then left shift the res by 1 to make space for the next coming bit and if its 1 then do res++;
 [View Solution 👈](./Solutions/Q126-ReverseBits.java)
+
+
+## 127. Number of 1 Bits
+
+**Problem Link:** 
+[Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+Get last bit by doing n&1 and if its 1 increase the count. Then right shift n by one. Repeat until n becomes 0.
+[View Solution 👈](./Solutions/Q127-NumberOf1Bits.java)
 
