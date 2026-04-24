@@ -151,6 +151,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [126. Reverse Bits](#126-reverse-bits)
   - [127. Number of 1 Bits](#127-number-of-1-bits)
   - [128. Single Number](#128-single-number)
+  - [129. Single Number II](#129-single-number-ii)
 
 
   
@@ -2383,4 +2384,15 @@ Get last bit by doing n&1 and if its 1 increase the count. Then right shift n by
 **Solution Key Idea or Approach:** 
 Perform zor (^) operation among all elements. All the duplicate elements will cancel each other and only one element which is unique will remain.
 [View Solution 👈](./Solutions/Q128-SingleNumber.java)
+
+
+## 129. Single Number II
+
+**Problem Link:** 
+[Single Number II](https://leetcode.com/problems/single-number-ii/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+Run a loop from 0 to 31 and get total number of set bits in each position if the number of bits are not divisible by 3 that means that bit is set in the unique number. So build unique number accordingly. 
+
+[View Solution 👈](./Solutions/Q129-SingleNumberII.java)
 
