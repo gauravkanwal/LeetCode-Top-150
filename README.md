@@ -152,6 +152,8 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [127. Number of 1 Bits](#127-number-of-1-bits)
   - [128. Single Number](#128-single-number)
   - [129. Single Number II](#129-single-number-ii)
+  - [130. Bitwise AND of Numbers Range](#130-bitwise-and-of-numbers-range)
+  - [131. Palindrome Number](#131-palindrome-number)
 
 
   
@@ -653,7 +655,7 @@ Uses StringBuilder efficiently instead of additional data structures. 🚀
 
 **Solution Key Idea or Approach:**  
 We initialize an array of StringBuilders of size numRows and a StringBuilder ans. And then we loop the input string and for each StringBuilder  in the array we add the correct string index wise.
-The main key point here is to use a boolean forward to check ig we have to go forward or backward in array. 
+The main key point here is to use a boolean forward to check if we have to go forward or backward in array. 
 [View Solution 👈](./Solutions/Q22-ZigzagConversion.java)   
   
   
@@ -2409,4 +2411,15 @@ The idea is to match prefixes of both number and return the result. To get the b
 Approach 2:
 With same idea but the better approach is right shift both left and right until they become equal and count number of iterations this way we will have the longest common prefix in the right side. Now to send the the prefix on their original position and get our result we will return left << i or right << i.  
 [View Solution 👈](./Solutions/Q130-BitwiseANDOfNumbersRange.java)
+
+
+## 131. Palindrome Number
+
+**Problem Link:** 
+[Palindrome Number](https://leetcode.com/problems/palindrome-number/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+We find the last digit of x by x%10 and then and it as the rightmost digit of a reverse variable by rev=rev*10+(x%10) then we divide x by 10 for the next iteration. We repeat this till x>0. Then we return if x and its reverse are equal or not.
+
+[View Solution 👈](./Solutions/Q131-PalindromeNumber.java)
 
