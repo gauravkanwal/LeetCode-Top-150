@@ -2396,3 +2396,17 @@ Run a loop from 0 to 31 and get total number of set bits in each position if the
 
 [View Solution 👈](./Solutions/Q129-SingleNumberII.java)
 
+
+## 130. Bitwise AND of Numbers Range
+
+**Problem Link:** 
+[Bitwise AND of Numbers Range](https://leetcode.com/problems/bitwise-and-of-numbers-range/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+Approach1:
+The idea is to match prefixes of both number and return the result. To get the bit at ith position we do left&(1<< i ) and same with right  if both bit match we add the same bit in the ith position of res by res|=(the bit at ith position of left and right).
+
+Approach 2:
+With same idea but the better approach is right shift both left and right until they become equal and count number of iterations this way we will have the longest common prefix in the right side. Now to send the the prefix on their original position and get our result we will return left << i or right << i.  
+[View Solution 👈](./Solutions/Q130-BitwiseANDOfNumbersRange.java)
+
