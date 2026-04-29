@@ -154,6 +154,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [129. Single Number II](#129-single-number-ii)
   - [130. Bitwise AND of Numbers Range](#130-bitwise-and-of-numbers-range)
   - [131. Palindrome Number](#131-palindrome-number)
+  - [132. Plus One](#132-plus-one)
 
 
   
@@ -2422,4 +2423,15 @@ With same idea but the better approach is right shift both left and right until 
 We find the last digit of x by x%10 and then and it as the rightmost digit of a reverse variable by rev=rev*10+(x%10) then we divide x by 10 for the next iteration. We repeat this till x>0. Then we return if x and its reverse are equal or not.
 
 [View Solution 👈](./Solutions/Q131-PalindromeNumber.java)
+
+
+## 132. Plus One
+
+**Problem Link:** 
+[Plus One](https://leetcode.com/problems/plus-one/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+Iterate through the array from right to left maintain a boolean carry. Change the original array itself and if the carry remains at last return a new array with an extra 1 on 0 index.
+
+[View Solution 👈](./Solutions/Q132-PlusOne.java)
 
