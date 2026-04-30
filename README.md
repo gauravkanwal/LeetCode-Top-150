@@ -155,6 +155,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [130. Bitwise AND of Numbers Range](#130-bitwise-and-of-numbers-range)
   - [131. Palindrome Number](#131-palindrome-number)
   - [132. Plus One](#132-plus-one)
+  - [133. Factorial Trailing Zeroes](#133-factorial-trailing-zeroes)
 
 
   
@@ -2396,7 +2397,6 @@ Perform zor (^) operation among all elements. All the duplicate elements will ca
 
 **Solution Key Idea or Approach:** 
 Run a loop from 0 to 31 and get total number of set bits in each position if the number of bits are not divisible by 3 that means that bit is set in the unique number. So build unique number accordingly. 
-
 [View Solution 👈](./Solutions/Q129-SingleNumberII.java)
 
 
@@ -2421,7 +2421,6 @@ With same idea but the better approach is right shift both left and right until 
 
 **Solution Key Idea or Approach:** 
 We find the last digit of x by x%10 and then and it as the rightmost digit of a reverse variable by rev=rev*10+(x%10) then we divide x by 10 for the next iteration. We repeat this till x>0. Then we return if x and its reverse are equal or not.
-
 [View Solution 👈](./Solutions/Q131-PalindromeNumber.java)
 
 
@@ -2432,6 +2431,15 @@ We find the last digit of x by x%10 and then and it as the rightmost digit of a 
 
 **Solution Key Idea or Approach:** 
 Iterate through the array from right to left maintain a boolean carry. Change the original array itself and if the carry remains at last return a new array with an extra 1 on 0 index.
-
 [View Solution 👈](./Solutions/Q132-PlusOne.java)
+
+
+## 133. Factorial Trailing Zeroes
+
+**Problem Link:** 
+[Factorial Trailing Zeroes](https://leetcode.com/problems/factorial-trailing-zeroes/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+How does a zero comes in? By multiplying by 10. 10=2*5 which means every time 2 and 5 comes in one trailing zero increases. 2 will always come more times than 5. One more thing is we can break every multiple of 5 to 5 * x for e.g. 25= 5*5 here two fives are coming we have to count both. So efficient solution would be divide the number by 5 which tells us how many 5 are there, then divide by 25 which tells us how many extra 5 are there, then divide by 125 and so on. Return the total number of fives.
+[View Solution 👈](./Solutions/Q133-FactorialTrailingZeroes.java)
 
