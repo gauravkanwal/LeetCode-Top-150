@@ -157,7 +157,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [132. Plus One](#132-plus-one)
   - [133. Factorial Trailing Zeroes](#133-factorial-trailing-zeroes)
   - [134. Sqrt(x)](#134-sqrtx)
-  - [135. Max Points on a Line](#135-max-points-on-a-line)
+  - [136. Max Points on a Line](#135-max-points-on-a-line)
 
   
 
@@ -2455,7 +2455,22 @@ We perform binary search in answer here. If we find a number whose square is <= 
 [View Solution 👈](./Solutions/Q134-Sqrt(x).java)
 
 
-## 135. Max Points on a Line
+## 135. Pow(x, n)
+
+**Problem Link:** 
+[Pow(x, n)](https://leetcode.com/problems/powx-n/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+Instead of multiplying x by itself n times, we use recursion to square x and reduce the exponent to n/2.
+If n is odd, we store an extra x in a variable called extra and multiply it with the final result.
+// 2 2 2 2 2 2 2 2 2 2 
+// 4 4 4 4 4 
+// 16 16 4(extra)
+// 256 4 
+[View Solution 👈](./Solutions/Q135-Pow(x_n).java)
+
+
+## 136. Max Points on a Line
 
 **Problem Link:** 
 [Max Points on a Line](https://leetcode.com/problems/max-points-on-a-line/description/?envType=study-plan-v2&envId=top-interview-150)
@@ -2464,5 +2479,5 @@ We perform binary search in answer here. If we find a number whose square is <= 
 From each pair of two points we find slope of the line connecting them by dy/dx where dy=(y2-y1) and dx=(x2-x1) and then we reduce the fraction by diving both dy and dx by their hcf, this way we count all the points falling in the lines with same slope.
 We use hashmap to store a slope and to store a slope we turn in into String like : "dy_dx" and make this the key of hashmap. 
 Note: To find hcf(a,b) we use logic remove chunks of b from a until nothing is left.    
-[View Solution 👈](./Solutions/Q135-MaxPointsOnALine.java)
+[View Solution 👈](./Solutions/Q136-MaxPointsOnALine.java)
 
