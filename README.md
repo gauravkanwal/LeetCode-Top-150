@@ -157,7 +157,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [132. Plus One](#132-plus-one)
   - [133. Factorial Trailing Zeroes](#133-factorial-trailing-zeroes)
   - [134. Sqrt(x)](#134-sqrtx)
-
+  - [135. Max Points on a Line](#135-max-points-on-a-line)
 
   
 
@@ -2453,4 +2453,16 @@ How does a zero comes in? By multiplying by 10. 10=2*5 which means every time 2 
 **Solution Key Idea or Approach:** 
 We perform binary search in answer here. If we find a number whose square is <= x, we keep that as result until we find the bigger number that satisfies the property. At last we return the biggest number that satisfies these properties.
 [View Solution 👈](./Solutions/Q134-Sqrt(x).java)
+
+
+## 135. Max Points on a Line
+
+**Problem Link:** 
+[Max Points on a Line](https://leetcode.com/problems/max-points-on-a-line/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+From each pair of two points we find slope of the line connecting them by dy/dx where dy=(y2-y1) and dx=(x2-x1) and then we reduce the fraction by diving both dy and dx by their hcf, this way we count all the points falling in the lines with same slope.
+We use hashmap to store a slope and to store a slope we turn in into String like : "dy_dx" and make this the key of hashmap. 
+Note: To find hcf(a,b) we use logic remove chunks of b from a until nothing is left.    
+[View Solution 👈](./Solutions/Q135-MaxPointsOnALine.java)
 

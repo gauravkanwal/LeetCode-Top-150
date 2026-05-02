@@ -1,4 +1,4 @@
-package Solutions;
+// package Solutions;
 class Solution {
     public boolean isPalindrome(int x) {
         int rev=0;
