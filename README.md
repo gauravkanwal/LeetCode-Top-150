@@ -2442,7 +2442,7 @@ Iterate through the array from right to left maintain a boolean carry. Change th
 [Factorial Trailing Zeroes](https://leetcode.com/problems/factorial-trailing-zeroes/?envType=study-plan-v2&envId=top-interview-150)
 
 **Solution Key Idea or Approach:** 
-How does a zero comes in? By multiplying by 10. 10=2*5 which means every time 2 and 5 comes in one trailing zero increases. 2 will always come more times than 5. One more thing is we can break every multiple of 5 to 5 * x for e.g. 25= 5*5 here two fives are coming we have to count both. So efficient solution would be divide the number by 5 which tells us how many 5 are there, then divide by 25 which tells us how many extra 5 are there, then divide by 125 and so on. Return the total number of fives.
+How does a zero comes in? By multiplying by 10. 10=2 * 5 which means every time 2 and 5 comes in one trailing zero increases. 2 will always come more times than 5. One more thing is we can break every multiple of 5 to 5 * x for e.g. 25= 5*5 here two fives are coming we have to count both. So efficient solution would be divide the number by 5 which tells us how many 5 are there, then divide by 25 which tells us how many extra 5 are there, then divide by 125 and so on. Return the total number of fives.
 [View Solution 👈](./Solutions/Q133-FactorialTrailingZeroes.java)
 
 
