@@ -158,6 +158,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [133. Factorial Trailing Zeroes](#133-factorial-trailing-zeroes)
   - [134. Sqrt(x)](#134-sqrtx)
   - [136. Max Points on a Line](#135-max-points-on-a-line)
+  - [137. Climbing Stairs](#137-climbing-stairs)
 
   
 
@@ -2480,4 +2481,27 @@ From each pair of two points we find slope of the line connecting them by dy/dx 
 We use hashmap to store a slope and to store a slope we turn in into String like : "dy_dx" and make this the key of hashmap. 
 Note: To find hcf(a,b) we use logic remove chunks of b from a until nothing is left.    
 [View Solution 👈](./Solutions/Q136-MaxPointsOnALine.java)
+
+
+## 137. Climbing Stairs
+
+**Problem Link:** 
+[Climbing Stairs](https://leetcode.com/problems/climbing-stairs/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+The main formula for this is **result(n)=result(n-1) + result(n-2)** as we have two choices every time either take 1 jump or take 2 jumps. The recursive approach will give TLE here because time complexity can go up to O(2^n). So we need to apply DP here.
+
+### Approach 1 [Memoization]:
+Use an int[] array dp that stores the result of subproblems and instead of computing subproblems again and again we store the value of them in the array. This is an top down approach. 
+TC: O(n) and SC: O(n)
+
+### Approach 2 [Tabulation]:
+To also save the recursive stack space we use a bottom up approach where we set the dp[ 1 ]=1 and dp[ 2 ]=2 then iteratively compute the value for n. 
+TC: O(n) and SC: O(n)
+
+### Approach 3 [Most Optimal]:
+We can see that we only need the last 2 values. So instead of array we use two vars only.
+TC: O(n) and SC: O(1)
+
+[View Solution 👈](./Solutions/Q137-ClimbingStairs.java)
 
