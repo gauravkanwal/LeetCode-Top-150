@@ -3,9 +3,7 @@
 This repository contains my solutions to the LeetCode Top Interview 150 problems. Each solution is provided as a separate Java file, with a detailed summary of the approach written below.
 
 ## Table of Contents
-- [LeetCode Top Interview 150 Solutions](#leetcode-top-interview-150-solutions)
-  - [Table of Contents](#table-of-contents)
-  - [Key Ideas or approaches of the problems:](#key-ideas-or-approaches-of-the-problems)
+- [Key Ideas or approaches of the problems:](#key-ideas-or-approaches-of-the-problems)
   - [Q1. Merge Sorted Array](#q1-merge-sorted-array)
   - [Q2. Remove Element](#q2-remove-element)
   - [Q3. Remove Duplicates from Sorted Array](#q3-remove-duplicates-from-sorted-array)
@@ -26,11 +24,9 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q18. Integer To Roman](#q18-integer-to-roman)
   - [Q19. Length of Last Word](#q19-length-of-last-word)
   - [Q20. Longest Common Prefix](#q20-longest-common-prefix)
-  - [Second Solution:](#second-solution)
   - [Q21. Reverse Words in a String](#q21-reverse-words-in-a-string)
   - [Q22. Zigzag Conversion](#q22-zigzag-conversion)
   - [Q23. Find the Index of the First Occurrence in a String](#q23-find-the-index-of-the-first-occurrence-in-a-string)
-  - [MY Solution:](#my-solution)
   - [Q24. Text Justification](#q24-text-justification)
   - [Q25. Valid Palindrome](#q25-valid-palindrome)
   - [Q26. Is Subsequence](#q26-is-subsequence)
@@ -42,24 +38,9 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [Q32. Substring with Concatenation of All Words](#q32-substring-with-concatenation-of-all-words)
   - [Q33. Minimum Window Substring](#q33-minimum-window-substring)
   - [Q34. Valid Sudoku](#q34-valid-sudoku)
-  - [🔹 First Approach: Using Multiple Loops (Brute Force)](#-first-approach-using-multiple-loops-brute-force)
-    - [Summary:](#summary)
-    - [Key Points:](#key-points)
-  - [🔹 Second Approach: Using a Single HashSet (Optimized)](#-second-approach-using-a-single-hashset-optimized)
-    - [Summary:](#summary-1)
-    - [Key Points:](#key-points-1)
-  - [🔹 Third Approach: Using 3 Boolean 2D Arrays (Most Optimal)](#-third-approach-using-3-boolean-2d-arrays-most-optimal)
-    - [Summary:](#summary-2)
   - [Q35. Spiral Matrix](#q35-spiral-matrix)
   - [Q36. Rotate Image](#q36-rotate-image)
   - [Q37. Set Matrix Zeroes](#q37-set-matrix-zeroes)
-  - [Initial HashSet Approach (O(m + n) Space)](#initial-hashset-approach-om--n-space)
-    - [Steps:](#steps)
-    - [Issue:](#issue)
-  - [Optimizing to O(1) Space using the Matrix itself](#optimizing-to-o1-space-using-the-matrix-itself)
-    - [**Key Insight:**](#key-insight)
-    - [**Optimized Steps:**](#optimized-steps)
-    - [**Why is This Better?**](#why-is-this-better)
   - [Q38. Game of Life](#q38-game-of-life)
   - [Q39. Ransom Note](#q39-ransom-note)
   - [Q40. Isomorphic Strings](#q40-isomorphic-strings)
@@ -159,6 +140,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [134. Sqrt(x)](#134-sqrtx)
   - [136. Max Points on a Line](#135-max-points-on-a-line)
   - [137. Climbing Stairs](#137-climbing-stairs)
+  - [138. House Robber](#138-house-robber)
 
   
 
@@ -2504,4 +2486,27 @@ We can see that we only need the last 2 values. So instead of array we use two v
 TC: O(n) and SC: O(1)
 
 [View Solution 👈](./Solutions/Q137-ClimbingStairs.java)
+
+
+## 138. House Robber
+
+**Problem Link:** 
+[House Robber](https://leetcode.com/problems/house-robber/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+For each index i we can check every possible combination from i+2 to n-1 and return the maximum sum. As we can see that if we solve this problem by recursion it can lead to TC= O(100^n) which is not acceptable at all. So we need to apply DP here.
+
+### Approach 1 [Memoization]:
+To improve our time complexity we store the results of the subproblems in a dp array. And instead of computing the same function multiple times we just took the value from that dp array.
+TC: O(n) and SC: O(n)
+
+### Approach 2 [Tabulation]:
+To also save the recursive stack space we use a bottom up approach where we set the dp[ n-1 ]=nums[ n-1 ] and dp[ n-2 ]= max(nums[n-1], nums[n-2]) then iteratively compute and return the value for 0. 
+TC: O(n) and SC: O(n)
+
+### Approach 3 [Most Optimal]:
+We can see that we only need the next 2 values. So instead of array we use two vars only.
+TC: O(n) and SC: O(1)
+
+[View Solution 👈](./Solutions/Q138-HouseRobber.java)
 
