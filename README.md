@@ -141,6 +141,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [136. Max Points on a Line](#135-max-points-on-a-line)
   - [137. Climbing Stairs](#137-climbing-stairs)
   - [138. House Robber](#138-house-robber)
+  - [139. Word Break](#139-word-break)
 
   
 
@@ -2509,4 +2510,24 @@ We can see that we only need the next 2 values. So instead of array we use two v
 TC: O(n) and SC: O(1)
 
 [View Solution 👈](./Solutions/Q138-HouseRobber.java)
+
+
+## 139. Word Break
+
+**Problem Link:** 
+[Word Break](https://leetcode.com/problems/word-break/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+First we store each String in dict in a HashSet for faster search. For each index i we can check if the substring(0,i+1) is present in list && substring(i+1,n) can also be segmented then we return true. As we can see that if we solve this problem by recursion it can lead to TC= O(2^n) which is not acceptable at all. So we need to apply DP here.
+
+### Approach 1 [Memoization]:
+To improve our time complexity we use a dp array and store 1 or 0 according to the result of each subproblem. This way we do not need to compute a subproblem multiple times.
+TC: O(n^3) (Traversing the string in first loop * same in second loop * calulating substring)
+SC: O(n) (dp array and recursion stack space)
+
+### Approach 2 [Tabulation]:
+To also save the recursive stack space we use a bottom up approach where we set the dp[ n ]=1 bcz empty string can be segmented then we check from each index if the substring(0,i+1) is present in hashset and dp[j=0 to j<n>]=1. If true we set dp[i]=1 and at last return dp[0]. 
+TC: O(n^3) and SC: O(n)(dp array only)
+
+[View Solution 👈](./Solutions/Q139-WordBreak.java)
 
