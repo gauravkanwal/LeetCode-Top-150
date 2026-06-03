@@ -142,6 +142,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [137. Climbing Stairs](#137-climbing-stairs)
   - [138. House Robber](#138-house-robber)
   - [139. Word Break](#139-word-break)
+  - [140. Coin Change](#140-coin-change)
 
   
 
@@ -2530,4 +2531,25 @@ To also save the recursive stack space we use a bottom up approach where we set 
 TC: O(n^3) and SC: O(n)(dp array only)
 
 [View Solution 👈](./Solutions/Q139-WordBreak.java)
+
+
+
+## 140. Coin Change
+
+**Problem Link:** 
+[Coin Change](https://leetcode.com/problems/coin-change/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+As there can be multiple combination of coins we have to check each and find the combination with minimum no. of coins used. Greedy won't work here because it's not confirmed that taking maximum coin will be the best choice like for coins=[1,3,4] and amount=6 the best choice will be 3+3 not 4+1+1. So the recursive solution for this would lead to exponential time complexity.
+
+### Approach 1 [Memoization]:
+To improve our time complexity we use a dp array and result of each subproblem. This way we do not need to compute a subproblem multiple times.
+TC: O(a*n) where a=amount and n=no.of coins 
+SC: O(n) (dp array and recursion stack space)
+
+### Approach 2 [Tabulation]:
+To also save the recursive stack space we use a bottom up approach where we set the dp[0]=0 get the optimal answer for each amount from 1 to A. With the formula dp[amount]=min(dp[amount],dp[amount-c]), for each coin c.
+TC: O(a*n) and SC: O(n)(dp array only)
+
+[View Solution 👈](./Solutions/Q140-CoinChange.java)
 
