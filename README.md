@@ -143,6 +143,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [138. House Robber](#138-house-robber)
   - [139. Word Break](#139-word-break)
   - [140. Coin Change](#140-coin-change)
+  - [141. Longest Increasing Subsequence](#141-longest-increasing-subsequence)
 
   
 
@@ -2552,4 +2553,27 @@ To also save the recursive stack space we use a bottom up approach where we set 
 TC: O(a*n) and SC: O(n)(dp array only)
 
 [View Solution 👈](./Solutions/Q140-CoinChange.java)
+
+
+
+
+## 141. Longest Increasing Subsequence
+
+**Problem Link:** 
+[Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+The main formula for each index is result[i]= max(result[i],result[j]+1) for all nums[j]>nums[i].
+If we solve this recursively it wuld take exponential 2^n time. So We use DP here. 
+
+### Approach 1 [Memoization]:
+To improve our time complexity we use a dp array and result of each subproblem. This way we do not need to compute a subproblem multiple times.
+TC: O(n*n)
+SC: O(n) (dp array and recursion stack space)
+
+### Approach 2 [Tabulation]:
+To also save the recursive stack space we use a bottom up approach where we set the dp[n-1]=1 get the optimal answer for each index from n-2 to 0. With the formula dp[i]=max(dp[i],dp[j]+1), for each j where nums[j]>nums[i]. Then we return the maximum value in the dp array.
+TC: O(n*n) and SC: O(n)(dp array only)
+
+[View Solution 👈](./Solutions/Q141-LongestIncreasingSubsequence.java)
 
