@@ -144,6 +144,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [139. Word Break](#139-word-break)
   - [140. Coin Change](#140-coin-change)
   - [141. Longest Increasing Subsequence](#141-longest-increasing-subsequence)
+  - [142. Triangle](#142-triangle)
 
   
 
@@ -2564,7 +2565,7 @@ TC: O(a*n) and SC: O(n)(dp array only)
 
 **Solution Key Idea or Approach:** 
 The main formula for each index is result[i]= max(result[i],result[j]+1) for all nums[j]>nums[i].
-If we solve this recursively it wuld take exponential 2^n time. So We use DP here. 
+If we solve this recursively it would take exponential 2^n time. So We use DP here. 
 
 ### Approach 1 [Memoization]:
 To improve our time complexity we use a dp array and result of each subproblem. This way we do not need to compute a subproblem multiple times.
@@ -2576,4 +2577,31 @@ To also save the recursive stack space we use a bottom up approach where we set 
 TC: O(n*n) and SC: O(n)(dp array only)
 
 [View Solution 👈](./Solutions/Q141-LongestIncreasingSubsequence.java)
+
+
+
+
+## 142. Triangle
+
+**Problem Link:** 
+[Triangle](https://leetcode.com/problems/triangle/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+For each index we have to return triangle[row][index] + min(fun(triangle[row+1][index]), fun(triangle[row+1][index+1])). And then return the fn(triangle[0][0]) as our answer.
+If we solve this recursively it would take exponential time. So We use DP here. Instead of 1D DP we need 2D DP here bcz there are two changing parameters for the recursion. As we can see there are overlapping subproblems:
+
+### Approach 1 [Memoization]:
+To improve our time complexity we use a 2d dp array and store result of each subproblem in it. This way we do not need to compute a subproblem multiple times.
+TC: O(m*m) where m = no. of rows
+SC: O(m*m + m) (dp array and recursion stack space)
+
+### Approach 2 [Tabulation]:
+To also save the recursive stack space we use a bottom up approach where we set the dp[m-1][i]=triangle[m-1][i] get the optimal answer for each index from n-2 to 0. With the formula dp[i][j]=triangle[i][j] + min(dp[i+1][j],dp[i+1][j+1]) . Then we return dp[0][0] which stores the min sum.
+TC: O(m*m) and SC: O(m*m)(dp array only)
+
+### Approach 3 [Space Optimization]:
+To optimize more space we can see that we only need the reults of prev row so we can use only one array named prev and store the values of previous row in it.
+TC: O(m*m) and SC: O(m)(prev array only)
+
+[View Solution 👈](./Solutions/Q142-Triangle.java)
 
