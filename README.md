@@ -145,6 +145,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [140. Coin Change](#140-coin-change)
   - [141. Longest Increasing Subsequence](#141-longest-increasing-subsequence)
   - [142. Triangle](#142-triangle)
+  - [143. Minimum Path Sum](#143-minimum-path-sum)
 
   
 
@@ -2580,7 +2581,6 @@ TC: O(n*n) and SC: O(n)(dp array only)
 
 
 
-
 ## 142. Triangle
 
 **Problem Link:** 
@@ -2604,4 +2604,30 @@ To optimize more space we can see that we only need the reults of prev row so we
 TC: O(m*m) and SC: O(m)(prev array only)
 
 [View Solution 👈](./Solutions/Q142-Triangle.java)
+
+
+
+## 143. Minimum Path Sum
+
+**Problem Link:** 
+[Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/description/?envType=study-plan-v2&envId=top-interview-150)
+
+**Solution Key Idea or Approach:** 
+For each cell we have to return grid[i][j] + min(fn([i+1][j]), fn([i][j+1])). And then return the result of fn([0][0]) as our answer.
+If we solve this recursively it would take exponential time. So We use DP here. Instead of 1D DP we need 2D DP here bcz there are two changing parameters for the recursion. As we can see there are overlapping subproblems:
+
+### Approach 1 [Memoization]:
+To improve our time complexity we use a 2d dp array and store result of each subproblem in it. This way we do not need to compute a subproblem multiple times.
+TC: O(mn)
+SC: O(mn + m+n) (dp array and recursion stack space)
+
+### Approach 2 [Tabulation]:
+To also save the recursive stack space we use a bottom up approach where we set the dp[m-1][n-1]=grid[m-1][n-1] get the optimal answer for each remaining cell. With the formula dp[i][j]=grid[i][j] + min(dp[i+1][j],dp[i][j+1]) . Then we return dp[0][0] which stores the min path sum.
+TC: O(m*n) and SC: O(m*n)(dp array only)
+
+### Approach 3 [Space Optimization]:
+To optimize more space we can see that we only need the reults of prev row so we can use only one array named prev and store the values of previous row in it.
+TC: O(m*n) and SC: O(n)(prev array only)
+
+[View Solution 👈](./Solutions/Q143-MinimumPathSum.java)
 
