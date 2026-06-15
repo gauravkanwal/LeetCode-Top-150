@@ -147,6 +147,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [142. Triangle](#142-triangle)
   - [143. Minimum Path Sum](#143-minimum-path-sum)
   - [144. Unique Paths II](#144-unique-paths-ii)
+  - [145. Longest Palindromic Substring](#145-longest-palindromic-substring)
 
   
 
@@ -2656,4 +2657,31 @@ To optimize more space we can see that we only need the reults of prev row so we
 TC: O(m*n) and SC: O(n)(prev array only)
 
 [View Solution 👈](./Solutions/Q144-UniquePathsII.java)
+
+
+
+
+## 145. Longest Palindromic Substring
+
+**Problem Link:** 
+[Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/description/?envType=study-plan-v2&envId=top-interview-150)
+**Solution Key Idea or Approach:** 
+For each pair of index i & j we have to check if s[i]==s[j] && s[i+1]to[j-1] i.e. the middle part of i & j is palindorme. If true then s[i]tos[j] is also palindrome. Then we return the maximum j-i+1 value possible.
+If we solve this recursively it would take exponential time. So We use DP here. Instead of 1D DP we need 2D DP here bcz there are two changing parameters for the recursion. As we can see there are overlapping subproblems:
+
+### Approach 1 [Memoization]:
+To improve our time complexity we use a 2d dp array and store result of each subproblem in it. This way we do not need to compute a subproblem multiple times.
+TC: O(n^2) [filling dp array with-1 (n^2) + 2 nested loops (n^2) + total dp states calculation(n^2)]
+SC: O(n^2) (dp array (n^2) + recursion stack space(n/2))
+
+### Approach 2 [Tabulation]:
+To also save the recursive stack space we use a bottom up approach where we set the dp[i][i]=true and get all the results for each length from 1 to s.length(). With the formula dp[i][j]=  s.charAt(i)==s.charAt(j) && dp[i+1][j-1]. Then we return maximum possible value of j-i+1 where dp[i][j] == true.
+TC: O(n^2) 
+SC: O(n^2)(dp array only)
+
+### Non DP Solution [Center-Expansion]:
+To optimize space to O(1) we can use a middle expansion approach which checks if a s[i]to[j] is palindrome and s[i-1]==s[j+1] so s[i-1]tos[j+1] is also a valid palindorme string.
+TC: O(n^2) and SC: O(1)
+
+[View Solution 👈](./Solutions/Q145-LongestPalindromicSubstring.java)
 
