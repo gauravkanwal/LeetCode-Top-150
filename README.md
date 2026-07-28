@@ -148,6 +148,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [143. Minimum Path Sum](#143-minimum-path-sum)
   - [144. Unique Paths II](#144-unique-paths-ii)
   - [145. Longest Palindromic Substring](#145-longest-palindromic-substring)
+  - [146. Interleaving String](#146-interleaving-string)
 
   
 
@@ -2684,4 +2685,25 @@ To optimize space to O(1) we can use a middle expansion approach which checks if
 TC: O(n^2) and SC: O(1)
 
 [View Solution 👈](./Solutions/Q145-LongestPalindromicSubstring.java)
+
+
+
+## 146. Interleaving String
+
+**Problem Link:** 
+[Interleaving String](https://leetcode.com/problems/interleaving-string?envType=study-plan-v2&envId=top-interview-150)
+**Solution Key Idea or Approach:** 
+For every pair of indices i,j where k=i+j we can check if s1[i]==s3[k] && rec(s1,s2,s3,i+1,j)==true we can return true. To optimize time we can use DP 
+
+### Approach 1 [Memoization]:
+To improve our time complexity we use a 2d dp array and store result of each subproblem in it. This way we do not need to compute a subproblem multiple times.
+TC: O(m*n) 
+SC: O(m*n) 
+
+### Approach 2 [Tabulation]:
+To also save the recursive stack space we use a bottom up approach where we set the dp[m][n]=true and get all the results for each index from dp[m-1][n] to dp[0][n] & dp[m][n-1]to dp[m][0]. Then fill each cell of dp. Then we return dp[0][0].
+TC: O(n^2) 
+SC: O(n^2)(dp array only)
+
+[View Solution 👈](./Solutions/Q146-InterleavingString.java)
 
