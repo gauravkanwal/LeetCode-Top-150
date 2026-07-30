@@ -149,6 +149,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [144. Unique Paths II](#144-unique-paths-ii)
   - [145. Longest Palindromic Substring](#145-longest-palindromic-substring)
   - [146. Interleaving String](#146-interleaving-string)
+  - [147. Edit Distance](#147-edit-distance)
 
   
 
@@ -2687,7 +2688,6 @@ TC: O(n^2) and SC: O(1)
 [View Solution 👈](./Solutions/Q145-LongestPalindromicSubstring.java)
 
 
-
 ## 146. Interleaving String
 
 **Problem Link:** 
@@ -2706,4 +2706,24 @@ TC: O(n^2)
 SC: O(n^2)(dp array only)
 
 [View Solution 👈](./Solutions/Q146-InterleavingString.java)
+
+
+## 147. Edit Distance
+
+**Problem Link:** 
+[Edit Distance](https://leetcode.com/problems/edit-distance/description/?envType=study-plan-v2&envId=top-interview-150)
+**Solution Key Idea or Approach:** 
+At every step we have three options so we try each one and find the optimal one. If i is the index for word1 and j is the index for word2. Inserting a char means increasing j only, Deleting a char means increasing i only and Replacing a char means increasing both i & j. So we recursively find the minimum operations costed over all and return it. To handle overlapping subproblems we use DP here. 
+
+### Approach 1 [Memoization]:
+To improve our time complexity we use a 2d dp array and store result of each subproblem in it. This way we do not need to compute a subproblem multiple times.
+TC: O(m*n) 
+SC: O(m*n) 
+
+### Approach 2 [Tabulation]:
+To also save the recursive stack space we use a bottom up approach where we set the dp[i][n]=m-i and dp[m][j]=n-j then get all the results for each index till dp[0][0]. Then we return dp[0][0].
+TC: O(m*n) 
+SC: O(m*n)(dp array only)
+
+[View Solution 👈](./Solutions/Q147-EditDistance.java)
 
