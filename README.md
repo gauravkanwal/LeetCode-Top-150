@@ -150,6 +150,7 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [145. Longest Palindromic Substring](#145-longest-palindromic-substring)
   - [146. Interleaving String](#146-interleaving-string)
   - [147. Edit Distance](#147-edit-distance)
+  - [148. Best Time to Buy and Sell Stock III](#148-best-time-to-buy-and-sell-stock-iii)
 
   
 
@@ -2726,4 +2727,18 @@ TC: O(m*n)
 SC: O(m*n)(dp array only)
 
 [View Solution 👈](./Solutions/Q147-EditDistance.java)
+
+
+## 148. Best Time to Buy and Sell Stock III
+
+**Problem Link:** 
+[Best Time to Buy and Sell Stock III](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/?envType=study-plan-v2&envId=top-interview-150)  
+**Solution Key Idea or Approach:** 
+Since at most two transactions are allowed, we use two arrays: dp1 and dp2.
+dp1[i] represents the maximum profit that can be made up to index i (left part).
+dp2[i] represents the maximum profit that can be made from index i to the end (right part).
+
+Finally, we compute the maximum value of dp1[i] + dp2[i] for all i, which gives the maximum profit that can be obtained by performing at most two transactions.
+
+[View Solution 👈](./Solutions/Q148-BestTimeToBuyAndSellStockIII.java)
 
