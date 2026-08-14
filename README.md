@@ -151,8 +151,8 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [146. Interleaving String](#146-interleaving-string)
   - [147. Edit Distance](#147-edit-distance)
   - [148. Best Time to Buy and Sell Stock III](#148-best-time-to-buy-and-sell-stock-iii)
+  - [149. Best Time to Buy and Sell Stock IV](#149-best-time-to-buy-and-sell-stock-iv)
 
-  
 
 ## Key Ideas or approaches of the problems:  
   
@@ -2741,4 +2741,16 @@ dp2[i] represents the maximum profit that can be made from index i to the end (r
 Finally, we compute the maximum value of dp1[i] + dp2[i] for all i, which gives the maximum profit that can be obtained by performing at most two transactions.
 
 [View Solution 👈](./Solutions/Q148-BestTimeToBuyAndSellStockIII.java)
+
+
+## 149. Best Time to Buy and Sell Stock IV
+
+**Problem Link:** 
+[Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/?envType=study-plan-v2&envId=top-interview-150)  
+**Solution Key Idea or Approach:** 
+For an index i we have two options:  
+1) **We can buy a stock and have k transactions left:** We return Max( Maximum Profit from 1 sell and k-1 transactions - prices[idx] , Do nothing and buy at next index)
+2) **We can sell a stock and have k transactions left:** We return Max( Maximum Profit from next index & k-1 transactions + prices[idx] , Do nothing and sell at next index)
+This recursive approach will take exponential time. To reduce the time to O(n*k) we store the results of overlapping subproblems in a 3D DP. Both the memoization and tabulation solution for that are given.
+[View Solution 👈](./Solutions/Q149-BestTimeToBuyAndSellStockIV.java)
 
