@@ -48,3 +48,30 @@ class Solution {
                    
     }
 
+    //Space optimization:
+    class Solution {
+    public int maxProfit(int k, int[] prices) {
+        int n=prices.length;
+        int[][]next=new int[k+1][2];
+        
+        for(int i=n-1;i>=0;i--){
+            int[][] curr=new int[k+1][2];
+            for(int j=1;j<=k;j++){
+                curr[j][1]=Math.max(
+                    next[j][0]-prices[i],
+                    next[j][1]
+                );
+                
+                curr[j][0]=Math.max(
+                    next[j-1][1]+prices[i],
+                    next[j][0]
+                );
+            }
+            next=curr;
+        }
+
+        return next[k][1];
+                   
+    }
+
+}
