@@ -152,7 +152,8 @@ This repository contains my solutions to the LeetCode Top Interview 150 problems
   - [147. Edit Distance](#147-edit-distance)
   - [148. Best Time to Buy and Sell Stock III](#148-best-time-to-buy-and-sell-stock-iii)
   - [149. Best Time to Buy and Sell Stock IV](#149-best-time-to-buy-and-sell-stock-iv)
-
+  - [150. Maximal Square](#150-maximal-square)
+    
 
 ## Key Ideas or approaches of the problems:  
   
@@ -2754,3 +2755,12 @@ For an index i we have two options:
 This recursive approach will take exponential time. To reduce the time to O(n*k) we store the results of overlapping subproblems in a 3D DP. Both the memoization and tabulation solution for that are given.
 [View Solution 👈](./Solutions/Q149-BestTimeToBuyAndSellStockIV.java)
 
+
+## 150. Maximal Square
+
+**Problem Link:** 
+[Maximal Square](https://leetcode.com/problems/maximal-square/description/)  
+**Solution Key Idea or Approach:** 
+We try to find out the maximum area starting from each cell as the top-left most corner. To do that the simple idea is to know the number of cells with '1' starting from the right, down and diagonal from each cell [i][j]. Then add 1 to the minimum of them. That is the length of the square with all '1's starting from the cell [i][j]. Run a loop to get the maximum side of square starting from each cell. Return the area as maxSize*maxSize;
+To do this recurcively will take exponential time. So we use 2D DP here. All memoization, tabulation and space optimization approaches are given.
+[View Solution 👈](./Solutions/Q150-MaximalSquare.java)
